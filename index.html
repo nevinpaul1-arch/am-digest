@@ -132,6 +132,65 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Inter',sans-serif;
 
 /* Footer */
 .page-footer{text-align:center;padding:24px;font-size:11px;color:rgba(255,255,255,.18);border-top:1px solid rgba(255,255,255,.05)}
+
+/* TAB BAR */
+.tab-bar{background:rgba(10,10,15,.95);border-bottom:1px solid rgba(255,255,255,.08);padding:0 32px;position:sticky;top:0;z-index:200}
+.tab-bar-inner{max-width:1200px;margin:0 auto;display:flex;gap:0}
+.tab-btn{padding:14px 22px;font-size:13px;font-weight:600;color:rgba(255,255,255,.38);border:none;background:transparent;cursor:pointer;border-bottom:2px solid transparent;transition:all .15s;white-space:nowrap;letter-spacing:.1px}
+.tab-btn:hover{color:rgba(255,255,255,.7)}
+.tab-btn.active{color:#fff;border-bottom-color:#6366f1}
+.tab-count{display:inline-block;background:rgba(255,255,255,.08);border-radius:10px;font-size:10px;font-weight:700;padding:1px 7px;margin-left:6px;color:rgba(255,255,255,.4)}
+.tab-btn.active .tab-count{background:rgba(99,102,241,.25);color:#a5b4fc}
+
+/* ARCHIVE */
+.archive-wrap{max-width:1200px;margin:0 auto;padding:28px 32px 60px;display:none}
+.archive-wrap.visible{display:block}
+.archive-toolbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:22px}
+.archive-search{flex:1;min-width:180px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:9px;padding:8px 14px;font-size:13px;color:#e8e8f0;outline:none;transition:border-color .15s}
+.archive-search::placeholder{color:rgba(255,255,255,.25)}
+.archive-search:focus{border-color:rgba(99,102,241,.5)}
+.archive-sector-btns{display:flex;gap:6px;flex-wrap:wrap}
+.arch-btn{padding:5px 12px;border-radius:7px;font-size:11px;font-weight:600;border:1px solid rgba(255,255,255,.1);background:transparent;color:rgba(255,255,255,.4);cursor:pointer;transition:all .15s;white-space:nowrap}
+.arch-btn:hover{border-color:rgba(255,255,255,.25);color:rgba(255,255,255,.75)}
+.arch-btn.active{color:#fff}
+.arch-btn[data-sector=all].active{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.25)}
+.arch-btn[data-sector=Aerospace].active{background:rgba(99,102,241,.2);border-color:#6366f1;color:#c7d2fe}
+.arch-btn[data-sector=Defence].active{background:rgba(239,68,68,.2);border-color:#ef4444;color:#fca5a5}
+.arch-btn[data-sector=Automotive].active{background:rgba(34,197,94,.2);border-color:#22c55e;color:#86efac}
+.arch-btn[data-sector=Energy].active{background:rgba(251,146,60,.2);border-color:#fb923c;color:#fdba74}
+.arch-btn[data-sector=Motorsport].active{background:rgba(234,179,8,.2);border-color:#eab308;color:#fde047}
+.arch-btn[data-sector=Semiconductor].active{background:rgba(6,182,212,.2);border-color:#06b6d4;color:#67e8f9}
+.archive-meta{font-size:11px;color:rgba(255,255,255,.22);margin-left:auto;white-space:nowrap}
+
+/* Archive table */
+.archive-table-wrap{border:1px solid rgba(255,255,255,.07);border-radius:14px;overflow:hidden}
+.archive-table{width:100%;border-collapse:collapse}
+.archive-table thead tr{background:rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.08)}
+.archive-table th{padding:11px 14px;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:rgba(255,255,255,.3);text-align:left;cursor:pointer;user-select:none;white-space:nowrap}
+.archive-table th:hover{color:rgba(255,255,255,.6)}
+.archive-table th .sort-icon{margin-left:4px;opacity:.4;font-size:9px}
+.archive-table th.sorted .sort-icon{opacity:1;color:#a5b4fc}
+.archive-table tbody tr{border-bottom:1px solid rgba(255,255,255,.04);transition:background .12s}
+.archive-table tbody tr:last-child{border-bottom:none}
+.archive-table tbody tr:hover{background:rgba(255,255,255,.03)}
+.archive-table td{padding:12px 14px;font-size:13px;vertical-align:middle}
+.arch-date{font-size:11.5px;color:rgba(255,255,255,.35);white-space:nowrap;font-variant-numeric:tabular-nums}
+.arch-sector-badge{display:inline-flex;align-items:center;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;padding:2px 8px;border-radius:4px;white-space:nowrap}
+.arch-title{color:#e8e8f0;font-weight:500;line-height:1.4;max-width:380px}
+.arch-title a{color:inherit;text-decoration:none;transition:color .12s}
+.arch-title a:hover{color:#a5b4fc}
+.arch-source{font-size:11.5px;color:rgba(255,255,255,.32);white-space:nowrap}
+.arch-link-btn{display:inline-flex;align-items:center;gap:5px;padding:5px 11px;border-radius:7px;font-size:11px;font-weight:600;color:rgba(165,180,252,.8);background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.2);text-decoration:none;white-space:nowrap;transition:all .12s}
+.arch-link-btn:hover{background:rgba(99,102,241,.2);color:#c7d2fe}
+
+/* Archive empty state */
+.archive-empty{text-align:center;padding:72px 32px;color:rgba(255,255,255,.2)}
+.archive-empty .ae-icon{font-size:40px;margin-bottom:14px}
+.archive-empty p{font-size:14px;line-height:1.7}
+.archive-empty span{color:rgba(99,102,241,.7)}
+
+/* Grouped date header row */
+.arch-date-header td{padding:14px 14px 6px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:rgba(255,255,255,.2);background:rgba(255,255,255,.02);border-bottom:1px solid rgba(255,255,255,.04)}
 </style>
 </head>
 <body>
@@ -153,6 +212,14 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Inter',sans-serif;
   </div>
 </div>
 
+<div class="tab-bar">
+  <div class="tab-bar-inner">
+    <button class="tab-btn active" data-tab="today">Today's Digest <span class="tab-count" id="today-count"></span></button>
+    <button class="tab-btn" data-tab="archive">Archive <span class="tab-count" id="archive-count"></span></button>
+  </div>
+</div>
+
+<div id="today-view">
 <div class="filter-wrap">
   <div class="filter-inner">
     <span class="filter-label">Filter</span>
@@ -192,6 +259,26 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Inter',sans-serif;
       </a>
     </div>
   </div>
+</div>
+
+</div><!-- /today-view -->
+
+<!-- ARCHIVE VIEW -->
+<div class="archive-wrap" id="archive-view">
+  <div class="archive-toolbar">
+    <input class="archive-search" id="arch-search" type="text" placeholder="Search titles, sources…">
+    <div class="archive-sector-btns">
+      <button class="arch-btn active" data-sector="all">All</button>
+      <button class="arch-btn" data-sector="Aerospace">Aerospace</button>
+      <button class="arch-btn" data-sector="Defence">Defence</button>
+      <button class="arch-btn" data-sector="Automotive">Automotive</button>
+      <button class="arch-btn" data-sector="Energy">Energy</button>
+      <button class="arch-btn" data-sector="Motorsport">Motorsport</button>
+      <button class="arch-btn" data-sector="Semiconductor">Semiconductor</button>
+    </div>
+    <span class="archive-meta" id="arch-meta"></span>
+  </div>
+  <div id="arch-table-wrap"></div>
 </div>
 
 <div class="page-footer">AM Innovation Digest · Generated by Claude · 24 Jun 2026 · nevinpaul1-arch.github.io/am-digest</div>
@@ -366,137 +453,4 @@ const FB = {
   Automotive:`<svg viewBox="0 0 400 170" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%"><rect width="400" height="170" fill="#052e16"/><g transform="translate(200,95)"><rect x="-95" y="-20" width="190" height="30" rx="10" fill="white" opacity=".85"/><path d="M-42,-20 L-24,-48 L30,-48 L48,-20Z" fill="white" opacity=".75"/><circle cx="-58" cy="18" r="17" fill="none" stroke="white" stroke-width="4" opacity=".8"/><circle cx="-58" cy="18" r="7" fill="white" opacity=".5"/><circle cx="58" cy="18" r="17" fill="none" stroke="white" stroke-width="4" opacity=".8"/><circle cx="58" cy="18" r="7" fill="white" opacity=".5"/></g><text x="12" y="158" font-family="system-ui" font-size="9" font-weight="700" fill="white" opacity=".3" letter-spacing="2">AUTOMOTIVE</text></svg>`,
   Energy:`<svg viewBox="0 0 400 170" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%"><rect width="400" height="170" fill="#1c1003"/><g transform="translate(200,80)"><polygon points="12,-58 -9,-6 9,-6 -12,58 32,-14 12,-14 32,-58" fill="#fb923c" opacity=".9"/></g><text x="12" y="158" font-family="system-ui" font-size="9" font-weight="700" fill="white" opacity=".3" letter-spacing="2">ENERGY</text></svg>`,
   Motorsport:`<svg viewBox="0 0 400 170" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%"><defs><linearGradient id="mg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1a1000"/><stop offset="100%" stop-color="#3d2600"/></linearGradient></defs><rect width="400" height="170" fill="url(#mg)"/><line x1="0" y1="145" x2="400" y2="145" stroke="#eab308" stroke-width="2" opacity=".3"/><line x1="0" y1="150" x2="400" y2="150" stroke="#eab308" stroke-width="1" opacity=".2"/><g transform="translate(200,82)"><ellipse cx="0" cy="0" rx="62" ry="9" fill="#fde047" opacity=".8"/><path d="M62,0 Q90,0 100,2 Q90,5 62,0Z" fill="#fde047" opacity=".75"/><path d="M-10,0 L-45,40 L-58,40 L-20,0 L-58,-40 L-45,-40 Z" fill="#fde047" opacity=".65"/><path d="M-48,0 L-65,-26 L-72,-26 L-56,0Z" fill="#fde047" opacity=".7"/><ellipse cx="-20" cy="12" rx="16" ry="5" fill="#1a1000"/><ellipse cx="22" cy="12" rx="16" ry="5" fill="#1a1000"/><ellipse cx="-20" cy="12" rx="16" ry="5" fill="none" stroke="#fde047" stroke-width="2.5" opacity=".7"/><ellipse cx="22" cy="12" rx="16" ry="5" fill="none" stroke="#fde047" stroke-width="2.5" opacity=".7"/></g><text x="12" y="158" font-family="system-ui" font-size="9" font-weight="700" fill="#fde047" opacity=".35" letter-spacing="2">MOTORSPORT</text></svg>`,
-  Semiconductor:`<svg viewBox="0 0 400 170" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%"><defs><linearGradient id="sg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#020f1f"/><stop offset="100%" stop-color="#0a1f3d"/></linearGradient></defs><rect width="400" height="170" fill="url(#sg)"/><g transform="translate(200,80)" opacity=".6"><rect x="-38" y="-38" width="76" height="76" rx="6" fill="none" stroke="#67e8f9" stroke-width="2"/><rect x="-24" y="-24" width="48" height="48" rx="3" fill="rgba(6,182,212,0.15)" stroke="#67e8f9" stroke-width="1.5"/><rect x="-10" y="-10" width="20" height="20" rx="2" fill="rgba(6,182,212,0.25)"/><line x1="-38" y1="-22" x2="-55" y2="-22" stroke="#67e8f9" stroke-width="2"/><line x1="-38" y1="0" x2="-55" y2="0" stroke="#67e8f9" stroke-width="2"/><line x1="-38" y1="22" x2="-55" y2="22" stroke="#67e8f9" stroke-width="2"/><line x1="38" y1="-22" x2="55" y2="-22" stroke="#67e8f9" stroke-width="2"/><line x1="38" y1="0" x2="55" y2="0" stroke="#67e8f9" stroke-width="2"/><line x1="38" y1="22" x2="55" y2="22" stroke="#67e8f9" stroke-width="2"/><line x1="-22" y1="-38" x2="-22" y2="-55" stroke="#67e8f9" stroke-width="2"/><line x1="0" y1="-38" x2="0" y2="-55" stroke="#67e8f9" stroke-width="2"/><line x1="22" y1="-38" x2="22" y2="-55" stroke="#67e8f9" stroke-width="2"/><line x1="-22" y1="38" x2="-22" y2="55" stroke="#67e8f9" stroke-width="2"/><line x1="0" y1="38" x2="0" y2="55" stroke="#67e8f9" stroke-width="2"/><line x1="22" y1="38" x2="22" y2="55" stroke="#67e8f9" stroke-width="2"/></g><text x="12" y="158" font-family="system-ui" font-size="9" font-weight="700" fill="#67e8f9" opacity=".3" letter-spacing="2">SEMICONDUCTOR</text></svg>`
-};
-
-const GRADIENTS = {
-  Aerospace:'linear-gradient(135deg,#4f46e5,#7c3aed)',
-  Defence:'linear-gradient(135deg,#dc2626,#9f1239)',
-  Automotive:'linear-gradient(135deg,#16a34a,#065f46)',
-  Energy:'linear-gradient(135deg,#ea580c,#92400e)',
-  Motorsport:'linear-gradient(135deg,#ca8a04,#92400e)',
-  Semiconductor:'linear-gradient(135deg,#0891b2,#1e40af)'
-};
-
-const SRC_EMOJI = {'Airbus Newsroom':'✈️','3D Printing Industry':'🖨️','TCT Magazine':'📰','3DPrint.com':'🔬','Fabbaloo':'📡','DefenceWeb':'🛡️','Engineering.com':'⚙️','Met3DP Blog':'🔩','Manufactur3D':'🏎️','3D Adept Media':'📐','VoxelMatters':'🔧','Mordor Intelligence':'📊'};
-
-function mkCardImg(item) {
-  const w = document.createElement('div');
-  w.className = 'card-img';
-  if (item.img) {
-    const i = document.createElement('img');
-    i.src = item.img; i.alt = item.title; i.loading = 'lazy';
-    i.onerror = () => { w.innerHTML = FB[item.sector]; };
-    w.appendChild(i);
-    const o = document.createElement('div'); o.className = 'img-overlay'; w.appendChild(o);
-  } else { w.innerHTML = FB[item.sector]; }
-  return w;
-}
-
-// Stats
-function buildStats() {
-  const row = document.getElementById('stats-row');
-  const sectors = ['Aerospace','Defence','Automotive','Energy','Motorsport','Semiconductor'];
-  const total = document.createElement('div');
-  total.className = 'stat';
-  total.innerHTML = `<div class="num">${ITEMS.length}</div><div class="lbl">Total Items</div>`;
-  row.appendChild(total);
-  sectors.forEach(s => {
-    const c = ITEMS.filter(i => i.sector === s).length;
-    if (c > 0) {
-      const el = document.createElement('div');
-      el.className = 'stat';
-      el.innerHTML = `<div class="num">${c}</div><div class="lbl">${s}</div>`;
-      row.appendChild(el);
-    }
-  });
-}
-
-// Render cards
-let activeFilter = 'all';
-function render() {
-  const grid = document.getElementById('card-grid');
-  grid.innerHTML = '';
-  const list = activeFilter === 'all' ? ITEMS : ITEMS.filter(i => i.sector === activeFilter);
-  document.getElementById('result-count').textContent = list.length + ' items';
-  document.getElementById('section-label').textContent = activeFilter === 'all' ? `Latest Findings · ${list.length} items` : `${activeFilter} · ${list.length} items`;
-
-  if (!list.length) {
-    grid.innerHTML = '<div class="empty"><div class="empty-icon">🔍</div><p>No items for this sector.</p></div>';
-    return;
-  }
-  list.forEach(item => {
-    const ri = ITEMS.indexOf(item);
-    const card = document.createElement('div');
-    card.className = `card sector-${item.sector}`;
-    card.appendChild(mkCardImg(item));
-    const body = document.createElement('div');
-    body.className = 'card-body';
-    body.innerHTML = `
-      <span class="card-sector cs-${item.sector}">${item.sector}</span>
-      <h3>${item.title}</h3>
-      <p class="card-summary">${item.summary}</p>
-      <div class="card-footer">
-        <span class="card-source">${item.source}</span>
-        <span class="card-cta">Read more ›</span>
-      </div>`;
-    card.appendChild(body);
-    card.addEventListener('click', () => openModal(ri));
-    grid.appendChild(card);
-  });
-}
-
-// Modal
-function openModal(idx) {
-  const item = ITEMS[idx];
-  const hero = document.getElementById('modal-hero');
-  const closeBtn = document.getElementById('modal-close');
-  hero.innerHTML = ''; hero.appendChild(closeBtn);
-  if (item.img) {
-    const i = document.createElement('img');
-    i.src = item.img; i.alt = item.title;
-    i.onerror = () => { hero.innerHTML = FB[item.sector]; hero.appendChild(closeBtn); };
-    hero.appendChild(i);
-  } else {
-    hero.innerHTML += FB[item.sector]; hero.appendChild(closeBtn);
-  }
-  const g = document.createElement('div'); g.className = 'modal-hero-gradient'; hero.appendChild(g);
-
-  const tag = document.getElementById('modal-sector-tag');
-  tag.textContent = item.sector;
-  tag.className = `modal-sector-tag cs-${item.sector}`;
-  document.getElementById('modal-title').textContent = item.title;
-  document.getElementById('modal-article').innerHTML = item.fullContent;
-
-  const dot = document.getElementById('modal-source-dot');
-  dot.textContent = SRC_EMOJI[item.source] || '🔬';
-  dot.style.background = GRADIENTS[item.sector];
-
-  document.getElementById('modal-source-name').textContent = item.source;
-  const lk = document.getElementById('modal-link');
-  lk.href = item.url;
-  lk.className = `modal-link-btn ml-${item.sector}`;
-  document.getElementById('modal-sheet').scrollTop = 0;
-  document.getElementById('modal-overlay').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeModal() {
-  document.getElementById('modal-overlay').classList.remove('open');
-  document.body.style.overflow = '';
-}
-
-document.getElementById('modal-close').addEventListener('click', closeModal);
-document.getElementById('modal-overlay').addEventListener('click', e => { if (e.target === document.getElementById('modal-overlay')) closeModal(); });
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
-
-document.querySelectorAll('.filter-btn').forEach(b => b.addEventListener('click', () => {
-  document.querySelectorAll('.filter-btn').forEach(x => x.classList.remove('active'));
-  b.classList.add('active'); activeFilter = b.dataset.filter; render();
-}));
-
-buildStats();
-render();
-</script>
-</body>
-</html>
+  Semiconductor:`<svg viewBox="0 0 400 170" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%"><defs><linearGradient id="sg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#020f1f"/><stop offset="100%" stop-color="#0a1f3d"/></linearGradient></defs><rect width="400" height="170" fill="url(#sg)"/><g transform="translate(200,80)" opacity=".6"><rect x="-38" y="-38" width="76" height="76" rx="6" fill="none" stroke="#67e8f9" stroke-width="2"/><rect x="-24" y="-24" width="48" height="48" rx="3" fill="rgba(6,182,212,0.15)" stroke="#67e8f9" stroke-width="1.5"/><rect x="-10" y="-10" width="20" height="20" rx="2" fill="rgba(6,182,212,0.25)"/><line x1="-38" y1="-22" x2="-55" y2="-22" stroke="#67e8f9" stroke-width="2"/><line x1="-38" y1="0" x2="-55" y2="0" stroke="#67e8f9" stroke-width="2"/><line x1="-38" y1="22" x2="-55" y2="22" stroke="#67e8f9" stroke-width="2"/>
