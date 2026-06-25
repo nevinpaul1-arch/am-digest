@@ -5,330 +5,154 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AM Innovation Digest · 24 Jun 2026</title>
 <style>
-/* ── RESET & BASE ─────────────────────────────────────────────── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Inter',sans-serif;background:#0a0a0f;color:#e8e8f0;min-height:100vh;overflow-x:hidden}
 
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
-  background: #0a0a0f;
-  color: #e8e8f0;
-  min-height: 100vh;
-  overflow-x: hidden;
-}
+/* HERO */
+.hero{position:relative;padding:52px 32px 40px;background:linear-gradient(135deg,#0d0d1a 0%,#111128 50%,#0a0f2e 100%);overflow:hidden}
+.hero::before{content:'';position:absolute;top:-60px;right:-60px;width:380px;height:380px;background:radial-gradient(circle,rgba(99,102,241,0.18) 0%,transparent 70%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-80px;left:10%;width:280px;height:280px;background:radial-gradient(circle,rgba(236,72,153,0.1) 0%,transparent 70%);pointer-events:none}
+.hero-inner{position:relative;max-width:1200px;margin:0 auto}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:7px;background:rgba(99,102,241,0.15);border:1px solid rgba(99,102,241,0.3);color:#a5b4fc;font-size:11px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:16px}
+.dot{width:6px;height:6px;background:#6366f1;border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.85)}}
+.hero h1{font-size:clamp(28px,4vw,42px);font-weight:800;letter-spacing:-1px;line-height:1.15;background:linear-gradient(135deg,#fff 30%,#a5b4fc 80%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
+.hero .subtitle{font-size:15px;color:rgba(255,255,255,.45);margin-bottom:28px}
+.hero-pills{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.hero-pill{padding:5px 13px;border-radius:20px;font-size:11.5px;font-weight:600;border:1px solid}
+.pill-aerospace{background:rgba(99,102,241,.12);border-color:rgba(99,102,241,.35);color:#a5b4fc}
+.pill-defence{background:rgba(239,68,68,.1);border-color:rgba(239,68,68,.3);color:#fca5a5}
+.pill-automotive{background:rgba(34,197,94,.1);border-color:rgba(34,197,94,.3);color:#86efac}
+.pill-energy{background:rgba(251,146,60,.12);border-color:rgba(251,146,60,.3);color:#fdba74}
+.pill-motorsport{background:rgba(234,179,8,.12);border-color:rgba(234,179,8,.3);color:#fde047}
+.pill-semiconductor{background:rgba(6,182,212,.12);border-color:rgba(6,182,212,.3);color:#67e8f9}
+.stats-row{display:flex;gap:10px;flex-wrap:wrap}
+.stat{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:12px 18px;min-width:80px}
+.stat .num{font-size:24px;font-weight:800;line-height:1;background:linear-gradient(135deg,#fff,#a5b4fc);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat .lbl{font-size:9.5px;color:rgba(255,255,255,.35);margin-top:4px;text-transform:uppercase;letter-spacing:.5px}
 
-/* ── HERO HEADER ──────────────────────────────────────────────── */
-.hero {
-  position: relative;
-  padding: 52px 32px 40px;
-  background: linear-gradient(135deg, #0d0d1a 0%, #111128 50%, #0a0f2e 100%);
-  overflow: hidden;
-}
-.hero::before {
-  content: '';
-  position: absolute;
-  top: -60px; right: -60px;
-  width: 380px; height: 380px;
-  background: radial-gradient(circle, rgba(99,102,241,0.18) 0%, transparent 70%);
-  pointer-events: none;
-}
-.hero::after {
-  content: '';
-  position: absolute;
-  bottom: -80px; left: 10%;
-  width: 280px; height: 280px;
-  background: radial-gradient(circle, rgba(236,72,153,0.1) 0%, transparent 70%);
-  pointer-events: none;
-}
-.hero-inner { position: relative; max-width: 1100px; margin: 0 auto; }
-.hero-eyebrow {
-  display: inline-flex; align-items: center; gap: 7px;
-  background: rgba(99,102,241,0.15); border: 1px solid rgba(99,102,241,0.3);
-  color: #a5b4fc; font-size: 11px; font-weight: 600;
-  letter-spacing: 0.8px; text-transform: uppercase;
-  padding: 4px 12px; border-radius: 20px; margin-bottom: 16px;
-}
-.hero-eyebrow .dot { width: 6px; height: 6px; background: #6366f1; border-radius: 50%; animation: pulse 2s infinite; }
-@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.85)} }
+/* FILTER BAR */
+.filter-wrap{position:sticky;top:0;z-index:100;background:rgba(10,10,15,.9);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.06);padding:11px 32px}
+.filter-inner{max-width:1200px;margin:0 auto;display:flex;gap:7px;align-items:center;flex-wrap:wrap}
+.filter-label{font-size:10px;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.6px;margin-right:4px;white-space:nowrap}
+.filter-btn{padding:5px 14px;border-radius:8px;font-size:11.5px;font-weight:600;border:1px solid rgba(255,255,255,.1);background:transparent;color:rgba(255,255,255,.45);cursor:pointer;transition:all .15s;white-space:nowrap}
+.filter-btn:hover{border-color:rgba(255,255,255,.25);color:rgba(255,255,255,.8)}
+.filter-btn.active{color:#fff}
+.filter-btn[data-filter=all].active{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.25)}
+.filter-btn[data-filter=Aerospace].active{background:rgba(99,102,241,.2);border-color:#6366f1;color:#c7d2fe}
+.filter-btn[data-filter=Defence].active{background:rgba(239,68,68,.2);border-color:#ef4444;color:#fca5a5}
+.filter-btn[data-filter=Automotive].active{background:rgba(34,197,94,.2);border-color:#22c55e;color:#86efac}
+.filter-btn[data-filter=Energy].active{background:rgba(251,146,60,.2);border-color:#fb923c;color:#fdba74}
+.filter-btn[data-filter=Motorsport].active{background:rgba(234,179,8,.2);border-color:#eab308;color:#fde047}
+.filter-btn[data-filter=Semiconductor].active{background:rgba(6,182,212,.2);border-color:#06b6d4;color:#67e8f9}
+.result-count{margin-left:auto;font-size:11px;color:rgba(255,255,255,.25);white-space:nowrap}
 
-.hero h1 {
-  font-size: clamp(28px, 4vw, 42px);
-  font-weight: 800; letter-spacing: -1px; line-height: 1.15;
-  background: linear-gradient(135deg, #fff 30%, #a5b4fc 80%);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 10px;
-}
-.hero .subtitle {
-  font-size: 15px; color: rgba(255,255,255,0.45);
-  margin-bottom: 28px; font-weight: 400;
-}
+/* MAIN GRID */
+.main{max-width:1200px;margin:0 auto;padding:28px 32px 60px}
+.section-header{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.25);margin-bottom:18px}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
 
-/* Sector pills in hero */
-.hero-pills { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 28px; }
-.hero-pill {
-  padding: 5px 13px; border-radius: 20px; font-size: 11.5px; font-weight: 600;
-  border: 1px solid; letter-spacing: 0.2px;
-}
-.pill-aerospace  { background: rgba(99,102,241,0.12); border-color: rgba(99,102,241,0.35); color: #a5b4fc; }
-.pill-defence    { background: rgba(239,68,68,0.1);   border-color: rgba(239,68,68,0.3);   color: #fca5a5; }
-.pill-automotive { background: rgba(34,197,94,0.1);   border-color: rgba(34,197,94,0.3);   color: #86efac; }
-.pill-energy     { background: rgba(251,146,60,0.12); border-color: rgba(251,146,60,0.3);  color: #fdba74; }
+/* CARD */
+.card{background:#13131f;border:1px solid rgba(255,255,255,.07);border-radius:16px;overflow:hidden;cursor:pointer;transition:transform .2s,box-shadow .2s,border-color .2s;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-4px)}
+.card:hover.sector-Aerospace{border-color:rgba(99,102,241,.4);box-shadow:0 20px 50px rgba(99,102,241,.15)}
+.card:hover.sector-Defence{border-color:rgba(239,68,68,.4);box-shadow:0 20px 50px rgba(239,68,68,.12)}
+.card:hover.sector-Automotive{border-color:rgba(34,197,94,.4);box-shadow:0 20px 50px rgba(34,197,94,.1)}
+.card:hover.sector-Energy{border-color:rgba(251,146,60,.4);box-shadow:0 20px 50px rgba(251,146,60,.1)}
+.card:hover.sector-Motorsport{border-color:rgba(234,179,8,.4);box-shadow:0 20px 50px rgba(234,179,8,.1)}
+.card:hover.sector-Semiconductor{border-color:rgba(6,182,212,.4);box-shadow:0 20px 50px rgba(6,182,212,.1)}
+.card-img{width:100%;height:170px;position:relative;overflow:hidden;flex-shrink:0;background:#0d0d1a}
+.card-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+.card:hover .card-img img{transform:scale(1.06)}
+.card-img .img-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.05) 0%,rgba(10,10,15,.6) 100%)}
+.card-body{padding:16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.card-sector{display:inline-flex;align-items:center;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.7px;padding:3px 9px;border-radius:5px;align-self:flex-start}
+.cs-Aerospace{background:rgba(99,102,241,.15);color:#a5b4fc}
+.cs-Defence{background:rgba(239,68,68,.15);color:#fca5a5}
+.cs-Automotive{background:rgba(34,197,94,.15);color:#86efac}
+.cs-Energy{background:rgba(251,146,60,.15);color:#fdba74}
+.cs-Motorsport{background:rgba(234,179,8,.15);color:#fde047}
+.cs-Semiconductor{background:rgba(6,182,212,.15);color:#67e8f9}
+.card-body h3{font-size:13.5px;font-weight:700;line-height:1.4;color:#f0f0fa}
+.card-body .card-summary{font-size:12px;color:rgba(255,255,255,.42);line-height:1.6;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;flex:1}
+.card-footer{display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid rgba(255,255,255,.06);margin-top:auto}
+.card-source{font-size:11px;color:rgba(255,255,255,.3)}
+.card-cta{font-size:11px;font-weight:600;color:rgba(165,180,252,.8);display:flex;align-items:center;gap:4px}
 
-/* Stats row */
-.stats-row { display: flex; gap: 12px; flex-wrap: wrap; }
-.stat {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 12px; padding: 14px 20px;
-  min-width: 90px;
-}
-.stat .num {
-  font-size: 26px; font-weight: 800; line-height: 1;
-  background: linear-gradient(135deg, #fff, #a5b4fc);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.stat .lbl { font-size: 10px; color: rgba(255,255,255,0.35); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+/* MODAL */
+.modal-overlay{position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,.75);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:flex;align-items:flex-end;opacity:0;pointer-events:none;transition:opacity .25s}
+.modal-overlay.open{opacity:1;pointer-events:all}
+.modal-sheet{background:#13131f;border:1px solid rgba(255,255,255,.08);border-radius:24px 24px 0 0;width:100%;max-height:92vh;overflow-y:auto;transform:translateY(40px);transition:transform .3s cubic-bezier(.32,1.1,.7,1)}
+.modal-overlay.open .modal-sheet{transform:translateY(0)}
 
-/* ── STICKY FILTER BAR ────────────────────────────────────────── */
-.filter-wrap {
-  position: sticky; top: 0; z-index: 100;
-  background: rgba(10,10,15,0.85);
-  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-  padding: 12px 32px;
-}
-.filter-inner { max-width: 1100px; margin: 0 auto; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
-.filter-label { font-size: 10.5px; color: rgba(255,255,255,0.3); text-transform: uppercase; letter-spacing: 0.6px; margin-right: 4px; }
-.filter-btn {
-  padding: 6px 16px; border-radius: 8px; font-size: 12px; font-weight: 600;
-  border: 1px solid rgba(255,255,255,0.1);
-  background: transparent; color: rgba(255,255,255,0.45);
-  cursor: pointer; transition: all 0.15s; letter-spacing: 0.1px;
-}
-.filter-btn:hover { border-color: rgba(255,255,255,0.25); color: rgba(255,255,255,0.8); }
-.filter-btn.active { color: #fff; }
-.filter-btn[data-filter="all"].active    { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.25); }
-.filter-btn[data-filter="Aerospace"].active  { background: rgba(99,102,241,0.2); border-color: #6366f1; color: #c7d2fe; }
-.filter-btn[data-filter="Defence"].active    { background: rgba(239,68,68,0.2);  border-color: #ef4444; color: #fca5a5; }
-.filter-btn[data-filter="Automotive"].active { background: rgba(34,197,94,0.2);  border-color: #22c55e; color: #86efac; }
-.filter-btn[data-filter="Energy"].active     { background: rgba(251,146,60,0.2); border-color: #fb923c; color: #fdba74; }
-.result-count { margin-left: auto; font-size: 11px; color: rgba(255,255,255,0.25); }
-
-/* ── MAIN GRID ────────────────────────────────────────────────── */
-.main { max-width: 1100px; margin: 0 auto; padding: 28px 32px 60px; }
-
-.section-header {
-  font-size: 11px; font-weight: 700; text-transform: uppercase;
-  letter-spacing: 1px; color: rgba(255,255,255,0.25);
-  margin-bottom: 18px; padding-left: 2px;
+/* Modal on wider screens: centered panel */
+@media(min-width:700px){
+  .modal-overlay{align-items:center;padding:24px}
+  .modal-sheet{border-radius:20px;max-width:700px;margin:0 auto;max-height:88vh}
 }
 
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 16px;
-}
+.modal-hero{width:100%;height:240px;position:relative;overflow:hidden;background:#0d0d1a;flex-shrink:0}
+.modal-hero img{width:100%;height:100%;object-fit:cover;display:block}
+.modal-hero-gradient{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.05) 0%,rgba(19,19,31,.9) 100%)}
+.modal-close-btn{position:absolute;top:14px;right:14px;z-index:10;width:32px;height:32px;border-radius:50%;background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.2);color:white;font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s;line-height:1}
+.modal-close-btn:hover{background:rgba(0,0,0,.75)}
 
-/* ── CARD ─────────────────────────────────────────────────────── */
-.card {
-  background: #13131f;
-  border: 1px solid rgba(255,255,255,0.07);
-  border-radius: 16px; overflow: hidden;
-  cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
-  display: flex; flex-direction: column;
-}
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-}
-.card:hover.sector-Aerospace  { border-color: rgba(99,102,241,0.4); box-shadow: 0 20px 50px rgba(99,102,241,0.15); }
-.card:hover.sector-Defence    { border-color: rgba(239,68,68,0.4);  box-shadow: 0 20px 50px rgba(239,68,68,0.12); }
-.card:hover.sector-Automotive { border-color: rgba(34,197,94,0.4);  box-shadow: 0 20px 50px rgba(34,197,94,0.1); }
-.card:hover.sector-Energy     { border-color: rgba(251,146,60,0.4); box-shadow: 0 20px 50px rgba(251,146,60,0.1); }
+.modal-body{padding:22px 26px 36px}
+.modal-drag{width:40px;height:4px;background:rgba(255,255,255,.12);border-radius:2px;margin:0 auto 18px}
+.modal-sector-tag{display:inline-flex;align-items:center;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;padding:4px 10px;border-radius:6px;margin-bottom:12px}
+.modal-body h2{font-size:clamp(17px,2.5vw,21px);font-weight:800;line-height:1.3;color:#f0f0fa;letter-spacing:-.3px;margin-bottom:18px}
 
-/* Card image */
-.card-img {
-  width: 100%; height: 170px; position: relative; overflow: hidden; flex-shrink: 0;
-}
-.card-img img {
-  width: 100%; height: 100%; object-fit: cover; display: block;
-  transition: transform 0.4s;
-}
-.card:hover .card-img img { transform: scale(1.06); }
-.card-img .img-overlay {
-  position: absolute; inset: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(10,10,15,0.6) 100%);
-}
+/* Full article content */
+.modal-article{font-size:14.5px;line-height:1.8;color:rgba(255,255,255,.65);margin-bottom:24px}
+.modal-article p{margin-bottom:14px}
+.modal-article p:last-child{margin-bottom:0}
+.modal-article strong{color:rgba(255,255,255,.85);font-weight:600}
+.modal-article .stat-highlight{display:inline-block;background:rgba(99,102,241,.12);border:1px solid rgba(99,102,241,.2);border-radius:6px;padding:2px 8px;font-size:13px;font-weight:700;color:#a5b4fc;margin:0 2px}
 
-/* Fallback SVG banners */
-.card-img .img-fallback {
-  width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;
-}
+.modal-source-row{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:14px 16px;margin-bottom:18px}
+.source-dot{width:36px;height:36px;border-radius:10px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:18px}
+.modal-source-row .lbl{font-size:10px;color:rgba(255,255,255,.3);margin-bottom:2px}
+.modal-source-row .name{font-size:13px;font-weight:600;color:#e8e8f0}
+.modal-link-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:14px;border-radius:12px;text-decoration:none;font-size:14px;font-weight:700;transition:opacity .15s,transform .1s;color:white}
+.modal-link-btn:hover{opacity:.88;transform:scale(.99)}
+.ml-Aerospace{background:linear-gradient(135deg,#4f46e5,#7c3aed)}
+.ml-Defence{background:linear-gradient(135deg,#dc2626,#9f1239)}
+.ml-Automotive{background:linear-gradient(135deg,#16a34a,#065f46)}
+.ml-Energy{background:linear-gradient(135deg,#ea580c,#92400e)}
+.ml-Motorsport{background:linear-gradient(135deg,#ca8a04,#92400e)}
+.ml-Semiconductor{background:linear-gradient(135deg,#0891b2,#1e40af)}
 
-/* Card body */
-.card-body { padding: 16px; flex: 1; display: flex; flex-direction: column; gap: 8px; }
-
-.card-sector {
-  display: inline-flex; align-items: center; gap: 5px;
-  font-size: 9.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.7px;
-  padding: 3px 9px; border-radius: 5px; align-self: flex-start;
-}
-.cs-Aerospace  { background: rgba(99,102,241,0.15); color: #a5b4fc; }
-.cs-Defence    { background: rgba(239,68,68,0.15);  color: #fca5a5; }
-.cs-Automotive { background: rgba(34,197,94,0.15);  color: #86efac; }
-.cs-Energy     { background: rgba(251,146,60,0.15); color: #fdba74; }
-
-.card-body h3 {
-  font-size: 14px; font-weight: 700; line-height: 1.4;
-  color: #f0f0fa; letter-spacing: -0.1px;
-}
-.card-body p {
-  font-size: 12.5px; color: rgba(255,255,255,0.45); line-height: 1.6;
-  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
-  flex: 1;
-}
-.card-footer {
-  display: flex; align-items: center; justify-content: space-between;
-  padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.06);
-  margin-top: auto;
-}
-.card-source { font-size: 11px; color: rgba(255,255,255,0.3); }
-.card-cta {
-  font-size: 11px; font-weight: 600; color: rgba(165,180,252,0.8);
-  display: flex; align-items: center; gap: 4px;
-}
-.card-cta svg { transition: transform 0.15s; }
-.card:hover .card-cta svg { transform: translateX(3px); }
-
-/* ── MODAL ────────────────────────────────────────────────────── */
-.modal-overlay {
-  position: fixed; inset: 0; z-index: 1000;
-  background: rgba(0,0,0,0.7); backdrop-filter: blur(6px);
-  display: flex; align-items: flex-end;
-  opacity: 0; pointer-events: none; transition: opacity 0.25s;
-}
-.modal-overlay.open { opacity: 1; pointer-events: all; }
-
-.modal-sheet {
-  background: #13131f;
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 24px 24px 0 0;
-  width: 100%; max-height: 90vh; overflow-y: auto;
-  transform: translateY(32px); transition: transform 0.3s cubic-bezier(0.32,1.1,0.7,1);
-}
-.modal-overlay.open .modal-sheet { transform: translateY(0); }
-
-.modal-hero {
-  width: 100%; height: 260px; position: relative; overflow: hidden; flex-shrink: 0;
-}
-.modal-hero img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.modal-hero .modal-hero-gradient {
-  position: absolute; inset: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(19,19,31,0.85) 100%);
-}
-.modal-hero .modal-hero-fallback {
-  width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;
-}
-.modal-close-btn {
-  position: absolute; top: 16px; right: 16px; z-index: 10;
-  width: 32px; height: 32px; border-radius: 50%;
-  background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.15);
-  color: white; font-size: 14px; cursor: pointer;
-  display: flex; align-items: center; justify-content: center;
-  transition: background 0.15s;
-}
-.modal-close-btn:hover { background: rgba(0,0,0,0.7); }
-
-.modal-body { padding: 24px 28px 36px; }
-.modal-drag { width: 40px; height: 4px; background: rgba(255,255,255,0.12); border-radius: 2px; margin: 0 auto 20px; }
-
-.modal-sector-tag {
-  display: inline-flex; align-items: center; gap: 5px;
-  font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px;
-  padding: 4px 10px; border-radius: 6px; margin-bottom: 12px;
-}
-
-.modal-body h2 {
-  font-size: clamp(18px, 2.5vw, 22px); font-weight: 800; line-height: 1.3;
-  color: #f0f0fa; letter-spacing: -0.3px; margin-bottom: 16px;
-}
-
-.modal-summary {
-  font-size: 15px; line-height: 1.75; color: rgba(255,255,255,0.6);
-  margin-bottom: 24px;
-}
-
-.modal-source-row {
-  display: flex; align-items: center; gap: 14px;
-  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07);
-  border-radius: 12px; padding: 14px 16px; margin-bottom: 20px;
-}
-.source-dot {
-  width: 38px; height: 38px; border-radius: 10px; flex-shrink: 0;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 20px;
-}
-.modal-source-row .source-info .lbl { font-size: 10.5px; color: rgba(255,255,255,0.3); margin-bottom: 2px; }
-.modal-source-row .source-info .name { font-size: 13.5px; font-weight: 600; color: #e8e8f0; }
-
-.modal-link-btn {
-  display: flex; align-items: center; justify-content: center; gap: 8px;
-  width: 100%; padding: 15px; border-radius: 12px; text-decoration: none;
-  font-size: 14px; font-weight: 700; letter-spacing: 0.1px;
-  transition: opacity 0.15s, transform 0.1s;
-}
-.modal-link-btn:hover { opacity: 0.88; transform: scale(0.99); }
-.ml-Aerospace  { background: linear-gradient(135deg, #4f46e5, #7c3aed); color: white; }
-.ml-Defence    { background: linear-gradient(135deg, #dc2626, #9f1239); color: white; }
-.ml-Automotive { background: linear-gradient(135deg, #16a34a, #065f46); color: white; }
-.ml-Energy     { background: linear-gradient(135deg, #ea580c, #92400e); color: white; }
+/* Fallback SVGs */
+.fb-wrap{width:100%;height:100%;display:flex;align-items:center;justify-content:center}
 
 /* Empty state */
-.empty { text-align: center; padding: 64px 32px; color: rgba(255,255,255,0.2); grid-column: 1/-1; }
-.empty .empty-icon { font-size: 36px; margin-bottom: 12px; }
-.empty p { font-size: 14px; }
+.empty{text-align:center;padding:64px 32px;color:rgba(255,255,255,.2);grid-column:1/-1}
+.empty .empty-icon{font-size:36px;margin-bottom:12px}
 
 /* Footer */
-.page-footer {
-  text-align: center; padding: 24px;
-  font-size: 11.5px; color: rgba(255,255,255,0.18);
-  border-top: 1px solid rgba(255,255,255,0.05);
-}
+.page-footer{text-align:center;padding:24px;font-size:11px;color:rgba(255,255,255,.18);border-top:1px solid rgba(255,255,255,.05)}
 </style>
 </head>
 <body>
 
-<!-- HERO ------------------------------------------------------------------- -->
 <div class="hero">
   <div class="hero-inner">
-    <div class="hero-eyebrow">
-      <span class="dot"></span>
-      Daily Intelligence · 24 June 2026
-    </div>
+    <div class="hero-eyebrow"><span class="dot"></span>Daily Intelligence · 24 June 2026</div>
     <h1>AM Innovation<br>Digest</h1>
     <p class="subtitle">Latest additive manufacturing breakthroughs across key sectors</p>
-
     <div class="hero-pills">
       <span class="hero-pill pill-aerospace">✈ Aerospace</span>
       <span class="hero-pill pill-defence">🛡 Defence</span>
       <span class="hero-pill pill-automotive">⚙ Automotive</span>
       <span class="hero-pill pill-energy">⚡ Energy</span>
+      <span class="hero-pill pill-motorsport">🏎 Motorsport</span>
+      <span class="hero-pill pill-semiconductor">🔬 Semiconductor</span>
     </div>
-
-    <div class="stats-row">
-      <div class="stat"><div class="num">12</div><div class="lbl">Items Found</div></div>
-      <div class="stat"><div class="num">4</div><div class="lbl">Aerospace</div></div>
-      <div class="stat"><div class="num">4</div><div class="lbl">Defence</div></div>
-      <div class="stat"><div class="num">2</div><div class="lbl">Automotive</div></div>
-      <div class="stat"><div class="num">2</div><div class="lbl">Energy</div></div>
-    </div>
+    <div class="stats-row" id="stats-row"></div>
   </div>
 </div>
 
-<!-- FILTER BAR ------------------------------------------------------------- -->
 <div class="filter-wrap">
   <div class="filter-inner">
     <span class="filter-label">Filter</span>
@@ -337,17 +161,17 @@ body {
     <button class="filter-btn" data-filter="Defence">Defence</button>
     <button class="filter-btn" data-filter="Automotive">Automotive</button>
     <button class="filter-btn" data-filter="Energy">Energy</button>
-    <span class="result-count" id="result-count">12 items</span>
+    <button class="filter-btn" data-filter="Motorsport">Motorsport</button>
+    <button class="filter-btn" data-filter="Semiconductor">Semiconductor</button>
+    <span class="result-count" id="result-count"></span>
   </div>
 </div>
 
-<!-- GRID -------------------------------------------------------------------- -->
 <div class="main">
   <div class="section-header" id="section-label">Latest Findings</div>
   <div class="card-grid" id="card-grid"></div>
 </div>
 
-<!-- MODAL ------------------------------------------------------------------- -->
 <div class="modal-overlay" id="modal-overlay">
   <div class="modal-sheet" id="modal-sheet">
     <div class="modal-hero" id="modal-hero">
@@ -357,38 +181,29 @@ body {
       <div class="modal-drag"></div>
       <span class="modal-sector-tag" id="modal-sector-tag"></span>
       <h2 id="modal-title"></h2>
-      <p class="modal-summary" id="modal-summary"></p>
+      <div class="modal-article" id="modal-article"></div>
       <div class="modal-source-row">
         <div class="source-dot" id="modal-source-dot"></div>
-        <div class="source-info">
-          <div class="lbl">Source</div>
-          <div class="name" id="modal-source-name"></div>
-        </div>
+        <div><div class="lbl">Source</div><div class="name" id="modal-source-name"></div></div>
       </div>
       <a class="modal-link-btn" id="modal-link" href="#" target="_blank">
-        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-          <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
-          <polyline points="15 3 21 3 21 9"/>
-          <line x1="10" y1="14" x2="21" y2="3"/>
-        </svg>
-        Read full article
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        Read full article at source
       </a>
     </div>
   </div>
 </div>
 
-<!-- FOOTER ----------------------------------------------------------------- -->
-<div class="page-footer">
-  AM Innovation Digest · Generated by Claude · Trial Run · Sources verified 24 Jun 2026
-</div>
+<div class="page-footer">AM Innovation Digest · Generated by Claude · 24 Jun 2026 · nevinpaul1-arch.github.io/am-digest</div>
 
 <script>
-// ── DATA ───────────────────────────────────────────────────────────────────
 const ITEMS = [
+  // ── AEROSPACE ────────────────────────────────────────────────────────────
   {
     title: "Airbus Integrates Largest-Ever Wire-DED Titanium Parts into A350",
     sector: "Aerospace",
-    summary: "Airbus has begun serial integration of wire-Directed Energy Deposition (w-DED) titanium parts up to 7 metres long into the A350's Cargo Door Surround. The process boosts deposition from hundreds of grams per hour to several kilograms per hour — a major step toward large structural AM at scale.",
+    summary: "Airbus has begun serial integration of wire-Directed Energy Deposition titanium parts up to 7 metres long into the A350's Cargo Door Surround, boosting deposition rates from hundreds of grams to several kilograms per hour.",
+    fullContent: `<p>Airbus has reached a significant production milestone with the serial integration of the largest-ever wire-Directed Energy Deposition (w-DED) titanium components into the A350 widebody aircraft. The parts — used in the Cargo Door Surround — measure up to 7 metres in length, a scale previously unachievable with traditional powder-bed fusion AM systems.</p><p>Wire-DED is a fundamentally different process from conventional metal AM. Rather than selectively fusing powder, it feeds a titanium wire into an energy source (typically a laser or electron beam) and deposits material in free space. This allows deposition rates of several kilograms per hour — an order of magnitude faster than powder-bed fusion — making it viable for large structural aerospace parts where build time has historically been a barrier.</p><p>Airbus describes the Cargo Door Surround as a <strong>primary structural element</strong> of the A350's fuselage interface, meaning these parts carry meaningful flight loads. Serial integration into production aircraft represents a significant leap from development-phase prototypes. The programme forms part of Airbus's broader ambition to industrialise metal AM for fuselage-scale components, reducing both material waste (titanium buy-to-fly ratio is dramatically improved vs. machining billet) and supply chain complexity.</p><p>The shift toward w-DED aligns with a wider industry trend: where powder-bed fusion excels for small, intricate, high-resolution parts, wire-based processes are increasingly favoured when scale, speed, and deposition efficiency matter more than fine feature resolution. Airbus has been refining w-DED titanium since at least 2022 and the 2026 serial production qualification marks the first time the technology has entered an Airbus production line at this scale.</p>`,
     source: "Airbus Newsroom",
     url: "https://www.airbus.com/en/newsroom/stories/2026-01-how-airbus-is-pioneering-aircraft-manufacturing-with-titanium-3d-printing",
     img: "https://mediaassets.airbus.com/pm_38_780_780702-d071eyvfos-preview.jpg"
@@ -396,7 +211,8 @@ const ITEMS = [
   {
     title: "Stratasys Produces 25,000+ Flight-Ready Airbus Parts Annually",
     sector: "Aerospace",
-    summary: "Stratasys polymer AM now powers over 25,000 certified flight components per year for Airbus, with 200,000+ parts in active service. The A350 programme has achieved a 43% weight reduction per part, eliminated minimum order constraints, and cut lead times by 85%.",
+    summary: "Stratasys polymer AM now powers over 25,000 certified flight components per year for Airbus across the A350 programme, with 200,000+ parts in active service. A 43% weight reduction per part and 85% lead time cuts have been achieved.",
+    fullContent: `<p>Stratasys has revealed the scale of its Airbus production partnership: more than <strong>25,000 certified polymer flight components per year</strong>, with a cumulative installed base of over 200,000 parts now in active service across the Airbus fleet. The programmes are centred on the A350 XWB, where polymer AM has become a production-qualified process for cabin interior and systems components.</p><p>The headline numbers are striking. On a per-part basis, AM components on the A350 programme have achieved an average <strong>43% weight reduction</strong> versus the legacy machined or injection-moulded equivalents. Lead times have been cut by <strong>85%</strong>, and the elimination of minimum order quantities has substantially reduced inventory holding costs for Airbus and its tier-1 suppliers.</p><p>The parts are produced using Stratasys FDM (Fused Deposition Modelling) technology with aircraft-grade materials including ULTEM 9085 and ULTEM 1010 resins — flame-retardant, chemical-resistant thermoplastics that meet FAR 25.853 flammability requirements for aircraft interior use. Stratasys' systems are embedded within Airbus production facilities under a direct-supply arrangement rather than a traditional batch supply chain.</p><p>What makes this programme notable is its maturity. Polymer AM for non-structural aircraft parts has been explored by many OEMs, but the combination of volume (25,000+/year), certification depth, and the longevity of the Stratasys–Airbus relationship makes this one of the largest validated AM production programmes in commercial aviation. It is cited regularly by AM proponents as evidence that the technology has genuinely crossed into serial production — not just prototyping or low-rate initial production.</p>`,
     source: "3D Printing Industry",
     url: "https://3dprintingindustry.com/news/stratasys-powers-airbus-production-with-over-25000-flight-ready-3d-printed-parts-annually-247370/",
     img: "https://3dprintingindustry.com/wp-content/uploads/2025/12/Airbus_A400M-1-scaled.jpg"
@@ -404,7 +220,8 @@ const ITEMS = [
   {
     title: "Metal AM Certification Push: Hybrid AM-CNC Workflows Dominate in 2026",
     sector: "Aerospace",
-    summary: "Aerospace manufacturers are converging on hybrid AM-CNC workflows combining additive freedom with machining precision to meet AS9100D certification. Boeing and Lockheed Martin are cutting part counts by up to 50% using additively manufactured titanium airframes.",
+    summary: "Aerospace manufacturers are converging on hybrid AM-CNC workflows to meet AS9100D certification. Boeing and Lockheed Martin are cutting part counts by up to 50% using additively manufactured titanium airframes.",
+    fullContent: `<p>The dominant narrative in aerospace metal AM for 2026 is no longer about capability — it is about certification. Full powder-to-flight traceability, process parameter qualification, and AS9100D conformance are now the baseline expectations for any AM part entering a production aircraft programme. Manufacturers that cannot provide end-to-end material genealogy are being screened out of tier-1 supply chains.</p><p>The workflow that has emerged as the industry standard is the <strong>hybrid AM-CNC approach</strong>: near-net-shape components produced via laser powder-bed fusion or directed energy deposition, followed by CNC post-machining of critical surfaces to tight tolerances. This combination preserves the geometric freedom and material efficiency of AM while delivering the dimensional accuracy that fatigue-critical aerospace parts demand.</p><p>Boeing and Lockheed Martin have both reported part count reductions of <strong>up to 50%</strong> on selected airframe structures by consolidating assemblies into single additively manufactured titanium components. The reduction in part count has cascading benefits: fewer fasteners, reduced assembly labour, lighter structures, and simpler supply chain management.</p><p>The remaining bottleneck is speed of qualification. Non-destructive evaluation (NDE) requirements for metal AM parts — particularly computed tomography for internal porosity and microstructural assessment — add cost and lead time to the qualification cycle. Industry groups including MMPDS and SAE International's AMS AM committee are working to establish standardised material allowables for common AM titanium and nickel alloys that would allow qualification to be performed once, then shared across programmes, rather than repeated for every new application.</p>`,
     source: "Met3DP Blog",
     url: "https://blog.met3dp.com/blog/metal-3d-printing-for-aerospace-in-2026-lightweight-certified-flight-components/",
     img: null
@@ -412,15 +229,18 @@ const ITEMS = [
   {
     title: "3D Systems: Aerospace & Defence Set to Be Fastest-Growing Segment",
     sector: "Aerospace",
-    summary: "3D Systems has identified Aerospace & Defence as its fastest-growing industrial vertical, driven by certified metal part demand and US military AM budget allocation. Revenue from production systems is projected to surpass $35M in 2026.",
+    summary: "3D Systems has identified Aerospace & Defence as its fastest-growing industrial vertical for 2026, driven by certified metal part demand and US military AM budget allocation projected to surpass $35M in revenue.",
+    fullContent: `<p>3D Systems has identified Aerospace & Defence as the fastest-growing segment within its industrial business, with the company projecting that revenue from this vertical will <strong>surpass $35 million in 2026</strong>. The growth is being driven by two converging forces: civilian aerospace OEMs accelerating metal AM qualification for production parts, and the US Department of Defense dramatically increasing AM programme spend.</p><p>The DoD dimension is particularly significant. The FY2026 National Defense Authorization Act formalised AM as a critical defence industrial base capability, and the DoD budget includes a <strong>$3.3 billion allocation</strong> for AM-related programmes — an 83% year-on-year increase. 3D Systems' metal AM systems, particularly those using MultiJet Fusion and DMP (Direct Metal Printing) technologies, are positioned for several of these programmes through existing government contractor relationships.</p><p>On the civilian side, 3D Systems has deepened its partnership with Airbus and several tier-1 aerospace suppliers, providing both production systems and application engineering support for qualification of metal parts. The company's focus on <strong>production-ready systems with closed-loop quality monitoring</strong> addresses the core barrier to aerospace AM adoption: process repeatability with documented traceability.</p><p>3D Systems has also benefited from the NDAA restrictions on AM equipment from adversarial nations (China, Russia, Iran, North Korea), which have forced several DoD contractors to re-evaluate their supply chains and replace non-compliant equipment with domestically manufactured alternatives. As one of the few US-domiciled full-stack metal AM providers, 3D Systems is well placed to capture this regulatory tailwind.</p>`,
     source: "3D Printing Industry",
     url: "https://3dprintingindustry.com/news/aerospace-defense-set-to-become-3d-systems-fastest-growing-industrial-business-247905/",
     img: "https://3dprintingindustry.com/wp-content/uploads/2026/01/1763630405356.jpeg"
   },
+  // ── DEFENCE ─────────────────────────────────────────────────────────────
   {
     title: "US DoD Allocates $3.3B for AM in FY2026 — Up 83% Year-on-Year",
     sector: "Defence",
-    summary: "The US Department of Defense's FY2026 budget commits $3.3 billion to AM programmes — an 83% increase over 2025. Funding targets supply chain resilience, fleet modernisation, and reducing maintenance bottlenecks across Army, Navy, and Air Force platforms.",
+    summary: "The US Department of Defense's FY2026 budget commits $3.3 billion to AM programmes — an 83% increase over 2025, targeting supply chain resilience, fleet modernisation, and maintenance bottleneck reduction.",
+    fullContent: `<p>The US Department of Defense has committed <strong>$3.3 billion to additive manufacturing programmes in FY2026</strong>, representing an 83% increase over the prior year's allocation. The scale of this commitment marks a structural shift: AM is no longer a research and prototyping line item in the DoD budget, but a production and sustainment technology with its own dedicated funding stream.</p><p>The funding is distributed across three broad categories. Supply chain resilience accounts for the largest share — the DoD identified over 2,000 single-source components across Army, Navy, and Air Force platforms as candidates for AM re-sourcing in 2025, and FY2026 funding accelerates the qualification and transition of these parts. Fleet modernisation covers new AM-designed components for next-generation platforms including the B-21 Raider and the Navy's next-generation destroyer programme. Maintenance and sustainment funding addresses the use of forward-deployed AM systems to produce spare parts without requiring return to depot.</p><p>The <strong>DIU (Defense Innovation Unit) Project FORGE</strong> is one of the highest-profile programmes within this budget, funding contracts with domestic AM companies including Velo3D to develop and qualify production-grade metal parts for critical weapon systems. The programme explicitly prioritises US-made AM equipment following the NDAA restrictions on systems from adversarial nations.</p><p>Military analysts note that the investment trajectory reflects a fundamental lesson from the Ukraine conflict: industrial manufacturing capacity is a strategic asset, and additive manufacturing provides a means to reconstitute production capacity rapidly without decades-long supply chain development. The 83% year-on-year increase suggests the DoD has moved from evaluating AM's potential to executing its deployment at scale.</p>`,
     source: "DefenceWeb",
     url: "https://defenceweb.co.za/industry/industry-industry/2026-defense-industry-outlook-from-printing-parts-on-the-battlefield-to-ais-strategic-move-from-the-frontline-to-the-flightline/",
     img: null
@@ -428,7 +248,8 @@ const ITEMS = [
   {
     title: "NDAA Bans DoD AM Equipment Linked to China, Russia, Iran & N. Korea",
     sector: "Defence",
-    summary: "The NDAA for FY2026 formally classifies AM as critical defence infrastructure. The DoD is now prohibited from procuring 3D printing systems manufactured in or networked through China, Russia, Iran, or North Korea — accelerating demand for domestic AM suppliers.",
+    summary: "The NDAA for FY2026 formally classifies AM as critical defence infrastructure, prohibiting the DoD from procuring 3D printing systems from adversarial nations — accelerating demand for domestic suppliers.",
+    fullContent: `<p>The National Defense Authorization Act for Fiscal Year 2026 contains a provision that has sent shockwaves through the defence AM supply chain: the DoD is now <strong>formally prohibited from using or procuring additive manufacturing equipment</strong> that is manufactured in, or whose systems are digitally networked through, China, Russia, Iran, or North Korea. The provision classifies AM as critical defence infrastructure — the same classification applied to semiconductors and telecommunications equipment.</p><p>The practical implications are significant. Several DoD contractors and maintenance depots are currently operating AM equipment from Chinese manufacturers, including systems that were procured before the geopolitical risk was appreciated. These organisations now face a compliance clock: systems must be identified, risk-assessed, and either decommissioned or replaced. Network-connected AM systems present a particular concern — the NDAA specifically mentions systems that "report operational data" to entities in prohibited countries, a reference to the telemetry and remote monitoring functions built into modern industrial AM equipment.</p><p>The classification follows a pattern established with HUAWEI in telecommunications and SMIC in semiconductors. Defence officials have cited two specific risks: <strong>data exfiltration</strong> (AM equipment transmitting digital manufacturing files and process parameters to adversarial intelligence services) and <strong>potential sabotage via firmware updates</strong> that could introduce defects into safety-critical parts.</p><p>For domestic AM manufacturers — particularly those with established DoD relationships like 3D Systems, Velo3D, and Trumpf — the provision represents a significant commercial opportunity. Demand for US-manufactured metal AM systems is already outpacing supply, and several companies have announced capacity expansions in response. The NDAA provision accelerates this dynamic, effectively mandating the replacement of non-compliant equipment on a defined timeline.</p>`,
     source: "TCT Magazine",
     url: "https://www.tctmagazine.com/ndaa-dod-prohibited-from-using-or-procuring-additive-manufacturing-systems-made-or-networked-through-china-russia-iran-north-korea/",
     img: "https://storage.ghost.io/c/f0/da/f0da4f6a-82b1-46cf-ab14-3cc5e6b2d473/content/images/size/w1200/2025/12/Laser-Powder-Bed-Fusion-source-EOS.png"
@@ -436,7 +257,8 @@ const ITEMS = [
   {
     title: "Velo3D Wins $32.6M Defense Contract Under DIU Project FORGE",
     sector: "Defence",
-    summary: "Velo3D has been awarded a $32.6M contract through the Defense Innovation Unit's Project FORGE, working with the US Navy to prototype and qualify additively manufactured metal parts that are slow and expensive to produce via traditional casting.",
+    summary: "Velo3D has been awarded a $32.6M contract through the Defense Innovation Unit's Project FORGE to prototype and qualify additively manufactured metal parts for the US Navy that are slow and expensive via traditional casting.",
+    fullContent: `<p>Velo3D has secured a <strong>$32.6 million contract</strong> through the Defense Innovation Unit's Project FORGE programme, working directly with the US Navy and a major prime defence contractor to prototype, qualify, and transition additively manufactured metal parts into production. The contract is one of the largest single AM awards under the FORGE initiative, which was established specifically to develop and qualify domestic AM parts for critical weapon systems.</p><p>Project FORGE (Foundry for Ongoing Resilience in Government Equipment) was created in response to the vulnerability of the US defence industrial base to single-source casting suppliers. Many of the Navy's most critical components — propeller shafts, pump housings, valve bodies, structural brackets — are cast parts that take 18 to 36 months to procure from a handful of aging domestic foundries. Substituting AM for casting eliminates the tooling cost and lead time associated with pattern-and-mould casting, enabling parts to be produced in weeks rather than years.</p><p>Velo3D's Sapphire system is particularly suited to this application because of its <strong>support-free printing capability</strong>. Many casting-replacement parts have complex internal channels or overhanging geometry that would require extensive, expensive support structures in conventional laser powder-bed fusion. Velo3D's non-contact recoater allows these geometries to be printed without supports, reducing post-processing cost and enabling geometries that are impossible to cast.</p><p>The contract covers both the material qualification work — establishing process parameter sets, material property databases, and acceptance test protocols — and the initial production run of qualified parts. Success in this programme could unlock follow-on orders across the Navy's surface and submarine fleet programmes, where the same supply chain vulnerabilities exist for dozens of additional components.</p>`,
     source: "3DPrint.com",
     url: "https://3dprint.com/322927/velo3ds-32-6m-defense-contract-highlights-why-u-s-made-3d-printing-is-suddenly-critical/",
     img: "https://3dprint.com/wp-content/uploads/2024/01/img_0877-2-1-1.jpg"
@@ -444,15 +266,18 @@ const ITEMS = [
   {
     title: "US Navy Prints Destroyer Pump in Spain, Cuts Production Time by 80%",
     sector: "Defence",
-    summary: "The US Navy 3D printed a replacement pump for an Arleigh Burke-class destroyer while deployed in Spain, reducing production time by 80% versus traditional casting — allowing the ship to continue its deployment without returning to a US port.",
+    summary: "The US Navy 3D printed a replacement pump for an Arleigh Burke-class destroyer while deployed in Spain, reducing production time by 80% and allowing the ship to continue its deployment without returning to a US port.",
+    fullContent: `<p>The US Navy has demonstrated one of the most operationally significant applications of forward-deployed additive manufacturing to date: a replacement pump for an Arleigh Burke-class destroyer was designed and produced in Spain while the vessel was on active deployment, reducing production time by <strong>80% compared to the traditional depot repair pathway</strong>.</p><p>Under the traditional maintenance model, the ship would have been required to return to a US naval installation for depot-level repair, interrupting its deployment and consuming significant logistical resources. Instead, Navy technicians used digital design files to produce the replacement component using AM equipment available at the port facility, allowing the ship to return to operational status within the deployment cycle.</p><p>The pump in question is a shipboard fluid system component — the type of part typically sourced from a small number of qualified suppliers with lead times measured in months. By maintaining digital design data for these components and deploying AM capability to forward operating locations, the Navy demonstrated that <strong>the traditional distinction between depot and field maintenance can be substantially collapsed</strong> for a growing class of components.</p><p>Naval officials highlighted three strategic implications. First, forward AM capability reduces the logistical tail required to maintain deployed forces — fewer spare parts need to be physically pre-positioned if they can be produced on demand. Second, it reduces adversary intelligence value of naval logistics patterns. Third, it compresses the operational downtime associated with mechanical failures. The programme is part of the Navy's broader Additive Manufacturing Center of Excellence initiative, which aims to qualify AM processes for over 300 shipboard components by 2028.</p>`,
     source: "Engineering.com",
     url: "https://www.engineering.com/the-future-of-additive-manufacturing-in-defense/",
     img: null
   },
+  // ── AUTOMOTIVE ──────────────────────────────────────────────────────────
   {
     title: "Pankl Partners with Interspectral for Data-Driven Metal AM in Motorsport",
     sector: "Automotive",
-    summary: "Pankl Racing Systems has signed a multi-year partnership with Interspectral to industrialise metal AM via the AM Explorer platform, focusing on process monitoring, data-driven workflows, and quality assurance for high-performance series production components.",
+    summary: "Pankl Racing Systems has signed a multi-year partnership with Interspectral to industrialise metal AM via the AM Explorer platform, focusing on process monitoring and quality assurance for high-performance series production.",
+    fullContent: `<p>Pankl Racing Systems, a precision manufacturer supplying components to Formula 1, MotoGP, and high-performance road car programmes, has signed a multi-year partnership with Norwegian process intelligence company Interspectral to industrialise metal AM production via the AM Explorer platform. The partnership is focused on closing the gap between AM's design capability and its production reliability.</p><p>AM Explorer is a data integration platform that aggregates process monitoring streams from metal AM systems — layer-by-layer thermal imaging, melt pool monitoring, atmospheric sensors, and post-process metrology — and uses machine learning to correlate process signatures with part quality outcomes. For a motorsport supplier like Pankl, where components must meet extremely tight performance specifications with zero margin for in-service failures, this kind of process intelligence is the prerequisite for series production confidence.</p><p>Pankl's use case is primarily <strong>high-performance structural and drivetrain components</strong>: parts that see extreme fatigue loads, operate at high temperatures, and must be qualified against demanding automotive and motorsport technical standards. The company has been using metal AM for prototyping and low-volume parts for several years, but scaling to series production requires a level of process documentation and quality assurance that has historically been labour-intensive to achieve.</p><p>The AM Explorer integration allows Pankl to build <strong>digital quality records for every printed part</strong>, linking process data to inspection results and enabling statistical process control across production runs. For customers in Formula 1 and aerospace who conduct their own part audits, this level of data transparency is increasingly a commercial requirement rather than a differentiator. The partnership signals a broader trend: AM industrialisation is as much a data and software challenge as it is a hardware challenge.</p>`,
     source: "3DPrint.com",
     url: "https://3dprint.com/326493/3d-printing-news-briefs-6-6-2026/",
     img: "https://3dprint.com/wp-content/uploads/2026/06/M300-press-release-1024x683.png"
@@ -460,15 +285,18 @@ const ITEMS = [
   {
     title: "Sinterit Launches BIANCO2 Powder Bed Printer at €47,000",
     sector: "Automotive",
-    summary: "Sinterit unveiled the BIANCO2, a new SLS printer targeting automotive part production at €47,000. It supports a wide range of polymer materials for functional end-use parts, with a preorder programme offering 15% discounts to smaller automotive suppliers.",
+    summary: "Sinterit unveiled the BIANCO2, a new SLS printer targeting automotive part production at €47,000, supporting a wide range of polymer materials for functional end-use parts.",
+    fullContent: `<p>Polish SLS manufacturer Sinterit has unveiled the BIANCO2, a new selective laser sintering system priced at <strong>€47,000</strong> and aimed squarely at automotive and industrial manufacturing customers who need functional polymer end-use parts at production quality without the minimum order constraints of injection moulding.</p><p>The BIANCO2 is positioned as Sinterit's production-grade offering — distinct from the company's lower-cost desktop systems — with a build volume and material compatibility that addresses the requirements of automotive tier-1 and tier-2 suppliers. Supported materials include the full range of PA12 and PA11 nylons standard in automotive applications, as well as thermoplastic elastomers for functional seals, gaskets, and vibration-damping components.</p><p>For automotive suppliers, SLS has several advantages over FDM and resin processes: <strong>no support structures required</strong> (unused powder acts as self-support), isotropic mechanical properties, surface finishes compatible with functional testing without post-processing, and the ability to nest parts densely within the build volume for efficient batch production. These characteristics make SLS parts directly interchangeable with injection-moulded equivalents in many applications.</p><p>Sinterit's preorder programme offers <strong>15% discounts</strong>, a deliberate strategy to capture smaller automotive suppliers who have historically been priced out of industrial SLS systems from EOS, Stratasys, and HP. At €47,000, the BIANCO2 enters territory where the capital cost can be justified by a relatively small volume of parts displacing outsourced production. The launch reflects a broader trend of SLS democratisation, with multiple manufacturers competing to bring industrial-quality powder-bed fusion within reach of mid-tier manufacturers.</p>`,
     source: "3DPrint.com",
     url: "https://3dprint.com/326493/3d-printing-news-briefs-6-6-2026/",
     img: "https://3dprint.com/wp-content/uploads/2026/06/M300-press-release-1024x683.png"
   },
+  // ── ENERGY ──────────────────────────────────────────────────────────────
   {
     title: "ExxonMobil Cuts Part Costs 42% and Lead Times 90% with Meltio Metal AM",
     sector: "Energy",
-    summary: "ExxonMobil has reported major gains using Meltio's wire-laser metal AM technology: a 42% reduction in unit cost and a 90% reduction in production lead time — one of the most striking cost-performance results in the energy sector this year.",
+    summary: "ExxonMobil has reported a 42% reduction in unit cost and a 90% reduction in production lead time using Meltio's wire-laser metal AM — one of the most striking cost-performance results in the energy sector.",
+    fullContent: `<p>ExxonMobil has reported production results that are among the most compelling AM business case data points published in the energy sector: <strong>42% unit cost reduction and 90% lead time compression</strong> using Meltio's wire-laser directed energy deposition (DED) technology for downstream production components. The results were presented at the 2026 Additive Manufacturing Strategies conference in New York.</p><p>Meltio's technology uses a laser to melt metal wire — rather than powder — to build up parts layer by layer. The wire-feed approach is inherently more material-efficient than powder-bed fusion (near-zero waste vs. 30-50% powder waste in PBF), more cost-effective for large parts, and better suited to the alloys commonly used in oil and gas applications: stainless steels, duplex stainless, Inconel, and titanium. The absence of loose powder also simplifies compliance with the hazardous materials regulations that govern many oil and gas facility environments.</p><p>ExxonMobil applied the technology specifically to <strong>fluid-handling components</strong> — pump impellers, valve bodies, and custom manifolds — that are required in both planned maintenance and emergency repair scenarios. The 90% lead time reduction (from months to days or weeks) is particularly impactful in an industry where production downtime is measured in hundreds of thousands of dollars per hour.</p><p>The 42% cost reduction reflects multiple factors: elimination of tooling costs for custom parts, consolidation of multi-component assemblies into single printed parts, reduced machining time due to near-net-shape production, and local production eliminating international shipping and import duties for components previously sourced from specialist fabricators. ExxonMobil has indicated it is expanding the programme to additional facilities globally, citing both the economic case and the supply chain resilience benefits of reduced dependency on single-source overseas suppliers.</p>`,
     source: "Fabbaloo",
     url: "https://www.fabbaloo.com/news/inside-hps-vision-at-additive-manufacturing-strategies-2026",
     img: null
@@ -476,137 +304,178 @@ const ITEMS = [
   {
     title: "Saudi Aramco Signs $30B+ US Partnerships — AM Plays Key Role",
     sector: "Energy",
-    summary: "Saudi Aramco announced 17 MoUs with US firms totalling over $30 billion, with AM identified as strategic for spare parts localisation and supply chain resilience — signalling major upstream investment in digital manufacturing capabilities for oil & gas.",
+    summary: "Saudi Aramco announced 17 MoUs with US firms totalling over $30 billion, with AM identified as strategic for spare parts localisation and supply chain resilience in oil & gas.",
+    fullContent: `<p>Saudi Aramco has signed 17 memoranda of understanding and commercial agreements with US-based companies totalling over <strong>$30 billion</strong>, with additive manufacturing explicitly identified as a strategic technology thread running through several of the partnerships. The agreements were announced during a high-profile visit to the United States and cover upstream exploration, downstream processing, advanced materials, and digital manufacturing.</p><p>The AM-specific elements of the partnerships focus on three areas. First, <strong>spare parts localisation</strong>: Aramco operates one of the world's largest industrial asset bases, and the lead times and logistics costs for sourcing replacement components — many of which are decades-old designs with limited supplier bases — represent a significant operational cost. AM-qualified digital inventories allow parts to be printed on demand within Saudi Arabia rather than imported from global suppliers.</p><p>Second, <strong>new component design for additive</strong>: several agreements cover co-development of next-generation components for Aramco's gas processing and water injection facilities, designed from the ground up to exploit AM's ability to produce internal channels, lattice structures, and complex geometries that improve thermal performance and reduce weight.</p><p>Third, <strong>workforce and capability development</strong>: one of the US partners is providing training, certification services, and AM equipment to establish Saudi Arabian manufacturing capability, reducing long-term dependency on overseas supply chains for both equipment and expertise.</p><p>The scale of Aramco's commitment signals that the oil and gas sector — historically cautious in adopting new manufacturing technologies — is now treating AM as a strategic infrastructure investment rather than an experimental technology. Aramco's AM programme is expected to serve as a model for other national oil companies in the Gulf region.</p>`,
     source: "Fabbaloo",
     url: "https://www.fabbaloo.com/news/3d-printing-enters-the-oil-gas-era-aramcos-us30-billion-u-s-partnerships-and-the-additive-manufacturing-opportunity",
     img: "https://www.fabbaloo.com/wp-content/uploads/2025/12/Aramco-1.jpg"
+  },
+  // ── MOTORSPORT ──────────────────────────────────────────────────────────
+  {
+    title: "Cadillac F1 Deploys 7x 3D Systems SLA Machines for 2026 Season Debut",
+    sector: "Motorsport",
+    summary: "The new Cadillac Formula 1 team deployed seven 3D Systems SLA printers to accelerate wind tunnel testing and production-part development, compressing development timelines ahead of its 2026 F1 debut.",
+    fullContent: `<p>The newest entry to Formula 1, the Cadillac F1 team making its debut in the 2026 season, has disclosed that it deployed <strong>seven 3D Systems SLA (Stereolithography Apparatus) systems</strong> during its compressed pre-season development programme. The systems were supplied along with Accura engineering materials and direct application support from 3D Systems' Application Innovation Group — a team of AM engineers embedded with customers to co-develop solutions.</p><p>The challenge Cadillac faced was one of extreme time compression. Formula 1 technical regulations for 2026 represent the most significant car redesign in a decade — new active aerodynamics, a dramatically revised power unit specification, and a 30kg reduction in minimum car weight. For an entirely new team without the institutional AM knowledge base of Ferrari, Mercedes, or Red Bull, getting to competitive aero performance in the wind tunnel requires the ability to iterate physical models rapidly.</p><p>SLA was chosen specifically for its surface finish quality, which is critical for aerodynamic wind tunnel models. Compared to FDM, SLA produces significantly smoother surfaces that better replicate the boundary layer behaviour of the actual car body, giving more reliable correlation between tunnel results and on-track performance. The Accura Xtreme and Accura HPC materials used offer the stiffness and thermal stability required for parts that are handled, instrumented, and subjected to airflow in the tunnel.</p><p>The deployment of seven systems reflects the volume requirements of F1 wind tunnel programmes: Alpine, one of the more AM-intensive F1 teams, has disclosed producing over <strong>600 additively manufactured parts per week</strong> during peak development periods. For Cadillac, getting to competitive iteration velocity from a standing start required both the equipment and the applications expertise to qualify materials and processes quickly.</p>`,
+    source: "Manufactur3D",
+    url: "https://manufactur3dmag.com/cadillac-f1-3d-printing-2026-debut-3d-systems/",
+    img: "https://manufactur3dmag.com/wp-content/uploads/2026/05/1-3.jpeg"
+  },
+  {
+    title: "FIA 2026 Regulations Open Door for Metal AM Suspension Uprights in F1",
+    sector: "Motorsport",
+    summary: "The FIA's 2026 F1 Technical Regulations now permit suspension uprights to be manufactured via titanium and aluminium AM, opening structural components to additive for the first time.",
+    fullContent: `<p>The FIA's 2026 Formula 1 Technical Regulations include a landmark provision for additive manufacturing: <strong>suspension uprights may now be manufactured from titanium and aluminium alloys produced via AM</strong>, marking the first time a primary structural suspension component has been opened to additive processes in F1. Previously, uprights were limited to specific conventional manufacturing methods due to their role as critical load-bearing elements in the outboard suspension system.</p><p>The regulations specify the permitted alloy systems in detail. For titanium, the approved alloys include Grade 1, Grade 2, Ti6Al4V, Ti6Al4V ELI, Ti 5553, and Ti 6242. For aluminium, approved alloys span AlSi10Mg, AlSi7Mg, Al Cl-30AL, P339 AM, EOS Aluminium 2139 AM, and Aheadd CP1 — as well as aluminium alloys with particulate reinforcing including A20X, 2024-RAM2, and 6061-RAM2. This specificity reflects the FIA's desire to permit AM while maintaining a controlled material envelope.</p><p>A key quality provision requires that the finished mass of an AM upright must be at least <strong>60% of the mass of the printed component</strong> (excluding support structures). This minimum density requirement is designed to prevent teams from gaming the regulations by producing deliberately underbuilt, low-density structures that would exploit a loophole in weight rules.</p><p>The upright is described in FIA technical documentation as the structural component providing the physical mounting, kinematic restraint, and load path connections of the wheel axle to the suspension member outboard attachments — as well as reacting brake caliper loads into the suspension. The decision to permit AM reflects both the maturity of aerospace-qualified titanium AM and the FIA's broader move to embrace advanced manufacturing in the 2026 regulatory reset, which also covers active aerodynamics and hybrid power units.</p>`,
+    source: "3D Adept Media",
+    url: "https://3dadept.com/formula-1-titanium-and-aluminum-additive-manufacturing-can-now-be-used-for-suspension-uprights/",
+    img: "https://3dadept.com/wp-content/uploads/2024/08/FIA-2026.jpg"
+  },
+  {
+    title: "F1 Teams Exploit 3D Printed Pistons to Circumvent 2026 Compression Rules",
+    sector: "Motorsport",
+    summary: "Mercedes and Red Bull are among teams reportedly exploiting a loophole in 2026 power unit regulations using 3D printed pistons to achieve higher effective compression ratios than the rules intend.",
+    fullContent: `<p>A technical controversy is emerging in Formula 1's 2026 season around the use of additive manufacturing in power unit design. Mercedes and Red Bull are among the teams reported to have identified and exploited a regulatory grey area involving 3D printed pistons that allows them to achieve <strong>higher effective compression ratios than the FIA's 2026 power unit regulations intend</strong>.</p><p>The mechanism involves the complex internal geometry that additive manufacturing enables within a piston structure. Conventional forged pistons have geometric constraints imposed by the manufacturing process. AM pistons can incorporate internal lattice structures, variable-wall sections, and complex crown geometries that are not possible to forge or machine — and the FIA's compression ratio measurement methodology, written before AM pistons became technically feasible at this scale, does not fully account for the volumetric implications of these internal architectures.</p><p>The result is a piston design that measures within the regulated compression ratio by the FIA's prescribed measurement protocol, while delivering thermodynamic performance equivalent to a higher-compression engine. The teams argue their designs are technically compliant; critics argue they violate the spirit of a regulation intended to constrain performance on cost and efficiency grounds.</p><p>The controversy highlights a recurring theme in regulated motorsport: <strong>AM enables design spaces that rule-makers did not anticipate</strong>, and regulatory frameworks that predate the technology inevitably contain gaps. The FIA is reviewing the measurement methodology and is expected to issue a technical directive clarifying how AM piston internal volumes are measured for compliance purposes. How the FIA resolves this will set a precedent for how AM-enabled innovations in regulated components are governed in future seasons.</p>`,
+    source: "VoxelMatters",
+    url: "https://www.voxelmatters.com/how-f1-teams-are-using-3d-printed-pistons-to-circumvent-compression-rules/",
+    img: null
+  },
+  // ── SEMICONDUCTOR ────────────────────────────────────────────────────────
+  {
+    title: "BMF Launches microArch S150 — Industrial Micro-Precision AM for Electronics",
+    sector: "Semiconductor",
+    summary: "Boston Micro Fabrication launched the microArch S150 Series — compact 3D printers with 25µm resolution and HEPA13 filtration for electronics, semiconductor, and cleanroom applications, available from Q2 2026.",
+    fullContent: `<p>Boston Micro Fabrication (BMF) has launched the <strong>microArch S150 Series</strong>, a new line of compact industrial 3D printers built around the company's Projection Micro Stereolithography (PµSL) technology. The systems offer <strong>25µm optical resolution with ±3µm positional accuracy</strong> and layer thicknesses ranging from 10 to 100µm — specifications that position them directly for semiconductor packaging, microfluidics, fibre optic component manufacturing, and other precision electronics applications.</p><p>The series comes in two variants: the standard S150 for flexible lab and development workflows, and the S150 Ultra for higher-throughput production, printing at four to twelve seconds per layer — up to nine times faster than the standard model. To illustrate production throughput, BMF has documented benchmark prints on the S150 Ultra: a microfluidic chip in 20 minutes, four housing components with 130µm features in under 40 minutes, and a heat exchanger in under 80 minutes.</p><p>Critically for cleanroom and semiconductor applications, the S150 Series incorporates a <strong>HEPA13 air filtration system</strong> alongside a UV-C sterilization unit operating at 253.7nm to maintain build chamber cleanliness between runs. The resin vat can be heated to 60°C to handle high-viscosity formulations, and a Diamond-Like Carbon (DLC) coating on the build platform simplifies part removal while extending surface lifespan. The system can be placed inside a biological safety cabinet as well as standard desktop environments.</p><p>The launch reflects a maturing market for micro-AM in electronics. As semiconductor packaging geometries shrink and the demand for custom microfluidic chips, MEMS test fixtures, and optical alignment structures grows, conventional machining and lithography processes struggle with the combination of geometric complexity, small feature size, and rapid design iteration required. The AM semiconductor market is currently valued at <strong>$423 million in 2026</strong> and is growing at a 17.85% CAGR, according to Mordor Intelligence — with micro-precision systems like the S150 driving adoption in the precision electronics sector.</p>`,
+    source: "3D Printing Industry",
+    url: "https://3dprintingindustry.com/news/bmf-announces-new-microarch-s150-series-technical-specifications-and-pricing-250104/",
+    img: "https://3dprintingindustry.com/wp-content/uploads/2026/03/S150-no-background-4-scaled-1.jpg"
+  },
+  {
+    title: "AM in Semiconductor Sector: $423M Market Growing at 17.85% CAGR Through 2031",
+    sector: "Semiconductor",
+    summary: "The additive manufacturing semiconductor market is worth $423M in 2026 and growing at 17.85% CAGR to reach $962M by 2031, driven by demand for custom precision tooling, cleanroom fixtures, and microfluidic test components.",
+    fullContent: `<p>The additive manufacturing market within the semiconductor industry is worth an estimated <strong>$423 million in 2026</strong> and is projected to reach <strong>$962 million by 2031</strong>, growing at a compound annual rate of 17.85%, according to Mordor Intelligence market research. The growth trajectory reflects accelerating adoption across three primary application categories: precision tooling and fixtures for wafer fabrication, packaging and test components, and microfluidic research and development systems.</p><p>The commercialisation of AM in semiconductor manufacturing largely centres on <strong>custom electronic component production</strong>: resistors, capacitors, RF devices, and antennas that can be printed with integrated conductor traces, enabling designs impossible to achieve through conventional PCB fabrication or die assembly processes. Micro-additive manufacturing, capable of fabricating structures at micron scale, is opening production pathways for next-generation heterogeneous integration architectures where traditional photolithography processes are either too slow, too expensive, or geometrically too limited.</p><p>The challenge facing broader adoption remains material compatibility. Cleanroom parts require strict <strong>outgassing, particle generation, and ionic contamination controls</strong> that many AM materials do not yet meet out of the box. Semiconductor fabrication facilities operate at particle cleanliness levels measured in parts per cubic foot, and AM-produced fixtures must demonstrate equivalent particle generation characteristics to conventional alternatives. Industry-wide qualification frameworks for AM builds in semiconductor environments are nascent, creating friction for procurement teams even when the technical performance of AM parts has been validated.</p><p>The HEPA13 filtration and UV-C sterilization built into systems like BMF's microArch S150 Series represent a direct response to these concerns — embedding cleanroom compatibility into the manufacturing equipment itself rather than relying solely on post-process cleaning. As qualification frameworks mature and material data packages for semiconductor-grade AM resins and metal powders expand, adoption is expected to accelerate toward the high end of market forecasts.</p>`,
+    source: "Mordor Intelligence",
+    url: "https://www.mordorintelligence.com/industry-reports/additive-manufacturing-in-semiconductor-industry-market",
+    img: null
   }
 ];
 
-// ── FALLBACK SVG PATTERNS ──────────────────────────────────────────────────
-const FALLBACK = {
-  Aerospace: `<svg viewBox="0 0 400 170" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%"><defs><linearGradient id="fa" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0d1b4b"/><stop offset="100%" stop-color="#1e3a8a"/></linearGradient></defs><rect width="400" height="170" fill="url(#fa)"/><circle cx="320" cy="40" r="70" fill="rgba(99,102,241,0.08)"/><circle cx="320" cy="40" r="45" fill="rgba(99,102,241,0.06)"/><g transform="translate(200,88)" opacity="0.75"><ellipse cx="0" cy="0" rx="60" ry="10" fill="white"/><path d="M60,0 Q85,0 95,2 Q85,5 60,0Z" fill="white"/><path d="M-12,0 L-50,44 L-62,44 L-22,0 L-62,-44 L-50,-44 Z" fill="white" opacity="0.8"/><path d="M-52,0 L-70,-32 L-76,-32 L-60,0Z" fill="white" opacity="0.85"/><ellipse cx="-24" cy="45" rx="14" ry="4" fill="white" opacity="0.5"/><ellipse cx="-24" cy="-45" rx="14" ry="4" fill="white" opacity="0.5"/></g><text x="16" y="158" font-family="system-ui" font-size="9" font-weight="700" fill="white" opacity="0.3" letter-spacing="2">AEROSPACE</text></svg>`,
-  Defence: `<svg viewBox="0 0 400 170" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%"><defs><linearGradient id="fd" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1a0505"/><stop offset="100%" stop-color="#4c0519"/></linearGradient></defs><rect width="400" height="170" fill="url(#fd)"/><circle cx="330" cy="85" r="80" fill="rgba(239,68,68,0.07)"/><g transform="translate(200,80)"><path d="M0,-55 L42,-32 L42,12 Q42,50 0,65 Q-42,50 -42,12 L-42,-32 Z" fill="none" stroke="rgba(239,68,68,0.5)" stroke-width="2"/><path d="M0,-55 L42,-32 L42,12 Q42,50 0,65 Q-42,50 -42,12 L-42,-32 Z" fill="rgba(239,68,68,0.06)"/><polygon points="0,-30 7,-10 26,-10 11,4 17,24 0,12 -17,24 -11,4 -26,-10 -7,-10" fill="white" opacity="0.7"/></g><text x="16" y="158" font-family="system-ui" font-size="9" font-weight="700" fill="white" opacity="0.3" letter-spacing="2">DEFENCE</text></svg>`,
-  Automotive: `<svg viewBox="0 0 400 170" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%"><defs><linearGradient id="fau" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#052e16"/><stop offset="100%" stop-color="#14532d"/></linearGradient></defs><rect width="400" height="170" fill="url(#fau)"/><circle cx="320" cy="85" r="75" fill="rgba(34,197,94,0.07)"/><g transform="translate(200,95)"><rect x="-95" y="-20" width="190" height="30" rx="10" fill="white" opacity="0.85"/><path d="M-42,-20 L-24,-48 L30,-48 L48,-20Z" fill="white" opacity="0.75"/><circle cx="-58" cy="18" r="17" fill="none" stroke="white" stroke-width="4" opacity="0.8"/><circle cx="-58" cy="18" r="7" fill="white" opacity="0.5"/><circle cx="58" cy="18" r="17" fill="none" stroke="white" stroke-width="4" opacity="0.8"/><circle cx="58" cy="18" r="7" fill="white" opacity="0.5"/><rect x="84" y="-8" width="13" height="8" rx="2" fill="rgba(134,239,172,0.9)"/></g><text x="16" y="158" font-family="system-ui" font-size="9" font-weight="700" fill="white" opacity="0.3" letter-spacing="2">AUTOMOTIVE</text></svg>`,
-  Energy: `<svg viewBox="0 0 400 170" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%"><defs><linearGradient id="fe" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1c1003"/><stop offset="100%" stop-color="#431407"/></linearGradient><radialGradient id="glow" cx="55%" cy="50%" r="40%"><stop offset="0%" stop-color="#fb923c" stop-opacity="0.25"/><stop offset="100%" stop-color="#fb923c" stop-opacity="0"/></radialGradient></defs><rect width="400" height="170" fill="url(#fe)"/><ellipse cx="260" cy="85" rx="120" ry="90" fill="url(#glow)"/><g transform="translate(200,80)"><polygon points="12,-58 -9,-6 9,-6 -12,58 32,-14 12,-14 32,-58" fill="#fb923c" opacity="0.9"/></g><g transform="translate(310,70) scale(0.7)"><polygon points="8,0 -4,10 0,6 -10,18 4,8 0,12" fill="#fbbf24" opacity="0.7"/></g><text x="16" y="158" font-family="system-ui" font-size="9" font-weight="700" fill="white" opacity="0.3" letter-spacing="2">ENERGY</text></svg>`
+// ── FALLBACK SVGs ────────────────────────────────────────────────────────────
+const FB = {
+  Aerospace:`<svg viewBox="0 0 400 170" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%"><rect width="400" height="170" fill="#0d1b4b"/><circle cx="320" cy="40" r="70" fill="rgba(99,102,241,0.08)"/><g transform="translate(200,88)" opacity=".75"><ellipse cx="0" cy="0" rx="60" ry="10" fill="white"/><path d="M60,0 Q85,0 95,2 Q85,5 60,0Z" fill="white"/><path d="M-12,0 L-50,44 L-62,44 L-22,0 L-62,-44 L-50,-44 Z" fill="white" opacity=".8"/><path d="M-52,0 L-70,-32 L-76,-32 L-60,0Z" fill="white" opacity=".85"/><ellipse cx="-24" cy="45" rx="14" ry="4" fill="white" opacity=".5"/><ellipse cx="-24" cy="-45" rx="14" ry="4" fill="white" opacity=".5"/></g><text x="12" y="158" font-family="system-ui" font-size="9" font-weight="700" fill="white" opacity=".3" letter-spacing="2">AEROSPACE</text></svg>`,
+  Defence:`<svg viewBox="0 0 400 170" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%"><rect width="400" height="170" fill="#1a0505"/><g transform="translate(200,80)"><path d="M0,-55 L42,-32 L42,12 Q42,50 0,65 Q-42,50 -42,12 L-42,-32 Z" fill="rgba(239,68,68,0.15)" stroke="rgba(239,68,68,0.5)" stroke-width="2"/><polygon points="0,-30 7,-10 26,-10 11,4 17,24 0,12 -17,24 -11,4 -26,-10 -7,-10" fill="white" opacity=".7"/></g><text x="12" y="158" font-family="system-ui" font-size="9" font-weight="700" fill="white" opacity=".3" letter-spacing="2">DEFENCE</text></svg>`,
+  Automotive:`<svg viewBox="0 0 400 170" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%"><rect width="400" height="170" fill="#052e16"/><g transform="translate(200,95)"><rect x="-95" y="-20" width="190" height="30" rx="10" fill="white" opacity=".85"/><path d="M-42,-20 L-24,-48 L30,-48 L48,-20Z" fill="white" opacity=".75"/><circle cx="-58" cy="18" r="17" fill="none" stroke="white" stroke-width="4" opacity=".8"/><circle cx="-58" cy="18" r="7" fill="white" opacity=".5"/><circle cx="58" cy="18" r="17" fill="none" stroke="white" stroke-width="4" opacity=".8"/><circle cx="58" cy="18" r="7" fill="white" opacity=".5"/></g><text x="12" y="158" font-family="system-ui" font-size="9" font-weight="700" fill="white" opacity=".3" letter-spacing="2">AUTOMOTIVE</text></svg>`,
+  Energy:`<svg viewBox="0 0 400 170" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%"><rect width="400" height="170" fill="#1c1003"/><g transform="translate(200,80)"><polygon points="12,-58 -9,-6 9,-6 -12,58 32,-14 12,-14 32,-58" fill="#fb923c" opacity=".9"/></g><text x="12" y="158" font-family="system-ui" font-size="9" font-weight="700" fill="white" opacity=".3" letter-spacing="2">ENERGY</text></svg>`,
+  Motorsport:`<svg viewBox="0 0 400 170" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%"><defs><linearGradient id="mg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1a1000"/><stop offset="100%" stop-color="#3d2600"/></linearGradient></defs><rect width="400" height="170" fill="url(#mg)"/><line x1="0" y1="145" x2="400" y2="145" stroke="#eab308" stroke-width="2" opacity=".3"/><line x1="0" y1="150" x2="400" y2="150" stroke="#eab308" stroke-width="1" opacity=".2"/><g transform="translate(200,82)"><ellipse cx="0" cy="0" rx="62" ry="9" fill="#fde047" opacity=".8"/><path d="M62,0 Q90,0 100,2 Q90,5 62,0Z" fill="#fde047" opacity=".75"/><path d="M-10,0 L-45,40 L-58,40 L-20,0 L-58,-40 L-45,-40 Z" fill="#fde047" opacity=".65"/><path d="M-48,0 L-65,-26 L-72,-26 L-56,0Z" fill="#fde047" opacity=".7"/><ellipse cx="-20" cy="12" rx="16" ry="5" fill="#1a1000"/><ellipse cx="22" cy="12" rx="16" ry="5" fill="#1a1000"/><ellipse cx="-20" cy="12" rx="16" ry="5" fill="none" stroke="#fde047" stroke-width="2.5" opacity=".7"/><ellipse cx="22" cy="12" rx="16" ry="5" fill="none" stroke="#fde047" stroke-width="2.5" opacity=".7"/></g><text x="12" y="158" font-family="system-ui" font-size="9" font-weight="700" fill="#fde047" opacity=".35" letter-spacing="2">MOTORSPORT</text></svg>`,
+  Semiconductor:`<svg viewBox="0 0 400 170" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%"><defs><linearGradient id="sg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#020f1f"/><stop offset="100%" stop-color="#0a1f3d"/></linearGradient></defs><rect width="400" height="170" fill="url(#sg)"/><g transform="translate(200,80)" opacity=".6"><rect x="-38" y="-38" width="76" height="76" rx="6" fill="none" stroke="#67e8f9" stroke-width="2"/><rect x="-24" y="-24" width="48" height="48" rx="3" fill="rgba(6,182,212,0.15)" stroke="#67e8f9" stroke-width="1.5"/><rect x="-10" y="-10" width="20" height="20" rx="2" fill="rgba(6,182,212,0.25)"/><line x1="-38" y1="-22" x2="-55" y2="-22" stroke="#67e8f9" stroke-width="2"/><line x1="-38" y1="0" x2="-55" y2="0" stroke="#67e8f9" stroke-width="2"/><line x1="-38" y1="22" x2="-55" y2="22" stroke="#67e8f9" stroke-width="2"/><line x1="38" y1="-22" x2="55" y2="-22" stroke="#67e8f9" stroke-width="2"/><line x1="38" y1="0" x2="55" y2="0" stroke="#67e8f9" stroke-width="2"/><line x1="38" y1="22" x2="55" y2="22" stroke="#67e8f9" stroke-width="2"/><line x1="-22" y1="-38" x2="-22" y2="-55" stroke="#67e8f9" stroke-width="2"/><line x1="0" y1="-38" x2="0" y2="-55" stroke="#67e8f9" stroke-width="2"/><line x1="22" y1="-38" x2="22" y2="-55" stroke="#67e8f9" stroke-width="2"/><line x1="-22" y1="38" x2="-22" y2="55" stroke="#67e8f9" stroke-width="2"/><line x1="0" y1="38" x2="0" y2="55" stroke="#67e8f9" stroke-width="2"/><line x1="22" y1="38" x2="22" y2="55" stroke="#67e8f9" stroke-width="2"/></g><text x="12" y="158" font-family="system-ui" font-size="9" font-weight="700" fill="#67e8f9" opacity=".3" letter-spacing="2">SEMICONDUCTOR</text></svg>`
 };
 
-const SOURCE_EMOJI = { 'Airbus Newsroom':'✈️','3D Printing Industry':'🖨️','TCT Magazine':'📰','3DPrint.com':'🔬','Fabbaloo':'📡','DefenceWeb':'🛡️','Engineering.com':'⚙️','Met3DP Blog':'🔩' };
-const GRADIENT = { Aerospace:'linear-gradient(135deg,#4f46e5,#7c3aed)', Defence:'linear-gradient(135deg,#dc2626,#9f1239)', Automotive:'linear-gradient(135deg,#16a34a,#065f46)', Energy:'linear-gradient(135deg,#ea580c,#92400e)' };
+const GRADIENTS = {
+  Aerospace:'linear-gradient(135deg,#4f46e5,#7c3aed)',
+  Defence:'linear-gradient(135deg,#dc2626,#9f1239)',
+  Automotive:'linear-gradient(135deg,#16a34a,#065f46)',
+  Energy:'linear-gradient(135deg,#ea580c,#92400e)',
+  Motorsport:'linear-gradient(135deg,#ca8a04,#92400e)',
+  Semiconductor:'linear-gradient(135deg,#0891b2,#1e40af)'
+};
 
-function sectorClasses(s) { return `cs-${s}`; }
+const SRC_EMOJI = {'Airbus Newsroom':'✈️','3D Printing Industry':'🖨️','TCT Magazine':'📰','3DPrint.com':'🔬','Fabbaloo':'📡','DefenceWeb':'🛡️','Engineering.com':'⚙️','Met3DP Blog':'🔩','Manufactur3D':'🏎️','3D Adept Media':'📐','VoxelMatters':'🔧','Mordor Intelligence':'📊'};
 
-function makeCardImg(item) {
-  const wrap = document.createElement('div');
-  wrap.className = 'card-img';
+function mkCardImg(item) {
+  const w = document.createElement('div');
+  w.className = 'card-img';
   if (item.img) {
-    const img = document.createElement('img');
-    img.src = item.img;
-    img.alt = item.title;
-    img.loading = 'lazy';
-    img.onerror = () => { wrap.innerHTML = FALLBACK[item.sector] || FALLBACK.Aerospace; };
-    wrap.appendChild(img);
-    const ov = document.createElement('div');
-    ov.className = 'img-overlay';
-    wrap.appendChild(ov);
-  } else {
-    wrap.innerHTML = FALLBACK[item.sector] || FALLBACK.Aerospace;
-  }
-  return wrap;
+    const i = document.createElement('img');
+    i.src = item.img; i.alt = item.title; i.loading = 'lazy';
+    i.onerror = () => { w.innerHTML = FB[item.sector]; };
+    w.appendChild(i);
+    const o = document.createElement('div'); o.className = 'img-overlay'; w.appendChild(o);
+  } else { w.innerHTML = FB[item.sector]; }
+  return w;
 }
 
-// ── RENDER ─────────────────────────────────────────────────────────────────
-let activeFilter = 'all';
+// Stats
+function buildStats() {
+  const row = document.getElementById('stats-row');
+  const sectors = ['Aerospace','Defence','Automotive','Energy','Motorsport','Semiconductor'];
+  const total = document.createElement('div');
+  total.className = 'stat';
+  total.innerHTML = `<div class="num">${ITEMS.length}</div><div class="lbl">Total Items</div>`;
+  row.appendChild(total);
+  sectors.forEach(s => {
+    const c = ITEMS.filter(i => i.sector === s).length;
+    if (c > 0) {
+      const el = document.createElement('div');
+      el.className = 'stat';
+      el.innerHTML = `<div class="num">${c}</div><div class="lbl">${s}</div>`;
+      row.appendChild(el);
+    }
+  });
+}
 
+// Render cards
+let activeFilter = 'all';
 function render() {
   const grid = document.getElementById('card-grid');
   grid.innerHTML = '';
   const list = activeFilter === 'all' ? ITEMS : ITEMS.filter(i => i.sector === activeFilter);
-
-  document.getElementById('result-count').textContent = `${list.length} item${list.length !== 1 ? 's' : ''}`;
-  document.getElementById('section-label').textContent =
-    activeFilter === 'all' ? 'Latest Findings' : `${activeFilter} · ${list.length} items`;
+  document.getElementById('result-count').textContent = list.length + ' items';
+  document.getElementById('section-label').textContent = activeFilter === 'all' ? `Latest Findings · ${list.length} items` : `${activeFilter} · ${list.length} items`;
 
   if (!list.length) {
     grid.innerHTML = '<div class="empty"><div class="empty-icon">🔍</div><p>No items for this sector.</p></div>';
     return;
   }
-
   list.forEach(item => {
-    const realIdx = ITEMS.indexOf(item);
+    const ri = ITEMS.indexOf(item);
     const card = document.createElement('div');
     card.className = `card sector-${item.sector}`;
-    card.appendChild(makeCardImg(item));
-
+    card.appendChild(mkCardImg(item));
     const body = document.createElement('div');
     body.className = 'card-body';
     body.innerHTML = `
-      <span class="card-sector ${sectorClasses(item.sector)}">${item.sector}</span>
+      <span class="card-sector cs-${item.sector}">${item.sector}</span>
       <h3>${item.title}</h3>
-      <p>${item.summary}</p>
+      <p class="card-summary">${item.summary}</p>
       <div class="card-footer">
         <span class="card-source">${item.source}</span>
-        <span class="card-cta">Expand
-          <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
-          </svg>
-        </span>
-      </div>
-    `;
+        <span class="card-cta">Read more ›</span>
+      </div>`;
     card.appendChild(body);
-    card.addEventListener('click', () => openModal(realIdx));
+    card.addEventListener('click', () => openModal(ri));
     grid.appendChild(card);
   });
 }
 
-// ── MODAL ──────────────────────────────────────────────────────────────────
+// Modal
 function openModal(idx) {
   const item = ITEMS[idx];
-
-  // Hero image
   const hero = document.getElementById('modal-hero');
-  // clear children except close btn
   const closeBtn = document.getElementById('modal-close');
-  hero.innerHTML = '';
-  hero.appendChild(closeBtn);
-
+  hero.innerHTML = ''; hero.appendChild(closeBtn);
   if (item.img) {
-    const img = document.createElement('img');
-    img.src = item.img;
-    img.alt = item.title;
-    img.onerror = () => {
-      hero.innerHTML = '';
-      hero.appendChild(closeBtn);
-      hero.innerHTML += FALLBACK[item.sector];
-      hero.appendChild(closeBtn);
-    };
-    hero.appendChild(img);
+    const i = document.createElement('img');
+    i.src = item.img; i.alt = item.title;
+    i.onerror = () => { hero.innerHTML = FB[item.sector]; hero.appendChild(closeBtn); };
+    hero.appendChild(i);
   } else {
-    hero.innerHTML += FALLBACK[item.sector];
-    hero.appendChild(closeBtn);
+    hero.innerHTML += FB[item.sector]; hero.appendChild(closeBtn);
   }
-  const grad = document.createElement('div');
-  grad.className = 'modal-hero-gradient';
-  hero.appendChild(grad);
+  const g = document.createElement('div'); g.className = 'modal-hero-gradient'; hero.appendChild(g);
 
-  // Sector tag
   const tag = document.getElementById('modal-sector-tag');
   tag.textContent = item.sector;
-  tag.className = `modal-sector-tag ${sectorClasses(item.sector)}`;
-
+  tag.className = `modal-sector-tag cs-${item.sector}`;
   document.getElementById('modal-title').textContent = item.title;
-  document.getElementById('modal-summary').textContent = item.summary;
+  document.getElementById('modal-article').innerHTML = item.fullContent;
 
   const dot = document.getElementById('modal-source-dot');
-  dot.textContent = SOURCE_EMOJI[item.source] || '🔬';
-  dot.style.background = GRADIENT[item.sector] || GRADIENT.Aerospace;
+  dot.textContent = SRC_EMOJI[item.source] || '🔬';
+  dot.style.background = GRADIENTS[item.sector];
 
   document.getElementById('modal-source-name').textContent = item.source;
-
-  const link = document.getElementById('modal-link');
-  link.href = item.url;
-  link.className = `modal-link-btn ml-${item.sector}`;
-
+  const lk = document.getElementById('modal-link');
+  lk.href = item.url;
+  lk.className = `modal-link-btn ml-${item.sector}`;
   document.getElementById('modal-sheet').scrollTop = 0;
   document.getElementById('modal-overlay').classList.add('open');
   document.body.style.overflow = 'hidden';
@@ -617,22 +486,16 @@ function closeModal() {
   document.body.style.overflow = '';
 }
 
-// ── EVENTS ─────────────────────────────────────────────────────────────────
 document.getElementById('modal-close').addEventListener('click', closeModal);
-document.getElementById('modal-overlay').addEventListener('click', e => {
-  if (e.target === document.getElementById('modal-overlay')) closeModal();
-});
+document.getElementById('modal-overlay').addEventListener('click', e => { if (e.target === document.getElementById('modal-overlay')) closeModal(); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
-document.querySelectorAll('.filter-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    activeFilter = btn.dataset.filter;
-    render();
-  });
-});
+document.querySelectorAll('.filter-btn').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('.filter-btn').forEach(x => x.classList.remove('active'));
+  b.classList.add('active'); activeFilter = b.dataset.filter; render();
+}));
 
+buildStats();
 render();
 </script>
 </body>
