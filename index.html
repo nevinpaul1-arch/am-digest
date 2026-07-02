@@ -67,7 +67,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Inter',sans-serif;
 .cs-Motorsport{background:rgba(234,179,8,.15);color:#fde047}
 .cs-Semiconductor{background:rgba(6,182,212,.15);color:#67e8f9}
 .card-body h3{font-size:13.5px;font-weight:700;line-height:1.4;color:#f0f0fa}
-.card-body .card-summary{font-size:12px;color:rgba(255,255,255,.42);line-height:1.6;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;flex:1}
+.card-body .card-summary{font-size:12px;color:rgba(255,255,255,.42);line-height:1.6;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 .card-footer{display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid rgba(255,255,255,.06);margin-top:auto}
 .card-source{font-size:11px;color:rgba(255,255,255,.3)}
 .card-cta{font-size:11px;font-weight:600;color:rgba(165,180,252,.8);display:flex;align-items:center;gap:4px}
@@ -154,6 +154,77 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Inter',sans-serif;
 .archive-empty .ae-icon{font-size:40px;margin-bottom:14px}
 .archive-empty p{font-size:14px;line-height:1.7}
 .arch-date-header td{padding:14px 14px 6px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:rgba(255,255,255,.2);background:rgba(255,255,255,.02);border-bottom:1px solid rgba(255,255,255,.04)}
+
+.leads-wrap{max-width:1200px;margin:0 auto;padding:28px 32px 60px;display:none}
+.leads-wrap.visible{display:block}
+.leads-toolbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:22px}
+.leads-search{flex:1;min-width:180px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:9px;padding:8px 14px;font-size:13px;color:#e8e8f0;outline:none;transition:border-color .15s}
+.leads-search::placeholder{color:rgba(255,255,255,.25)}
+.leads-search:focus{border-color:rgba(99,102,241,.5)}
+.leads-sector-btns{display:flex;gap:6px;flex-wrap:wrap}
+.lead-btn{padding:5px 12px;border-radius:7px;font-size:11px;font-weight:600;border:1px solid rgba(255,255,255,.1);background:transparent;color:rgba(255,255,255,.4);cursor:pointer;transition:all .15s;white-space:nowrap}
+.lead-btn:hover{border-color:rgba(255,255,255,.25);color:rgba(255,255,255,.75)}
+.lead-btn.active{color:#fff}
+.lead-btn[data-lsector=all].active{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.25)}
+.lead-btn[data-lsector=Aerospace].active{background:rgba(99,102,241,.2);border-color:#6366f1;color:#c7d2fe}
+.lead-btn[data-lsector=Defence].active{background:rgba(239,68,68,.2);border-color:#ef4444;color:#fca5a5}
+.lead-btn[data-lsector=Motorsport].active{background:rgba(234,179,8,.2);border-color:#eab308;color:#fde047}
+.leads-meta{font-size:11px;color:rgba(255,255,255,.22);margin-left:auto;white-space:nowrap}
+.leads-table-wrap{border:1px solid rgba(255,255,255,.07);border-radius:14px;overflow:hidden}
+.leads-table{width:100%;border-collapse:collapse}
+.leads-table thead tr{background:rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.08)}
+.leads-table th{padding:11px 14px;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:rgba(255,255,255,.3);text-align:left;white-space:nowrap}
+.leads-table tbody tr{border-bottom:1px solid rgba(255,255,255,.04);transition:background .12s;cursor:pointer}
+.leads-table tbody tr:last-child{border-bottom:none}
+.leads-table tbody tr:hover{background:rgba(99,102,241,.05)}
+.leads-table td{padding:12px 14px;font-size:13px;vertical-align:middle}
+.lead-priority{display:flex;gap:2px}
+.lead-star{font-size:12px}
+.lead-star.on{color:#eab308}
+.lead-star.off{color:rgba(255,255,255,.1)}
+.lead-name-cell .ln{font-weight:700;color:#f0f0fa;font-size:13px}
+.lead-name-cell .lt{font-size:11px;color:rgba(255,255,255,.35);margin-top:2px;max-width:220px}
+.lead-company-cell .lco{font-weight:600;color:#e8e8f0;font-size:13px}
+.lead-company-cell .lloc{font-size:11px;color:rgba(255,255,255,.3);margin-top:2px}
+.lead-li-btn{display:inline-flex;align-items:center;gap:5px;padding:5px 10px;border-radius:7px;font-size:11px;font-weight:600;color:rgba(100,170,255,.9);background:rgba(14,118,168,.12);border:1px solid rgba(14,118,168,.22);text-decoration:none;white-space:nowrap;transition:all .12s}
+.lead-li-btn:hover{background:rgba(14,118,168,.25)}
+.lead-draft-btn{padding:5px 12px;border-radius:7px;font-size:11px;font-weight:700;color:#a5b4fc;background:rgba(99,102,241,.12);border:1px solid rgba(99,102,241,.22);cursor:pointer;transition:all .12s;white-space:nowrap}
+.lead-draft-btn:hover{background:rgba(99,102,241,.25);color:#c7d2fe}
+.lead-article-cell a{color:rgba(255,255,255,.5);font-size:11.5px;text-decoration:none;line-height:1.4;display:block;max-width:220px}
+.lead-article-cell a:hover{color:#a5b4fc}
+.lead-article-cell .lab{font-size:10.5px;color:rgba(255,255,255,.22);line-height:1.4;max-width:220px;margin-top:3px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.lead-email-overlay{position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);display:flex;align-items:flex-end;opacity:0;pointer-events:none;transition:opacity .25s}
+.lead-email-overlay.open{opacity:1;pointer-events:all}
+.lead-email-sheet{background:#13131f;border:1px solid rgba(255,255,255,.09);border-radius:24px 24px 0 0;width:100%;max-height:92vh;overflow-y:auto;transform:translateY(50px);transition:transform .3s cubic-bezier(.32,1.1,.7,1)}
+.lead-email-overlay.open .lead-email-sheet{transform:translateY(0)}
+@media(min-width:800px){
+  .lead-email-overlay{align-items:center;padding:24px}
+  .lead-email-sheet{border-radius:20px;max-width:920px;margin:0 auto;max-height:88vh;display:flex;flex-direction:row;overflow:hidden}
+}
+.le-left{padding:26px;flex:0 0 280px;border-right:1px solid rgba(255,255,255,.07);display:flex;flex-direction:column;gap:12px;overflow-y:auto}
+.le-right{padding:26px;flex:1;display:flex;flex-direction:column;gap:14px;overflow-y:auto}
+.le-close-btn{align-self:flex-end;width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.55);font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s;flex-shrink:0;line-height:1}
+.le-close-btn:hover{background:rgba(255,255,255,.12)}
+.le-name{font-size:18px;font-weight:800;color:#f0f0fa;line-height:1.2}
+.le-title{font-size:11.5px;color:rgba(255,255,255,.4);margin-top:1px}
+.le-company{font-size:14px;font-weight:600;color:#e8e8f0;margin-top:4px}
+.le-loc{font-size:11.5px;color:rgba(255,255,255,.3);margin-top:2px}
+.le-sector-badge{display:inline-flex;align-items:center;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.7px;padding:3px 9px;border-radius:5px;align-self:flex-start}
+.le-links{display:flex;flex-direction:column;gap:8px;padding-top:4px}
+.le-li-link{display:inline-flex;align-items:center;gap:7px;font-size:12px;color:#93c5fd;text-decoration:none}
+.le-li-link:hover{color:#bfdbfe}
+.le-email-na{font-size:11px;color:rgba(255,255,255,.22)}
+.le-article-box{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:12px 14px;margin-top:auto}
+.le-article-box .lab-head{font-size:9.5px;text-transform:uppercase;letter-spacing:.6px;color:rgba(255,255,255,.22);margin-bottom:6px;font-weight:700}
+.le-article-box a{font-size:12px;font-weight:600;color:#a5b4fc;text-decoration:none;line-height:1.4;display:block}
+.le-article-box p{font-size:11.5px;color:rgba(255,255,255,.35);line-height:1.5;margin-top:5px}
+.le-email-head{font-size:10px;text-transform:uppercase;letter-spacing:.7px;color:rgba(255,255,255,.28);font-weight:700}
+.le-subject-box{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:9px;padding:11px 14px;font-size:13px;font-weight:600;color:#e8e8f0;line-height:1.4}
+.le-body-area{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:14px 16px;font-size:13px;color:rgba(255,255,255,.68);line-height:1.85;resize:vertical;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Inter',sans-serif;min-height:300px;outline:none;width:100%}
+.le-body-area:focus{border-color:rgba(99,102,241,.4)}
+.le-copy-btn{padding:12px;border-radius:10px;background:linear-gradient(135deg,#4f46e5,#7c3aed);border:none;color:white;font-size:13px;font-weight:700;cursor:pointer;transition:opacity .15s;letter-spacing:.1px}
+.le-copy-btn:hover{opacity:.88}
+.le-copied-msg{font-size:12px;color:#86efac;text-align:center;min-height:18px}
 </style>
 </head>
 <body>
@@ -177,6 +248,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Inter',sans-serif;
   <div class="tab-bar-inner">
     <button class="tab-btn active" data-tab="today">Today&#39;s Digest <span class="tab-count" id="today-count"></span></button>
     <button class="tab-btn" data-tab="archive">Archive <span class="tab-count" id="archive-count"></span></button>
+    <button class="tab-btn" data-tab="leads">Leads <span class="tab-count" id="leads-count"></span></button>
   </div>
 </div>
 <div id="today-view">
@@ -234,6 +306,26 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Inter',sans-serif;
     <span class="archive-meta" id="arch-meta"></span>
   </div>
   <div id="arch-table-wrap"></div>
+</div>
+<div class="leads-wrap" id="leads-view">
+  <div class="leads-toolbar">
+    <input class="leads-search" id="leads-search" type="text" placeholder="Search name, company, title&#8230;">
+    <div class="leads-sector-btns">
+      <button class="lead-btn active" data-lsector="all">All</button>
+      <button class="lead-btn" data-lsector="Aerospace">Aerospace</button>
+      <button class="lead-btn" data-lsector="Defence">Defence</button>
+      <button class="lead-btn" data-lsector="Motorsport">Motorsport</button>
+    </div>
+    <span class="leads-meta" id="leads-meta"></span>
+  </div>
+  <div id="leads-table-wrap"></div>
+</div>
+
+<div class="lead-email-overlay" id="lead-email-overlay">
+  <div class="lead-email-sheet">
+    <div class="le-left" id="le-left"></div>
+    <div class="le-right" id="le-right"></div>
+  </div>
 </div>
 <div class="page-footer">AM Innovation Digest &middot; Generated by Claude &middot; 1 Jul 2026 &middot; nevinpaul1-arch.github.io/am-digest</div>
 <script>
@@ -1484,7 +1576,10 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
     document.getElementById('today-view').style.display = tab === 'today' ? '' : 'none';
     const av = document.getElementById('archive-view');
     av.classList.toggle('visible', tab === 'archive');
+    const lv = document.getElementById('leads-view');
+    lv.classList.toggle('visible', tab === 'leads');
     if (tab === 'archive') renderArchive();
+    if (tab === 'leads') renderLeads();
   });
 });
 
@@ -1550,8 +1645,458 @@ document.querySelectorAll('.arch-btn').forEach(btn => {
   });
 });
 
+
+const LEADS = [
+  {p:3,name:"Ian Tew",title:"Head of Manufacturing Engineering",company:"McLaren Racing",sector:"Motorsport",location:"Portsmouth, UK",linkedin:"https://www.linkedin.com/in/ian-t-84796214a",email:null,
+   articleUrl:"https://3dadept.com/formula-1-titanium-and-aluminum-additive-manufacturing-can-now-be-used-for-suspension-uprights/",
+   articleTitle:"2026 F1 Regs Permit Ti & Al AM for Suspension Uprights",
+   articleBrief:"FIA 2026 rules now explicitly permit titanium and aluminium AM for F1 suspension uprights — opening precision-critical LPBF applications at the sport's highest level.",
+   subject:"LPBF Ti64 & IN718 Supply for F1 Suspension Programme",
+   body:`Hi Ian,
+
+The FIA's 2026 rule change permitting titanium and aluminium AM for F1 suspension uprights opens a significant manufacturing opportunity — and given McLaren's precision engineering standards, I imagine you're already evaluating AM supply options.
+
+We're a metal LPBF service bureau specialising in Ti64, IN718, IN625, MS1, and 316L, with integrated CNC machining for post-print finishing to tight tolerances. We have experience with structurally demanding components where dimensional accuracy and material certification are non-negotiable.
+
+If you're assessing external LPBF capacity for the upright programme or other structural components this season, I'd welcome a brief conversation at your convenience.
+
+Best regards,
+[Name]
+[Company] | [Phone]`},
+
+  {p:3,name:"Giovanna Gazzin",title:"Sr Manager — Procurement, Production, Technical & Racing",company:"McLaren Racing",sector:"Motorsport",location:"England, UK",linkedin:"https://www.linkedin.com/in/giovanna-gazzin-77a30b4",email:null,
+   articleUrl:"https://3dadept.com/formula-1-titanium-and-aluminum-additive-manufacturing-can-now-be-used-for-suspension-uprights/",
+   articleTitle:"2026 F1 Regs Permit Ti & Al AM for Suspension Uprights",
+   articleBrief:"FIA 2026 rules now explicitly permit titanium and aluminium AM for F1 suspension uprights — opening precision-critical LPBF applications at the sport's highest level.",
+   subject:"Metal LPBF Capability for McLaren's Technical Procurement",
+   body:`Hi Giovanna,
+
+With the FIA's 2026 regulation change opening suspension uprights and structural components to titanium and aluminium AM, I wanted to reach out about our LPBF metal manufacturing capability.
+
+We're a metal service bureau printing in Ti64, IN718, IN625, MS1, and 316L, with integrated machining for post-print precision finishing. We support development iterations and low-volume series production, with full material traceability.
+
+Given your remit across procurement, production, and technical at McLaren, this may be relevant to your supplier evaluation. Happy to provide material datasheets, case studies, or arrange a capability overview call.
+
+Best regards,
+[Name]
+[Company] | [Phone]`},
+
+  {p:2,name:"Joshua Birch",title:"Senior Manager of Procurement",company:"McLaren Racing",sector:"Motorsport",location:"London, UK",linkedin:"https://www.linkedin.com/in/joshua-birch-990a13322",email:null,
+   articleUrl:"https://3dadept.com/formula-1-titanium-and-aluminum-additive-manufacturing-can-now-be-used-for-suspension-uprights/",
+   articleTitle:"2026 F1 Regs Permit Ti & Al AM for Suspension Uprights",
+   articleBrief:"FIA 2026 rules now explicitly permit titanium and aluminium AM for F1 suspension uprights — opening precision-critical LPBF applications at the sport's highest level.",
+   subject:"LPBF Metal AM Supply — McLaren Procurement",
+   body:`Hi Joshua,
+
+I'm reaching out as a metal LPBF service bureau — Ti64, IN718, IN625, MS1, and 316L — with integrated precision machining for post-print finishing.
+
+With the 2026 FIA rule change allowing AM for F1 suspension uprights and the broader trend toward AM-produced structural components in motorsport, LPBF supply chain development is likely on your radar.
+
+If McLaren is evaluating or expanding its AM supplier base, I'd welcome the opportunity to discuss our capabilities and quality processes.
+
+Best regards,
+[Name]
+[Company] | [Phone]`},
+
+  {p:2,name:"Samantha Camm",title:"Sr Manager — Procurement & Commercial Business Performance",company:"McLaren Racing",sector:"Motorsport",location:"Woking, UK",linkedin:"https://www.linkedin.com/in/samantha-camm-8b4310131",email:null,
+   articleUrl:"https://3dadept.com/formula-1-titanium-and-aluminum-additive-manufacturing-can-now-be-used-for-suspension-uprights/",
+   articleTitle:"2026 F1 Regs Permit Ti & Al AM for Suspension Uprights",
+   articleBrief:"FIA 2026 rules now explicitly permit titanium and aluminium AM for F1 suspension uprights — opening precision-critical LPBF applications at the sport's highest level.",
+   subject:"Metal AM Service Bureau — McLaren Procurement Introduction",
+   body:`Hi Samantha,
+
+I wanted to introduce our LPBF metal AM service bureau to McLaren's procurement team. We specialise in Ti64, IN718, IN625, MS1, and 316L with integrated precision machining — producing complex structural and thermal components for high-performance applications.
+
+With the FIA's 2026 regulation changes expanding where AM can be used on F1 cars, demand for qualified LPBF suppliers in motorsport is growing. We'd be happy to discuss how we might support McLaren's needs — for race-pace development parts or longer-run components.
+
+Best regards,
+[Name]
+[Company] | [Phone]`},
+
+  {p:3,name:"Jamie Meades",title:"Head of Supply Chain Operations",company:"Red Bull Racing & Technology",sector:"Motorsport",location:"UK",linkedin:"https://www.linkedin.com/in/jamie-meades-35309440",email:null,
+   articleUrl:"https://www.topgear.com/car-news/formula-one/ford-3d-printing-parts-2026-red-bull-f1-car",
+   articleTitle:"Ford 3D-Prints 1,000+ Parts for 2026 Red Bull F1 Powertrain",
+   articleBrief:"Ford Performance additively manufactured over 1,000 complex metal and polymer parts for the Red Bull F1 powertrain — each inspected via aerospace-grade CT scanning and metrology before track deployment.",
+   subject:"LPBF Metal Supply Chain for Red Bull's AM Component Programme",
+   body:`Hi Jamie,
+
+The scale of Ford's AM work on the Red Bull powertrain — over 1,000 printed parts, each with aerospace-grade CT inspection — demonstrates how demanding your supply chain quality requirements are.
+
+We're a metal LPBF service bureau with Ti64, IN718, IN625, MS1, and 316L capability, supported by integrated precision machining for post-print finishing to tight tolerances. Our quality processes include material traceability and dimensional verification at component level.
+
+If Red Bull is assessing additional LPBF supply options — for powertrain components, thermal management, or structural parts — I'd welcome a brief conversation.
+
+Best regards,
+[Name]
+[Company] | [Phone]`},
+
+  {p:3,name:"Harris Mohammed",title:"Manufacturing Engineering Manager",company:"Multimatic",sector:"Motorsport",location:"Newmarket, ON, Canada",linkedin:"https://www.linkedin.com/in/harrispmohammed",email:null,
+   articleUrl:"https://3dprintingindustry.com/news/conflux-technology-3d-printed-oil-cooler-completes-full-distance-endurance-race-on-multimatic-engineered-car-249570/",
+   articleTitle:"Conflux AM Oil Cooler Completes Full Endurance Race on Multimatic Car",
+   articleBrief:"Conflux Technology's 3D-printed aluminium oil cooler ran a full endurance race on a Multimatic-engineered car — validating conformal-channel AM heat exchangers under real sustained motorsport loads.",
+   subject:"LPBF Metal AM — Thermal & Structural Components for Multimatic",
+   body:`Hi Harris,
+
+The Conflux–Multimatic oil cooler result — completing a full endurance race with conformal internal channels — is a strong proof point for where AM heat exchangers are heading in motorsport.
+
+We're an LPBF metal service bureau printing in aluminium alloys, 316L stainless, Ti64, IN718, and IN625, with integrated CNC machining for post-print precision finishing. We produce complex internal geometry parts — heat exchangers, brackets, structural housings — with full material traceability.
+
+If Multimatic is evaluating LPBF supply for upcoming thermal management or structural programmes, I'd be happy to share our capability details and typical lead times.
+
+Best regards,
+[Name]
+[Company] | [Phone]`},
+
+  {p:3,name:"Mike King",title:"Manufacturing Engineering Manager",company:"Multimatic",sector:"Motorsport",location:"Newmarket, ON, Canada",linkedin:"https://www.linkedin.com/in/mike-king-5b061718",email:null,
+   articleUrl:"https://3dprintingindustry.com/news/conflux-technology-3d-printed-oil-cooler-completes-full-distance-endurance-race-on-multimatic-engineered-car-249570/",
+   articleTitle:"Conflux AM Oil Cooler Completes Full Endurance Race on Multimatic Car",
+   articleBrief:"Conflux Technology's 3D-printed aluminium oil cooler ran a full endurance race on a Multimatic-engineered car — validating conformal-channel AM heat exchangers under real sustained motorsport loads.",
+   subject:"LPBF Metal Manufacturing Capability for Multimatic Programmes",
+   body:`Hi Mike,
+
+The AM oil cooler Conflux produced for Multimatic — surviving a full endurance race with conformal cooling channels — is exactly the kind of validation that opens doors for LPBF in further Multimatic programmes.
+
+We're a metal LPBF service bureau with Ti64, IN718, IN625, 316L, and MS1 capability plus integrated machining for post-print finishing. We're set up for the iterative development cycles motorsport demands, as well as low-volume series production.
+
+If you're exploring LPBF options for upcoming projects — thermal management, structural brackets, or powertrain components — I'd welcome a conversation about how we might support Multimatic.
+
+Best regards,
+[Name]
+[Company] | [Phone]`},
+
+  {p:2,name:"Tony Ferraro",title:"Materials & Supply Chain Manager",company:"Multimatic",sector:"Motorsport",location:"Toronto, ON, Canada",linkedin:"https://www.linkedin.com/in/tony-ferraro-pmp-csm-6378267",email:null,
+   articleUrl:"https://3dprintingindustry.com/news/conflux-technology-3d-printed-oil-cooler-completes-full-distance-endurance-race-on-multimatic-engineered-car-249570/",
+   articleTitle:"Conflux AM Oil Cooler Completes Full Endurance Race on Multimatic Car",
+   articleBrief:"Conflux Technology's 3D-printed aluminium oil cooler ran a full endurance race on a Multimatic-engineered car — validating conformal-channel AM heat exchangers under real sustained motorsport loads.",
+   subject:"LPBF Metal AM — Materials & Supply for Multimatic",
+   body:`Hi Tony,
+
+Given your materials and supply chain remit at Multimatic, I wanted to introduce our LPBF metal AM service — Ti64, IN718, IN625, 316L, and MS1 with integrated precision machining.
+
+Following Conflux's AM oil cooler completing a full endurance race on a Multimatic car, there's clearly growing appetite for LPBF-produced components. We can support both materials qualification and supply of finished components.
+
+Happy to provide material datasheets, process certifications, or discuss qualification requirements for specific applications.
+
+Best regards,
+[Name]
+[Company] | [Phone]`},
+
+  {p:2,name:"Nick Fabbricino",title:"Group Purchasing Manager",company:"Multimatic",sector:"Motorsport",location:"Ontario, Canada",linkedin:"https://www.linkedin.com/in/nick-fabbricino-30196b9",email:null,
+   articleUrl:"https://3dprintingindustry.com/news/conflux-technology-3d-printed-oil-cooler-completes-full-distance-endurance-race-on-multimatic-engineered-car-249570/",
+   articleTitle:"Conflux AM Oil Cooler Completes Full Endurance Race on Multimatic Car",
+   articleBrief:"Conflux Technology's 3D-printed aluminium oil cooler ran a full endurance race on a Multimatic-engineered car — validating conformal-channel AM heat exchangers under real sustained motorsport loads.",
+   subject:"LPBF Metal AM Service Bureau — Multimatic Purchasing",
+   body:`Hi Nick,
+
+I'm reaching out to introduce our LPBF metal AM service bureau. We produce components in Ti64, IN718, IN625, 316L, and MS1 with integrated CNC machining for final precision finishing.
+
+Multimatic's AM adoption is clearly accelerating — the Conflux oil cooler endurance validation is a good example. We'd welcome the opportunity to be considered as a qualified LPBF supplier across Multimatic's programmes.
+
+Happy to provide a capability overview, pricing structure, or sample parts for evaluation.
+
+Best regards,
+[Name]
+[Company] | [Phone]`},
+
+  {p:2,name:"Enrique Palacio",title:"Purchasing Manager",company:"Multimatic",sector:"Motorsport",location:"Aurora, ON, Canada",linkedin:"https://www.linkedin.com/in/enrique-palacio-bba-59607bb3",email:null,
+   articleUrl:"https://3dprintingindustry.com/news/conflux-technology-3d-printed-oil-cooler-completes-full-distance-endurance-race-on-multimatic-engineered-car-249570/",
+   articleTitle:"Conflux AM Oil Cooler Completes Full Endurance Race on Multimatic Car",
+   articleBrief:"Conflux Technology's 3D-printed aluminium oil cooler ran a full endurance race on a Multimatic-engineered car — validating conformal-channel AM heat exchangers under real sustained motorsport loads.",
+   subject:"Metal LPBF AM Supply — Multimatic Purchasing",
+   body:`Hi Enrique,
+
+I'm reaching out from a metal LPBF service bureau specialising in Ti64, IN718, IN625, 316L, and MS1 — with integrated machining for post-print precision work.
+
+With Multimatic's growing involvement in AM components (the recent Conflux oil cooler race validation being a notable example), I wanted to introduce our capability as a potential supplier for your purchasing pipeline.
+
+Happy to share specifications, lead times, and pricing for relevant component categories.
+
+Best regards,
+[Name]
+[Company] | [Phone]`},
+
+  {p:2,name:"Rachel Rourke",title:"Procurement Manager",company:"Multimatic",sector:"Motorsport",location:"Thetford, UK",linkedin:"https://www.linkedin.com/in/rachel-rourke-81b2a6a",email:null,
+   articleUrl:"https://3dprintingindustry.com/news/conflux-technology-3d-printed-oil-cooler-completes-full-distance-endurance-race-on-multimatic-engineered-car-249570/",
+   articleTitle:"Conflux AM Oil Cooler Completes Full Endurance Race on Multimatic Car",
+   articleBrief:"Conflux Technology's 3D-printed aluminium oil cooler ran a full endurance race on a Multimatic-engineered car — validating conformal-channel AM heat exchangers under real sustained motorsport loads.",
+   subject:"Metal LPBF AM — Multimatic UK Procurement Introduction",
+   body:`Hi Rachel,
+
+I wanted to introduce our LPBF metal AM service bureau to Multimatic's UK procurement team. We specialise in Ti64, IN718, IN625, 316L, and MS1 with integrated precision machining — producing complex structural and thermal components for high-performance applications.
+
+Multimatic's recent AM collaboration with Conflux on the endurance race oil cooler confirms strong appetite for AM heat management components. We can support similar programmes with fast turnaround and flexible run volumes.
+
+Would you be open to a brief introduction call?
+
+Best regards,
+[Name]
+[Company] | [Phone]`},
+
+  {p:2,name:"Simon Standing",title:"Supply Chain Manager",company:"Multimatic",sector:"Motorsport",location:"Cambridge, UK",linkedin:"https://www.linkedin.com/in/simon-standing-4aa4b67b",email:null,
+   articleUrl:"https://3dprintingindustry.com/news/conflux-technology-3d-printed-oil-cooler-completes-full-distance-endurance-race-on-multimatic-engineered-car-249570/",
+   articleTitle:"Conflux AM Oil Cooler Completes Full Endurance Race on Multimatic Car",
+   articleBrief:"Conflux Technology's 3D-printed aluminium oil cooler ran a full endurance race on a Multimatic-engineered car — validating conformal-channel AM heat exchangers under real sustained motorsport loads.",
+   subject:"LPBF Metal AM Supply Chain — Multimatic UK",
+   body:`Hi Simon,
+
+I'm reaching out as an LPBF metal AM service bureau — Ti64, IN718, IN625, 316L, MS1 — with integrated machining capability for precision post-processing.
+
+Given Multimatic's expanding AM footprint (the Conflux heat exchanger race result being the latest example), I wanted to introduce our capability as a potential supply chain addition for LPBF-produced components.
+
+Happy to discuss lead times, quality processes, and relevant component categories at your convenience.
+
+Best regards,
+[Name]
+[Company] | [Phone]`},
+
+  {p:2,name:"Jake Tan",title:"Supply Chain Manager",company:"Multimatic",sector:"Motorsport",location:"Vaughan, ON, Canada",linkedin:"https://www.linkedin.com/in/jake-tan-7a421917",email:null,
+   articleUrl:"https://3dprintingindustry.com/news/conflux-technology-3d-printed-oil-cooler-completes-full-distance-endurance-race-on-multimatic-engineered-car-249570/",
+   articleTitle:"Conflux AM Oil Cooler Completes Full Endurance Race on Multimatic Car",
+   articleBrief:"Conflux Technology's 3D-printed aluminium oil cooler ran a full endurance race on a Multimatic-engineered car — validating conformal-channel AM heat exchangers under real sustained motorsport loads.",
+   subject:"Metal LPBF AM — Multimatic Canada Supply Chain",
+   body:`Hi Jake,
+
+I'm reaching out from a metal LPBF service bureau specialising in Ti64, IN718, IN625, 316L, and MS1 with integrated precision machining — based in [location], well-positioned to support Multimatic's Canadian operations.
+
+With the Conflux AM oil cooler endurance validation confirming Multimatic's appetite for AM components, I wanted to introduce our LPBF capability as a potential North American supplier.
+
+Happy to share lead times, pricing, and quality documentation at your convenience.
+
+Best regards,
+[Name]
+[Company] | [Phone]`},
+
+  {p:3,name:"Matthias Bensch",title:"Head of Manufacturing Engineering, Standardization & IP",company:"Airbus",sector:"Aerospace",location:"Munich, Germany",linkedin:"https://www.linkedin.com/in/dr-matthias-bensch",email:null,
+   articleUrl:"https://3dprintingindustry.com/news/norsk-titanium-and-airbus-take-rpd-from-proof-to-production-252173/",
+   articleTitle:"Norsk Titanium & Airbus Take Wire-DED from Proof to Production",
+   articleBrief:"Norsk Titanium and Airbus have industrialised wire-DED for A350 structures — the Lower Frame Fitting is now FAA/EASA dual-certified, the largest AM aerostructure certified to date.",
+   subject:"LPBF Ti64 & Superalloy Capability — Aerospace Structural Supply",
+   body:`Hi Matthias,
+
+Airbus's RPD certification of the A350 Lower Frame Fitting — the largest AM aerostructure to achieve FAA/EASA dual certification — demonstrates the organisation's genuine commitment to industrialising AM at aerostructure scale.
+
+For components where LPBF's resolution, surface quality, and material properties are required — Ti64, IN718, IN625 — we operate a metal LPBF service bureau with integrated precision machining for post-print finishing to aerospace dimensional tolerances and full material traceability.
+
+If there are programmes within your manufacturing engineering scope where LPBF supply is being evaluated, I'd welcome a brief conversation to understand your requirements.
+
+Best regards,
+[Name]
+[Company] | [Phone]`},
+
+  {p:3,name:"Thomas Mahrt",title:"Head of Procurement, Supply Chain & Quality — Airframe",company:"Airbus",sector:"Aerospace",location:"Germany",linkedin:"https://www.linkedin.com/in/thomas-mahrt-586734a6",email:null,
+   articleUrl:"https://3dprintingindustry.com/news/norsk-titanium-and-airbus-take-rpd-from-proof-to-production-252173/",
+   articleTitle:"Norsk Titanium & Airbus Take Wire-DED from Proof to Production",
+   articleBrief:"Norsk Titanium and Airbus have industrialised wire-DED for A350 structures — the Lower Frame Fitting is now FAA/EASA dual-certified, the largest AM aerostructure certified to date.",
+   subject:"LPBF Metal AM — Airframe Structural Components",
+   body:`Hi Thomas,
+
+With Airbus's recent FAA/EASA dual-certification of the A350 Lower Frame Fitting — the largest AM aerostructure certified to date — the Airbus supply chain is entering a new phase of AM industrialisation.
+
+We operate a metal LPBF service bureau specialising in Ti64, IN718, IN625, 316L, and MS1, with integrated CNC machining for dimensional finishing and full material traceability for aerospace qualification.
+
+For LPBF-produced structural or secondary airframe components where external supply is being considered, I'd welcome the opportunity to discuss our capabilities and qualification approach.
+
+Best regards,
+[Name]
+[Company] | [Phone]`},
+
+  {p:2,name:"Maxime Villain",title:"Manufacturing Engineering Manager",company:"Airbus",sector:"Aerospace",location:"Amiens, France",linkedin:"https://www.linkedin.com/in/maxime-villain-78252b88",email:null,
+   articleUrl:"https://3dprintingindustry.com/news/norsk-titanium-and-airbus-take-rpd-from-proof-to-production-252173/",
+   articleTitle:"Norsk Titanium & Airbus Take Wire-DED from Proof to Production",
+   articleBrief:"Norsk Titanium and Airbus have industrialised wire-DED for A350 structures — the Lower Frame Fitting is now FAA/EASA dual-certified, the largest AM aerostructure certified to date.",
+   subject:"LPBF Metal AM for Airbus Manufacturing Engineering",
+   body:`Hi Maxime,
+
+I'm reaching out as a metal LPBF service bureau — Ti64, IN718, IN625, 316L — with integrated machining for aerospace-tolerance post-processing.
+
+With Airbus's AM industrialisation advancing (the A350 Lower Frame Fitting certification being the latest milestone), I wanted to introduce our LPBF capability for programmes that could benefit from external supply of precision AM components.
+
+Happy to share material datasheets, process capabilities, and discuss qualification requirements for specific component categories.
+
+Best regards,
+[Name]
+[Company] | [Phone]`},
+
+  {p:2,name:"Benjamin Obermeier",title:"Manufacturing Development Engineer",company:"Airbus",sector:"Aerospace",location:"Hamburg, Germany",linkedin:"https://www.linkedin.com/in/benjamin-obermeier-602782128",email:null,
+   articleUrl:"https://3dprintingindustry.com/news/norsk-titanium-and-airbus-take-rpd-from-proof-to-production-252173/",
+   articleTitle:"Norsk Titanium & Airbus Take Wire-DED from Proof to Production",
+   articleBrief:"Norsk Titanium and Airbus have industrialised wire-DED for A350 structures — the Lower Frame Fitting is now FAA/EASA dual-certified, the largest AM aerostructure certified to date.",
+   subject:"Metal LPBF Capability — Airbus Manufacturing Development",
+   body:`Hi Benjamin,
+
+I'm reaching out from a metal LPBF service bureau with Ti64, IN718, IN625, and 316L capability plus integrated precision machining.
+
+With Airbus's AM programmes advancing — the A350 Lower Frame Fitting FAA/EASA certification being the most recent milestone — I wanted to introduce our LPBF manufacturing capability for development and production-phase component supply.
+
+Happy to discuss our process, typical lead times, and qualification documentation.
+
+Best regards,
+[Name]
+[Company] | [Phone]`},
+
+  {p:2,name:"Nizar El Haoudar",title:"Digital Manufacturing Engineer",company:"Airbus",sector:"Aerospace",location:"Paris, France",linkedin:"https://www.linkedin.com/in/nizar-e-h-588343131",email:null,
+   articleUrl:"https://3dprintingindustry.com/news/norsk-titanium-and-airbus-take-rpd-from-proof-to-production-252173/",
+   articleTitle:"Norsk Titanium & Airbus Take Wire-DED from Proof to Production",
+   articleBrief:"Norsk Titanium and Airbus have industrialised wire-DED for A350 structures — the Lower Frame Fitting is now FAA/EASA dual-certified, the largest AM aerostructure certified to date.",
+   subject:"LPBF Metal AM — Airbus Digital Manufacturing",
+   body:`Hi Nizar,
+
+Given your digital manufacturing focus at Airbus, I wanted to introduce our LPBF metal AM service bureau — Ti64, IN718, IN625, 316L — with integrated machining and full digital traceability from print to inspection.
+
+With Airbus's AM industrialisation clearly advancing, we'd welcome a conversation about where external LPBF supply might fit within Airbus's digital manufacturing workflows.
+
+Best regards,
+[Name]
+[Company] | [Phone]`},
+
+  {p:2,name:"Guillaume Joly",title:"Procurement Commodity Manager",company:"Airbus",sector:"Aerospace",location:"Toulouse, France",linkedin:"https://www.linkedin.com/in/guillaume-joly-61bb4678",email:null,
+   articleUrl:"https://3dprintingindustry.com/news/norsk-titanium-and-airbus-take-rpd-from-proof-to-production-252173/",
+   articleTitle:"Norsk Titanium & Airbus Take Wire-DED from Proof to Production",
+   articleBrief:"Norsk Titanium and Airbus have industrialised wire-DED for A350 structures — the Lower Frame Fitting is now FAA/EASA dual-certified, the largest AM aerostructure certified to date.",
+   subject:"Metal LPBF AM — Airbus Toulouse Procurement",
+   body:`Hi Guillaume,
+
+I'm reaching out to introduce our LPBF metal AM service bureau to Airbus's Toulouse procurement team. We specialise in Ti64, IN718, IN625, 316L, and MS1 with integrated precision machining and full material traceability for aerospace applications.
+
+With Airbus's AM supply chain expanding following the A350 Lower Frame Fitting certification, we'd welcome the opportunity to discuss how our capabilities might fit within your commodity sourcing.
+
+Happy to provide qualification documentation and discuss supplier onboarding at your convenience.
+
+Best regards,
+[Name]
+[Company] | [Phone]`},
+
+  {p:2,name:"Steven Julmus",title:"Senior Manufacturing Engineer",company:"Lockheed Martin",sector:"Aerospace",location:"Arlington, TX, USA",linkedin:"https://www.linkedin.com/in/steven-julmus-65660097",email:null,
+   articleUrl:"https://aviationweek.com/defense/aircraft-propulsion/skunk-works-divergent-unveil-3d-printed-one-way-attack-drone",
+   articleTitle:"Skunk Works & Divergent Reveal Fully AM Attack Drone in Under 12 Months",
+   articleBrief:"Lockheed Skunk Works and Divergent unveiled Project Dragonfly — a fully AM one-way attack drone built from concept to hardware in under 12 months using the DAPS platform.",
+   subject:"LPBF Metal AM Supply — Defence & Aerospace Structural Components",
+   body:`Hi Steven,
+
+Lockheed's Project Dragonfly — concept to hardware in under 12 months, fully additively manufactured — is a compelling demonstration of what happens when AM is built into the programme from day one rather than retrofitted.
+
+We're a metal LPBF service bureau with Ti64, IN718, IN625, 316L, and MS1 capability, supported by integrated precision machining for post-print finishing. We have experience producing structurally demanding components with tight tolerances and full material traceability.
+
+If there are programmes where external LPBF supply would be relevant — prototypes, qualification builds, or production components — I'd welcome a brief conversation.
+
+Best regards,
+[Name]
+[Company] | [Phone]`}
+];
+
+let activeLeadSector = 'all';
+
+function renderLeads() {
+  const search = (document.getElementById('leads-search').value || '').toLowerCase();
+  const sector = activeLeadSector;
+  const filtered = LEADS.filter(l => {
+    if (sector !== 'all' && l.sector !== sector) return false;
+    if (search) {
+      const hay = (l.name + ' ' + l.title + ' ' + l.company + ' ' + l.location).toLowerCase();
+      if (!hay.includes(search)) return false;
+    }
+    return true;
+  });
+  const wrap = document.getElementById('leads-table-wrap');
+  document.getElementById('leads-meta').textContent = filtered.length + ' lead' + (filtered.length !== 1 ? 's' : '');
+  if (!filtered.length) {
+    wrap.innerHTML = '<div class="archive-empty"><div class="ae-icon">&#128269;</div><p>No leads match your search.</p></div>';
+    return;
+  }
+  const stars = p => {
+    let s = '';
+    for (let i = 1; i <= 3; i++) s += '<span class="lead-star ' + (i <= p ? 'on' : 'off') + '">★</span>';
+    return '<div class="lead-priority">' + s + '</div>';
+  };
+  const liSvg = '<svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>';
+  const rows = filtered.map(l => {
+    const realIdx = LEADS.indexOf(l);
+    const color = SECTOR_COLORS[l.sector] || '#999';
+    const emailCell = l.email
+      ? '<span style="font-size:11px;font-family:monospace;color:rgba(255,255,255,.45)">' + l.email + '</span>'
+      : '<span style="color:rgba(255,255,255,.18);font-size:11px">&#8212;</span>';
+    return '<tr onclick="openLeadEmail(' + realIdx + ')">' +
+      '<td>' + stars(l.p) + '</td>' +
+      '<td class="lead-name-cell"><div class="ln">' + l.name + '</div><div class="lt">' + l.title + '</div></td>' +
+      '<td class="lead-company-cell"><div class="lco">' + l.company + '</div><div class="lloc">' + l.location + '</div></td>' +
+      '<td><span class="arch-sector-badge" style="background:' + color + '22;color:' + color + '">' + l.sector + '</span></td>' +
+      '<td><a class="lead-li-btn" href="' + l.linkedin + '" target="_blank" rel="noopener" onclick="event.stopPropagation()">' + liSvg + ' LinkedIn</a></td>' +
+      '<td>' + emailCell + '</td>' +
+      '<td class="lead-article-cell"><a href="' + l.articleUrl + '" target="_blank" rel="noopener" onclick="event.stopPropagation()">' + l.articleTitle + '</a><div class="lab">' + l.articleBrief + '</div></td>' +
+      '<td><button class="lead-draft-btn" onclick="event.stopPropagation();openLeadEmail(' + realIdx + ')">&#10003; Draft Email</button></td>' +
+      '</tr>';
+  }).join('');
+  wrap.innerHTML = '<div class="leads-table-wrap"><table class="leads-table"><thead><tr>' +
+    '<th>Priority</th><th>Contact</th><th>Company</th><th>Sector</th><th>LinkedIn</th><th>Email</th><th>Related Article</th><th></th>' +
+    '</tr></thead><tbody>' + rows + '</tbody></table></div>';
+}
+
+function openLeadEmail(idx) {
+  const l = LEADS[idx];
+  const overlay = document.getElementById('lead-email-overlay');
+  const color = SECTOR_COLORS[l.sector] || '#999';
+  const stars = p => { let s = ''; for (let i=1;i<=3;i++) s+='<span class="lead-star '+(i<=p?'on':'off')+'">★</span>'; return '<div class="lead-priority">'+s+'</div>'; };
+  const liSvg = '<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>';
+  document.getElementById('le-left').innerHTML =
+    '<button class="le-close-btn" onclick="closeLeadEmail()">✕</button>' +
+    stars(l.p) +
+    '<div class="le-name">' + l.name + '</div>' +
+    '<div class="le-title">' + l.title + '</div>' +
+    '<div class="le-company">' + l.company + '</div>' +
+    '<div class="le-loc">&#128205; ' + l.location + '</div>' +
+    '<span class="le-sector-badge" style="background:' + color + '22;color:' + color + '">' + l.sector + '</span>' +
+    '<div class="le-links">' +
+      '<a class="le-li-link" href="' + l.linkedin + '" target="_blank" rel="noopener">' + liSvg + ' View LinkedIn Profile</a>' +
+      (l.email ? '<div style="font-size:11.5px;font-family:monospace;color:rgba(255,255,255,.4)">✉ ' + l.email + '</div>' : '<div class="le-email-na">Email not yet revealed</div>') +
+    '</div>' +
+    '<div class="le-article-box">' +
+      '<div class="lab-head">Related Article</div>' +
+      '<a href="' + l.articleUrl + '" target="_blank" rel="noopener">' + l.articleTitle + '</a>' +
+      '<p>' + l.articleBrief + '</p>' +
+    '</div>';
+  document.getElementById('le-right').innerHTML =
+    '<div class="le-email-head">Draft Outreach Email</div>' +
+    '<div class="le-subject-box">Subject: ' + l.subject + '</div>' +
+    '<textarea class="le-body-area" id="le-body-textarea">' + l.body.replace(/</g,'&lt;').replace(/>/g,'&gt;') + '</textarea>' +
+    '<button class="le-copy-btn" onclick="copyLeadEmail()">Copy Email to Clipboard</button>' +
+    '<div class="le-copied-msg" id="le-copied-msg"></div>';
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLeadEmail() {
+  document.getElementById('lead-email-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function copyLeadEmail() {
+  const subj = document.querySelector('.le-subject-box').textContent;
+  const body = document.getElementById('le-body-textarea').value;
+  navigator.clipboard.writeText(subj + '\n\n' + body).then(() => {
+    const msg = document.getElementById('le-copied-msg');
+    if (msg) { msg.textContent = '\u2713 Copied to clipboard'; setTimeout(() => { msg.textContent = ''; }, 2500); }
+  });
+}
+
+document.getElementById('lead-email-overlay').addEventListener('click', e => { if (e.target === e.currentTarget) closeLeadEmail(); });
+document.getElementById('leads-search').addEventListener('input', renderLeads);
+document.querySelectorAll('.lead-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.lead-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeLeadSector = btn.dataset.lsector;
+    renderLeads();
+  });
+});
+
+function renderLeadsCount() {
+  document.getElementById('leads-count').textContent = LEADS.length;
+}
+
 renderCards('all');
 renderStats();
+renderLeadsCount();
+renderLeads();
 </script>
 </body>
 </html>
