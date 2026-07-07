@@ -294,6 +294,53 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Inter',sans-serif;
 .amc-part-summary{font-size:11.5px;color:rgba(255,255,255,.3);line-height:1.55;margin-bottom:6px}
 .amc-part-source{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:rgba(165,180,252,.8);text-decoration:none}
 .amc-part-source:hover{color:#c7d2fe}
+.as-wrap{max-width:1200px;margin:0 auto;padding:28px 32px 60px;display:none}
+.as-wrap.visible{display:block}
+.as-summary-card{background:rgba(99,102,241,.08);border:1px solid rgba(99,102,241,.22);border-radius:14px;padding:18px 22px;margin-bottom:18px;display:flex;gap:28px;flex-wrap:wrap}
+.as-summary-item{flex:1;min-width:200px}
+.as-summary-label{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.7px;color:rgba(165,180,252,.7);margin-bottom:4px}
+.as-summary-value{font-size:13.5px;font-weight:700;color:#f0f0fa;line-height:1.45}
+.as-summary-disclaimer{font-size:10.5px;color:rgba(255,255,255,.28);margin-top:10px;line-height:1.5;width:100%}
+.as-nav{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px}
+.as-nav-pill{padding:5px 11px;border-radius:7px;font-size:10.5px;font-weight:600;border:1px solid rgba(255,255,255,.1);background:transparent;color:rgba(255,255,255,.4);cursor:pointer;transition:all .15s;white-space:nowrap}
+.as-nav-pill:hover{border-color:rgba(99,102,241,.4);color:#c7d2fe}
+.as-card{border:1px solid rgba(255,255,255,.07);border-radius:14px;overflow:hidden;margin-bottom:10px;background:#13131f;transition:border-color .15s}
+.as-card:hover{border-color:rgba(255,255,255,.12)}
+.as-header{display:flex;align-items:flex-start;gap:14px;padding:18px 20px;cursor:pointer;transition:background .12s;user-select:none}
+.as-header:hover{background:rgba(255,255,255,.02)}
+.as-color-bar{width:4px;border-radius:2px;flex-shrink:0;align-self:stretch;min-height:52px;background:#6366f1}
+.as-info{flex:1;min-width:0}
+.as-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:4px}
+.as-phase-badge{display:inline-flex;align-items:center;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.7px;padding:3px 9px;border-radius:5px;white-space:nowrap;background:rgba(99,102,241,.18);color:#a5b4fc}
+.as-title{font-size:16px;font-weight:800;color:#f0f0fa}
+.as-meta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:6px}
+.as-meta-badge{font-size:11px;color:rgba(255,255,255,.4);display:inline-flex;align-items:center;gap:5px}
+.as-summary-text{font-size:12px;color:rgba(255,255,255,.4);margin-top:8px;line-height:1.5}
+.as-right{display:flex;align-items:flex-start;gap:10px;flex-shrink:0;margin-left:auto}
+.as-count{font-size:11px;background:rgba(255,255,255,.06);border-radius:10px;padding:3px 10px;color:rgba(255,255,255,.38);white-space:nowrap;align-self:flex-start}
+.as-chevron{font-size:13px;color:rgba(255,255,255,.25);transition:transform .2s;align-self:center;margin-left:4px}
+.as-chevron.open{transform:rotate(180deg)}
+.as-body{border-top:1px solid rgba(255,255,255,.06);display:none;padding:18px 20px 20px 24px}
+.as-body.open{display:block}
+.as-group{margin-bottom:16px;padding-left:14px;border-left:3px solid rgba(255,255,255,.08)}
+.as-group:last-child{margin-bottom:0}
+.as-group.focus{border-left-color:#6366f1;background:rgba(99,102,241,.05);border-radius:0 8px 8px 0;padding:10px 14px}
+.as-group-dept{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:rgba(255,255,255,.45);margin-bottom:8px}
+.as-group.focus .as-group-dept{color:#a5b4fc}
+.as-todo{display:flex;gap:9px;font-size:12.5px;color:rgba(255,255,255,.62);line-height:1.55;padding:4px 0}
+.as-todo:before{content:"\25B8";color:rgba(99,102,241,.6);flex-shrink:0}
+.as-nadcap-card{border:1px solid rgba(251,146,60,.28);background:rgba(251,146,60,.06);border-radius:14px;overflow:hidden;margin-top:16px}
+.as-nadcap-header{display:flex;align-items:center;gap:12px;padding:16px 20px;cursor:pointer;user-select:none}
+.as-nadcap-badge{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.7px;padding:3px 9px;border-radius:5px;background:rgba(251,146,60,.2);color:#fdba74;white-space:nowrap}
+.as-nadcap-title{font-size:14px;font-weight:800;color:#f0f0fa;flex:1}
+.as-nadcap-body{display:none;padding:0 20px 18px 20px}
+.as-nadcap-body.open{display:block}
+.as-nadcap-body p{font-size:12.5px;color:rgba(255,255,255,.5);line-height:1.6;margin-bottom:12px}
+.as-nadcap-item{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:9px;padding:10px 14px;margin-bottom:8px}
+.as-nadcap-item b{font-size:12.5px;color:#fdba74}
+.as-nadcap-item div{font-size:11.5px;color:rgba(255,255,255,.42);line-height:1.55;margin-top:3px}
+.as-nadcap-rec{font-size:11.5px;color:rgba(255,255,255,.4);line-height:1.6;font-style:italic;margin-top:4px}
+
 </style>
 </head>
 <body>
@@ -319,6 +366,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Inter',sans-serif;
     <button class="tab-btn" data-tab="archive">Archive <span class="tab-count" id="archive-count"></span></button>
     <button class="tab-btn" data-tab="leads">Leads <span class="tab-count" id="leads-count"></span></button>
     <button class="tab-btn" data-tab="companies">Metal AM Companies <span class="tab-count" id="companies-count"></span></button>
+    <button class="tab-btn" data-tab="as9100">AS9100 Roadmap <span class="tab-count" id="as9100-count"></span></button>
   </div>
 </div>
 <div id="today-view">
@@ -406,6 +454,20 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Inter',sans-serif;
     <span class="amco-meta" id="amco-meta"></span>
   </div>
   <div id="amco-list"></div>
+</div>
+
+<div class="as-wrap" id="as9100-view">
+  <div class="as-summary-card" id="as-summary"></div>
+  <div class="as-nav" id="as-nav"></div>
+  <div id="as-list"></div>
+  <div class="as-nadcap-card">
+    <div class="as-nadcap-header" onclick="toggleNadcap()">
+      <span class="as-nadcap-badge">Follow-on Consideration</span>
+      <span class="as-nadcap-title">NADCAP Special Process Accreditation</span>
+      <span class="as-chevron" id="as-nadcap-chev">&#9660;</span>
+    </div>
+    <div class="as-nadcap-body" id="as-nadcap-body"></div>
+  </div>
 </div>
 
 <div class="lead-email-overlay" id="lead-email-overlay">
@@ -2345,9 +2407,12 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
     lv.classList.toggle('visible', tab === 'leads');
     const cv = document.getElementById('companies-view');
     cv.classList.toggle('visible', tab === 'companies');
+    const asv = document.getElementById('as9100-view');
+    asv.classList.toggle('visible', tab === 'as9100');
     if (tab === 'archive') renderArchive();
     if (tab === 'leads') renderLeads();
     if (tab === 'companies') renderAMCompanies();
+    if (tab === 'as9100') renderAS9100();
   });
 });
 
@@ -2362,6 +2427,7 @@ function renderStats() {
   const totalArch = ARCHIVE.reduce((a,e) => a + e.items.length, 0);
   document.getElementById('archive-count').textContent = totalArch;
   document.getElementById('companies-count').textContent = AM_COMPANIES.length;
+  document.getElementById('as9100-count').textContent = AS9100_ROADMAP.length;
 }
 
 // Archive render
@@ -4540,6 +4606,288 @@ document.querySelectorAll('.amco-btn').forEach(btn => {
 function renderLeadsCount() {
   const total = COMPANIES.reduce((a, co) => a + co.contacts.length, 0);
   document.getElementById('leads-count').textContent = total;
+}
+
+const AS9100_SUMMARY = {
+  totalDuration: "~9–11 months from kickoff to Stage 2 certification decision",
+  totalCost: "$20,000 – $50,000 all-in for first-time certification",
+  ongoingCost: "~$3,000 – $10,000 / year thereafter for annual surveillance audits, plus a Stage-2-sized recertification audit every 3rd year",
+  disclaimer: "Rough planning estimates based on industry-reported ranges for small first-time AS9100 applicants — not vendor quotes. Actual costs depend on the registrar and consultant chosen and the final certification scope."
+};
+
+const AS9100_ROADMAP = [
+  {
+    phase: "Phase 1", title: "Leadership Commitment & Project Kickoff",
+    duration: "Weeks 1–2", cost: "$0 – $2,000 (mostly internal time)",
+    summary: "Get formal executive sponsorship, define what's actually in scope for certification, and put one named owner in charge before any documentation work starts.",
+    groups: [
+      { dept: "All Departments", items: [
+        "Appoint an AS9100 Management Representative / Quality Director to own the project end-to-end",
+        "Define certification scope precisely — Newmarket facility, metal LPBF production of tool steel components, in-house heat treat, and inspection — and document any exclusions",
+        "Secure leadership sign-off on budget, timeline, and who gets pulled off other duties to support this",
+        "Communicate the initiative to all staff; frame AS9100 as daily operating discipline, not a paperwork exercise for the audit",
+        "Identify an experienced AS9100 consultant or auditor-trainer to support the gap analysis — strongly recommended for a first-time aerospace certification"
+      ]}
+    ]
+  },
+  {
+    phase: "Phase 2", title: "Gap Analysis — ISO 9001:2015 vs AS9100D",
+    duration: "Weeks 1–4 (runs parallel to kickoff)", cost: "$3,000 – $6,000 (consultant-led gap audit)",
+    summary: "Map every existing ISO 9001:2015 procedure against the full AS9100D clause set to find exactly what's missing before committing to a timeline.",
+    groups: [
+      { dept: "All Departments", items: [
+        "Run a clause-by-clause gap audit against AS9100D Rev D — it layers roughly 30 aerospace-specific requirements on top of the existing ISO 9001:2015 backbone",
+        "Identify the aerospace-specific additions not yet covered: risk management (5.1.2/6.1), configuration management (8.1.2), product safety (8.1.3), counterfeit parts prevention (8.1.4), human factors (7.1.2)",
+        "Score every gap by effort — documentation-only vs. process change vs. capital/equipment — and build a prioritized remediation backlog"
+      ]},
+      { dept: "Metal LPBF / Print Department", focus: true, items: [
+        "Assess current LPBF process-control maturity against AS9100 8.5.1 special-process requirements — this will be the single largest gap area found",
+        "Review current build traceability and powder-lot documentation for AS9102 (First Article Inspection) and AS9103 (Key Characteristics) readiness"
+      ]},
+      { dept: "Heat Treat & Thermal Simulation", items: [
+        "Confirm existing furnace controls, pyrometry calibration, and simulation records as a baseline — expect a lighter gap list than LPBF since these are more mature conventional processes"
+      ]}
+    ]
+  },
+  {
+    phase: "Phase 3", title: "Project Planning, Team & Registrar Selection",
+    duration: "Weeks 3–6 (overlapping)", cost: "$15,000 – $30,000 (3-year registrar contract, quoted now / paid across phases)",
+    summary: "Turn the gap list into an owned project plan and lock in an accredited registrar early — audit slots book out months in advance.",
+    groups: [
+      { dept: "All Departments", items: [
+        "Build a detailed project plan from the Phase 2 backlog with a named owner and due date on every item",
+        "Assign a cross-functional AS9100 team: Quality, LPBF Production/Engineering, Heat Treat, Purchasing, and a management reviewer",
+        "Shortlist ANAB- or IAQG-recognized accredited registrars with experience auditing metal AM or small aerospace machine shops",
+        "Request quotes from 2–3 registrars covering Stage 1 + Stage 2 + the 3-year surveillance cycle",
+        "Confirm OASIS (Online Aerospace Supplier Information System) registration requirements with the chosen registrar",
+        "Set a target Stage 1 audit date — typically 6–9 months out from kickoff"
+      ]}
+    ]
+  },
+  {
+    phase: "Phase 4", title: "QMS Documentation Build-Out",
+    duration: "Months 2–4", cost: "$5,000 – $15,000 (consultant/writer support, templates, software)",
+    summary: "The biggest single lift in the whole roadmap. Metal LPBF gets by far the most detail here because it's Exco's core special process — heat treat, thermal sim, and quality get lighter, right-sized updates.",
+    groups: [
+      { dept: "QMS-Wide (All Departments)", items: [
+        "Update the Quality Manual and Quality Policy to reference AS9100D and the aerospace scope",
+        "Build a Risk Management procedure — an FMEA-style risk register covering products, processes, and projects (5.1.2, 6.1)",
+        "Build a Configuration Management procedure for part/process revision and engineering change control (8.1.2)",
+        "Build a Control of Work Transfer procedure in case work ever moves between sites or to subcontractors (8.1.3)",
+        "Build a Counterfeit Parts Prevention procedure — verified mill/atomizer sources, incoming material testing (8.1.4)",
+        "Build or expand a FOD (Foreign Object Debris) Prevention Program — especially important in a powder-handling environment",
+        "Update Purchasing/Supplier Control: approved supplier list, powder supplier qualification and requalification, flow-down of aerospace requirements to sub-tier suppliers (8.4)",
+        "Build a Human Factors procedure covering operator fatigue, training, and error-proofing for machine operators and inspectors",
+        "Strengthen Nonconformance & Corrective Action procedures to AS9100 rigor — formal root-cause method (5-Why/fishbone) plus effectiveness verification (8.7, 10.2)",
+        "Update the Internal Audit procedure/schedule to cover every AS9100 clause and every department at least once a year"
+      ]},
+      { dept: "Metal LPBF / Print Department — Primary Focus", focus: true, items: [
+        "Formally designate LPBF as a special process per tool-steel part family/material, citing AS9100 8.5.1",
+        "Lock down process parameter sets per part/material — laser power, scan speed, hatch spacing, layer thickness, chamber O2 level, platform preheat — with formal change control and re-validation before any parameter change",
+        "Establish a machine qualification & periodic requalification schedule for all four EOS M400-4 systems: laser power calibration, build-plate flatness/levelness checks, gas-flow/O2 sensor verification, OEM PM schedule",
+        "Implement powder-lot traceability: incoming powder certs (chemistry, PSD, flowability, moisture), virgin/reused blend-ratio tracking, powder aging/reuse limits, sieving records",
+        "Build full build-to-part traceability: link every serial/part number to machine ID, build job, operator, powder lot(s), and parameter set used",
+        "Stand up a First Article Inspection (FAI) program per AS9102 for the first article of every new part number/process combination, with re-FAI triggered by any process, design, or location change",
+        "Identify Key Characteristics per AS9103 — critical-to-function dimensions on printed tool-steel inserts — with SPC sampling plans",
+        "Formalize an operator qualification/certification program for LPBF machine operators, including periodic re-certification",
+        "Define environmental controls for the print room and powder-handling area: inert gas monitoring, humidity control, contamination and FOD control specific to metal powders",
+        "Establish in-process monitoring records (melt-pool/optical monitoring data, if the EOS systems support it) as objective evidence of process stability",
+        "Link post-process steps — stress relief, support removal, machining, heat treat, finishing — into a single router/traveler per part for continuous, unbroken records",
+        "Define an NDT/inspection plan for internal defects (CT scanning or equivalent) tied to part criticality",
+        "Build an FMEA-style risk assessment template specifically for new part introduction on the LPBF line"
+      ]},
+      { dept: "Heat Treat (in-house furnace)", items: [
+        "Document furnace qualification and a temperature-uniformity survey per AMS2750 pyrometry practice, plus a calibration schedule",
+        "Tighten per-batch/load process record-keeping, linked into the part traceability chain above",
+        "Flag as a candidate for future NADCAP Heat Treating accreditation — see follow-on consideration below"
+      ]},
+      { dept: "Thermal Simulation / CAE", items: [
+        "Document the simulation software validation/verification approach and how results feed into build parameter selection and distortion compensation",
+        "Define record retention for simulation reports tied to specific part numbers and builds"
+      ]},
+      { dept: "Quality / Inspection", items: [
+        "Confirm CMM and other measurement equipment calibration meets the AS9100 7.1.5 traceability-to-national-standards requirement",
+        "Update inspection/test record formats to capture every AS9100-required data field"
+      ]}
+    ]
+  },
+  {
+    phase: "Phase 5", title: "Training & Competency Rollout",
+    duration: "Months 3–5 (overlaps documentation)", cost: "$5,000 – $25,000 (scales with headcount)",
+    summary: "Documentation only matters if people actually work the new way — this phase builds the record trail that proves it.",
+    groups: [
+      { dept: "All Departments", items: [
+        "Deliver AS9100D awareness training to all employees",
+        "Deliver role-specific training: internal auditors, LPBF machine operators, quality inspectors, purchasing/supplier-control owners",
+        "Document all training records and competency evidence per clause 7.2 — registrars will sample these directly"
+      ]}
+    ]
+  },
+  {
+    phase: "Phase 6", title: "Live Implementation / Objective Evidence Period",
+    duration: "Months 4–7", cost: "Primarily internal labor (~200–400 staff-hours across the shop)",
+    summary: "Run the new QMS on real production jobs long enough to generate a genuine track record — registrars want to see the system actually working, not just written down.",
+    groups: [
+      { dept: "All Departments", items: [
+        "Run real production jobs through the new procedures and generate the full record set: LPBF traceability packets, FAIs, training records, supplier qualification files",
+        "Complete at least 2–3 full months of \"live\" operating history with objective evidence before scheduling Stage 2 — longer is better and reduces audit risk",
+        "Track open items weekly in the AS9100 team meeting so nothing drifts before the internal audit"
+      ]}
+    ]
+  },
+  {
+    phase: "Phase 7", title: "Internal Audit Program & Management Review",
+    duration: "Months 6–7", cost: "$0 – $2,000 (if external internal-audit support is hired)",
+    summary: "Close the loop internally before an outside auditor ever sees the system.",
+    groups: [
+      { dept: "All Departments", items: [
+        "Complete one full internal audit cycle covering every clause and every department, including LPBF special-process controls",
+        "Hold a formal Management Review meeting with the full AS9100-required agenda (clause 9.3): audit results, customer feedback, process performance, risk register status, resource needs",
+        "Close out every internal finding — with root cause and verified corrective action — before Stage 1"
+      ]}
+    ]
+  },
+  {
+    phase: "Phase 8", title: "Stage 1 Audit — Documentation & Readiness Review",
+    duration: "Month 7–8", cost: "$3,000 – $6,000 + travel (registrar fee)",
+    summary: "The registrar checks that the QMS is documented and ready for a full audit — typically 1–2 days on-site or remote.",
+    groups: [
+      { dept: "All Departments", items: [
+        "Registrar reviews Quality Manual, procedures, and readiness evidence against AS9100D",
+        "Expect minor findings — this is normal for a first-time audit",
+        "Receive the Stage 1 report and finalize the Stage 2 audit date"
+      ]}
+    ]
+  },
+  {
+    phase: "Phase 9", title: "Stage 1 Corrective Actions",
+    duration: "Month 8 (2–4 weeks)", cost: "Internal labor",
+    summary: "Close every Stage 1 finding cleanly — this is the last checkpoint before the audit that actually grants certification.",
+    groups: [
+      { dept: "All Departments", items: [
+        "Root-cause every Stage 1 finding and implement corrective action with objective evidence",
+        "Submit the corrective action package to the registrar for review and acceptance"
+      ]}
+    ]
+  },
+  {
+    phase: "Phase 10", title: "Stage 2 Audit — Certification Audit",
+    duration: "Month 8–9", cost: "$4,000 – $8,000 + travel (registrar fee)",
+    summary: "The full on-site audit. Expect the LPBF special process to draw the most auditor attention and the most audit days, since it's the highest-risk process in scope.",
+    groups: [
+      { dept: "All Departments", items: [
+        "Full on-site audit of implementation across every clause and department",
+        "Auditors pull real job traceability packets and interview staff on the floor — this is where the Phase 4 documentation depth pays off directly",
+        "Aerospace scope typically adds audit days versus a plain ISO 9001 audit, driven mostly by special-process sampling on the LPBF line"
+      ]}
+    ]
+  },
+  {
+    phase: "Phase 11", title: "Certification Decision, OASIS Listing & Issuance",
+    duration: "Month 9–10", cost: "Included in registrar fee",
+    summary: "The formal finish line for initial certification.",
+    groups: [
+      { dept: "All Departments", items: [
+        "Registrar's certification decision panel reviews the audit results independently of the audit team",
+        "Upon approval, the certificate is issued and Exco Additive is listed on OASIS",
+        "Announce certification to customers and primes; update marketing materials, sales collateral, and RFQ response templates"
+      ]}
+    ]
+  },
+  {
+    phase: "Phase 12", title: "Surveillance Audits & 3-Year Recertification Cycle",
+    duration: "Ongoing — annual surveillance in Years 1 & 2, full recertification in Year 3", cost: "$3,000 – $10,000 / year + travel; recertification audit roughly Stage-2-sized",
+    summary: "Certification isn't a one-time event — it has to be actively maintained or it can be suspended or withdrawn.",
+    groups: [
+      { dept: "All Departments", items: [
+        "Maintain the internal audit and management review cadence every year, not just before audits",
+        "Monitor LPBF process data trends (parameter drift, FAI results, NCR trends) as ongoing objective evidence",
+        "Keep training and competency records current as staff join, leave, or change roles",
+        "Close corrective actions promptly — a pattern of late closures is a common driver of surveillance findings"
+      ]}
+    ]
+  }
+];
+
+const AS9100_NADCAP = {
+  title: "Follow-on Consideration: NADCAP Special Process Accreditation",
+  body: "AS9100 certifies the quality management system as a whole. It does not automatically satisfy every aerospace prime's requirement for accreditation of specific “special processes.” For Exco Additive, two processes are worth flagging now so they don't come as a surprise later.",
+  items: [
+    { name: "Heat Treating — NADCAP AC7102", note: "Because Exco operates an in-house heat-treat furnace on printed tool-steel parts, primes supplying flight-critical or fracture-critical components may specifically require NADCAP heat-treat accreditation in addition to — not instead of — AS9100 certification." },
+    { name: "Nondestructive Testing (NDT) — NADCAP AC7114", note: "If in-house or contracted CT/X-ray inspection is used to detect internal defects on flight-critical parts, NDT may also need its own NADCAP accreditation depending on the specific customer/program requirement." }
+  ],
+  recommendation: "Treat NADCAP as a separate, later project rather than folding it into this roadmap — it has its own PRI audit criteria, its own auditor pool, and its own timeline (commonly 9–18 months per process). Confirm with target aerospace customers whether NADCAP will actually be required for their specific contracts before committing budget, since not every prime or program mandates it."
+};
+
+function renderAS9100() {
+  const sum = AS9100_SUMMARY;
+  document.getElementById('as-summary').innerHTML =
+    '<div class="as-summary-item"><div class="as-summary-label">Estimated Timeline</div><div class="as-summary-value">' + sum.totalDuration + '</div></div>' +
+    '<div class="as-summary-item"><div class="as-summary-label">Estimated Cost — First Certification</div><div class="as-summary-value">' + sum.totalCost + '</div></div>' +
+    '<div class="as-summary-item"><div class="as-summary-label">Ongoing Maintenance Cost</div><div class="as-summary-value">' + sum.ongoingCost + '</div></div>' +
+    '<div class="as-summary-disclaimer">' + sum.disclaimer + '</div>';
+
+  document.getElementById('as-nav').innerHTML = AS9100_ROADMAP.map(function(p, idx) {
+    return '<button class="as-nav-pill" onclick="jumpToAS(' + idx + ')">' + p.phase + '</button>';
+  }).join('');
+
+  document.getElementById('as-list').innerHTML = AS9100_ROADMAP.map(function(p, idx) {
+    const totalItems = p.groups.reduce(function(a, g) { return a + g.items.length; }, 0);
+    const groupsHtml = p.groups.map(function(g) {
+      const itemsHtml = g.items.map(function(it) { return '<div class="as-todo">' + it + '</div>'; }).join('');
+      return '<div class="as-group' + (g.focus ? ' focus' : '') + '"><div class="as-group-dept">' + g.dept + '</div>' + itemsHtml + '</div>';
+    }).join('');
+    return '<div class="as-card">' +
+      '<div class="as-header" onclick="toggleAS(' + idx + ')">' +
+        '<div class="as-color-bar"></div>' +
+        '<div class="as-info">' +
+          '<div class="as-top">' +
+            '<span class="as-phase-badge">' + p.phase + '</span>' +
+            '<span class="as-title">' + p.title + '</span>' +
+          '</div>' +
+          '<div class="as-meta-row">' +
+            '<span class="as-meta-badge"><b>Duration:</b>&nbsp;' + p.duration + '</span>' +
+            '<span class="as-meta-badge"><b>Cost:</b>&nbsp;' + p.cost + '</span>' +
+          '</div>' +
+          '<div class="as-summary-text">' + p.summary + '</div>' +
+        '</div>' +
+        '<div class="as-right">' +
+          '<span class="as-count">' + totalItems + ' to-dos</span>' +
+          '<span class="as-chevron" id="as-chev-' + idx + '">▼</span>' +
+        '</div>' +
+      '</div>' +
+      '<div class="as-body" id="as-panel-' + idx + '">' + groupsHtml + '</div>' +
+    '</div>';
+  }).join('');
+
+  const n = AS9100_NADCAP;
+  const nadcapItems = n.items.map(function(it) {
+    return '<div class="as-nadcap-item"><b>' + it.name + '</b><div>' + it.note + '</div></div>';
+  }).join('');
+  document.getElementById('as-nadcap-body').innerHTML =
+    '<p>' + n.body + '</p>' + nadcapItems + '<div class="as-nadcap-rec">' + n.recommendation + '</div>';
+}
+
+function toggleAS(idx) {
+  const panel = document.getElementById('as-panel-' + idx);
+  const chev = document.getElementById('as-chev-' + idx);
+  const isOpen = panel.classList.contains('open');
+  panel.classList.toggle('open', !isOpen);
+  chev.classList.toggle('open', !isOpen);
+}
+
+function jumpToAS(idx) {
+  const panel = document.getElementById('as-panel-' + idx);
+  if (!panel.classList.contains('open')) toggleAS(idx);
+  panel.closest('.as-card').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function toggleNadcap() {
+  const body = document.getElementById('as-nadcap-body');
+  const chev = document.getElementById('as-nadcap-chev');
+  const isOpen = body.classList.contains('open');
+  body.classList.toggle('open', !isOpen);
+  chev.classList.toggle('open', !isOpen);
 }
 
 renderCards('all');
