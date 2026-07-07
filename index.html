@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AM Innovation Digest &middot; 6 Jul 2026</title>
+<title>AM Innovation Digest &middot; 7 Jul 2026</title>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -294,12 +294,59 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Inter',sans-serif;
 .amc-part-summary{font-size:11.5px;color:rgba(255,255,255,.3);line-height:1.55;margin-bottom:6px}
 .amc-part-source{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:rgba(165,180,252,.8);text-decoration:none}
 .amc-part-source:hover{color:#c7d2fe}
+.as-wrap{max-width:1200px;margin:0 auto;padding:28px 32px 60px;display:none}
+.as-wrap.visible{display:block}
+.as-summary-card{background:rgba(99,102,241,.08);border:1px solid rgba(99,102,241,.22);border-radius:14px;padding:18px 22px;margin-bottom:18px;display:flex;gap:28px;flex-wrap:wrap}
+.as-summary-item{flex:1;min-width:200px}
+.as-summary-label{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.7px;color:rgba(165,180,252,.7);margin-bottom:4px}
+.as-summary-value{font-size:13.5px;font-weight:700;color:#f0f0fa;line-height:1.45}
+.as-summary-disclaimer{font-size:10.5px;color:rgba(255,255,255,.28);margin-top:10px;line-height:1.5;width:100%}
+.as-nav{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px}
+.as-nav-pill{padding:5px 11px;border-radius:7px;font-size:10.5px;font-weight:600;border:1px solid rgba(255,255,255,.1);background:transparent;color:rgba(255,255,255,.4);cursor:pointer;transition:all .15s;white-space:nowrap}
+.as-nav-pill:hover{border-color:rgba(99,102,241,.4);color:#c7d2fe}
+.as-card{border:1px solid rgba(255,255,255,.07);border-radius:14px;overflow:hidden;margin-bottom:10px;background:#13131f;transition:border-color .15s}
+.as-card:hover{border-color:rgba(255,255,255,.12)}
+.as-header{display:flex;align-items:flex-start;gap:14px;padding:18px 20px;cursor:pointer;transition:background .12s;user-select:none}
+.as-header:hover{background:rgba(255,255,255,.02)}
+.as-color-bar{width:4px;border-radius:2px;flex-shrink:0;align-self:stretch;min-height:52px;background:#6366f1}
+.as-info{flex:1;min-width:0}
+.as-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:4px}
+.as-phase-badge{display:inline-flex;align-items:center;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.7px;padding:3px 9px;border-radius:5px;white-space:nowrap;background:rgba(99,102,241,.18);color:#a5b4fc}
+.as-title{font-size:16px;font-weight:800;color:#f0f0fa}
+.as-meta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:6px}
+.as-meta-badge{font-size:11px;color:rgba(255,255,255,.4);display:inline-flex;align-items:center;gap:5px}
+.as-summary-text{font-size:12px;color:rgba(255,255,255,.4);margin-top:8px;line-height:1.5}
+.as-right{display:flex;align-items:flex-start;gap:10px;flex-shrink:0;margin-left:auto}
+.as-count{font-size:11px;background:rgba(255,255,255,.06);border-radius:10px;padding:3px 10px;color:rgba(255,255,255,.38);white-space:nowrap;align-self:flex-start}
+.as-chevron{font-size:13px;color:rgba(255,255,255,.25);transition:transform .2s;align-self:center;margin-left:4px}
+.as-chevron.open{transform:rotate(180deg)}
+.as-body{border-top:1px solid rgba(255,255,255,.06);display:none;padding:18px 20px 20px 24px}
+.as-body.open{display:block}
+.as-group{margin-bottom:16px;padding-left:14px;border-left:3px solid rgba(255,255,255,.08)}
+.as-group:last-child{margin-bottom:0}
+.as-group.focus{border-left-color:#6366f1;background:rgba(99,102,241,.05);border-radius:0 8px 8px 0;padding:10px 14px}
+.as-group-dept{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:rgba(255,255,255,.45);margin-bottom:8px}
+.as-group.focus .as-group-dept{color:#a5b4fc}
+.as-todo{display:flex;gap:9px;font-size:12.5px;color:rgba(255,255,255,.62);line-height:1.55;padding:4px 0}
+.as-todo:before{content:"\25B8";color:rgba(99,102,241,.6);flex-shrink:0}
+.as-nadcap-card{border:1px solid rgba(251,146,60,.28);background:rgba(251,146,60,.06);border-radius:14px;overflow:hidden;margin-top:16px}
+.as-nadcap-header{display:flex;align-items:center;gap:12px;padding:16px 20px;cursor:pointer;user-select:none}
+.as-nadcap-badge{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.7px;padding:3px 9px;border-radius:5px;background:rgba(251,146,60,.2);color:#fdba74;white-space:nowrap}
+.as-nadcap-title{font-size:14px;font-weight:800;color:#f0f0fa;flex:1}
+.as-nadcap-body{display:none;padding:0 20px 18px 20px}
+.as-nadcap-body.open{display:block}
+.as-nadcap-body p{font-size:12.5px;color:rgba(255,255,255,.5);line-height:1.6;margin-bottom:12px}
+.as-nadcap-item{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:9px;padding:10px 14px;margin-bottom:8px}
+.as-nadcap-item b{font-size:12.5px;color:#fdba74}
+.as-nadcap-item div{font-size:11.5px;color:rgba(255,255,255,.42);line-height:1.55;margin-top:3px}
+.as-nadcap-rec{font-size:11.5px;color:rgba(255,255,255,.4);line-height:1.6;font-style:italic;margin-top:4px}
+
 </style>
 </head>
 <body>
 <div class="hero">
   <div class="hero-inner">
-    <div class="hero-eyebrow"><span class="dot"></span>Daily Intelligence &middot; 6 Jul 2026</div>
+    <div class="hero-eyebrow"><span class="dot"></span>Daily Intelligence &middot; 7 Jul 2026</div>
     <h1>AM Innovation<br>Digest</h1>
     <p class="subtitle">Latest additive manufacturing breakthroughs across key sectors</p>
     <div class="hero-pills">
@@ -319,6 +366,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Inter',sans-serif;
     <button class="tab-btn" data-tab="archive">Archive <span class="tab-count" id="archive-count"></span></button>
     <button class="tab-btn" data-tab="leads">Leads <span class="tab-count" id="leads-count"></span></button>
     <button class="tab-btn" data-tab="companies">Metal AM Companies <span class="tab-count" id="companies-count"></span></button>
+    <button class="tab-btn" data-tab="as9100">AS9100 Roadmap <span class="tab-count" id="as9100-count"></span></button>
   </div>
 </div>
 <div id="today-view">
@@ -408,186 +456,291 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Inter',sans-serif;
   <div id="amco-list"></div>
 </div>
 
+<div class="as-wrap" id="as9100-view">
+  <div class="as-summary-card" id="as-summary"></div>
+  <div class="as-nav" id="as-nav"></div>
+  <div id="as-list"></div>
+  <div class="as-nadcap-card">
+    <div class="as-nadcap-header" onclick="toggleNadcap()">
+      <span class="as-nadcap-badge">Follow-on Consideration</span>
+      <span class="as-nadcap-title">NADCAP Special Process Accreditation</span>
+      <span class="as-chevron" id="as-nadcap-chev">&#9660;</span>
+    </div>
+    <div class="as-nadcap-body" id="as-nadcap-body"></div>
+  </div>
+</div>
+
 <div class="lead-email-overlay" id="lead-email-overlay">
   <div class="lead-email-sheet">
     <div class="le-left" id="le-left"></div>
     <div class="le-right" id="le-right"></div>
   </div>
 </div>
-<div class="page-footer">AM Innovation Digest &middot; Generated by Claude &middot; 6 Jul 2026 &middot; nevinpaul1-arch.github.io/am-digest</div>
+<div class="page-footer">AM Innovation Digest &middot; Generated by Claude &middot; 7 Jul 2026 &middot; nevinpaul1-arch.github.io/am-digest</div>
 <script>
 const ITEMS = [
   // AEROSPACE
   {
-    title: "Airbus Scales Titanium Wire 3D Printing for A350 Structural Parts",
+    title: "EOS Acquires Metalpine to Lock Down Titanium Powder Supply",
     sector: "Aerospace",
-    summary: "Airbus is industrializing wire-Directed Energy Deposition (w-DED) titanium 3D printing, already flying on the A350's Cargo Door Surround, promising large structural parts with far less material waste than forging.",
-    fullContent: `<p><strong>Airbus</strong> is scaling up a titanium 3D printing technique called wire-Directed Energy Deposition (w-DED) that could reshape how the toughest structural components of an airliner are made. Rather than machining parts from solid blocks of metal, the process uses a multi-axis robotic arm to feed titanium wire into a focused laser, plasma, or electron beam, fusing it layer by layer into a near-final "blank" shape that requires only light finishing machining.</p><p>Conventional metal 3D printing in aerospace has mostly been confined to powder-bed systems optimized for parts under two feet long. w-DED breaks that ceiling: Airbus can now print structural titanium parts up to <strong>seven meters (23 feet)</strong> long, at production rates of several kilograms per hour rather than the hundreds of grams per hour typical of powder-bed systems, a leap the company says could make 3D printing viable for high-volume structural manufacturing.</p><p>The economics center on titanium's "buy-to-fly" ratio. Traditional forging can require recycling <strong>80% to 95%</strong> of the titanium originally purchased, since so much is machined away. Because w-DED grows a part into a shape already close to its final geometry, most of that waste is eliminated at the source, a significant saving given titanium's high raw-material cost and aerospace's stringent weight requirements.</p><p>Airbus has already moved past the demonstration phase: the largest w-DED parts to enter serial production are now integrated into the <strong>A350's Cargo Door Surround</strong>, 3D-printed by a qualified supplier using plasma w-DED, ultrasonically inspected, and machined to final tolerance in Airbus factories. These parts are functionally and geometrically identical to the forged components they replace but deliver immediate cost savings.</p><p>Beyond the A350, Airbus is pursuing a "designed for DED" philosophy, letting engineers merge what would traditionally be several separate assembled parts into a single printed component, simplifying the supply chain and cutting assembly labor. The next targets include more critical applications and, longer term, wings and landing gear, as Airbus and its partners race to accumulate qualification experience across plasma, arc, electron- and laser-beam energy sources.</p>`,
-    source: "Airbus",
-    url: "https://www.airbus.com/en/newsroom/stories/2026-01-how-airbus-is-pioneering-aircraft-manufacturing-with-titanium-3d-printing",
-    img: "https://mediaassets.airbus.com/pm_38_780_780702-d071eyvfos-preview.jpg"
+    summary: "EOS has taken full ownership of Austrian metal powder specialist Metalpine, securing its patented titanium atomization process to meet surging aerospace and medical demand for metal 3D printing feedstock.",
+    fullContent: `<p><strong>EOS</strong>, the German industrial 3D printing group, has acquired the remaining stake in <strong>Metalpine GmbH</strong>, an Austrian manufacturer of high-quality metal powders, after holding a minority position in the company for several years. The move gives EOS full ownership of Metalpine's patented wire-based gas atomization process, which produces highly spherical, pore-free titanium and copper powders prized for consistency in demanding industrial applications.</p><p>"For many years, Metalpine has been a strong and innovative partner to EOS. By integrating Metalpine into EOS, we are taking the next logical step in our collaboration, strengthening our metal materials supply and accelerating innovation, particularly in titanium, where we see significant and sustained market demand," said <strong>Joachim Zettler</strong>, CTO of EOS.</p><p>The deal is squarely aimed at supply security. Titanium demand for metal additive manufacturing has climbed sharply as aerospace, medical, and high-performance industrial customers push more flight- and implant-critical parts through powder bed fusion systems, and access to a reliable, high-purity powder source has become a competitive differentiator for printer OEMs trying to shorten qualification cycles for customers.</p><p>Metalpine, headquartered in Graz, Austria and AS/EN9100 certified, will continue operating as an independent brand within EOS, retaining its organizational structure and existing global customer base rather than being folded directly into EOS's materials division. "Becoming part of EOS is a natural progression of this partnership, enabling us to further develop our technologies and scale our capabilities while continuing to reliably serve customers worldwide," said Metalpine CEO <strong>Gerald Pöllmann</strong>.</p><p>The acquisition reinforces a broader trend of AM hardware makers moving to control upstream materials supply chains, following similar vertical integration moves elsewhere in the industry as titanium becomes a strategic bottleneck for scaling serial production in aerospace and defense.</p>`,
+    source: "EOS GmbH",
+    url: "https://www.eos.info/press-media/press-center/press-releases/2026/eos-acquires-metalpine",
+    img: "https://www.eos.info/07-press/Metalpine-Joachim_Zettler-Gerald_Poellmann-Martin_Dopler.jpeg"
   },
   {
-    title: "3D Systems' Aerospace & Defense Unit Set to Become Its Fastest-Growing Business",
+    title: "OU and Oak Ridge Launch Phase II of Air Force AM Qualification Program",
     sector: "Aerospace",
-    summary: "3D Systems expects its Aerospace & Defense segment to exceed 20% growth in 2026, driven by NDAA restrictions on foreign AM systems, a Colorado facility expansion, and an $18.5M Air Force large-format metal printing program.",
-    fullContent: `<p><strong>3D Systems</strong> has reported that its Aerospace & Defense (A&D) segment is on track to become the company's largest and fastest-growing industrial business in 2026, serving crewed and uncrewed aircraft, naval platforms, defense systems, rocket propulsion, and satellites. The unit is forecast to have grown over <strong>15% in 2025</strong>, with expectations to exceed <strong>20% growth in 2026</strong>, pushing revenue from production printing systems and custom metal parts past $35 million.</p><p>Much of that momentum is tied to policy: the Fiscal Year 2026 National Defense Authorization Act restricts foreign-sourced 3D printing systems for Department of Defense programs, funneling demand toward domestic suppliers. "Aerospace and defense customers worldwide increasingly require a reliable partner that delivers qualified, scalable solutions with speed, security, and supply chain resilience," said Dr. Jeffrey Graves, President and CEO of 3D Systems.</p><p>To meet that demand, 3D Systems is expanding its <strong>Littleton, Colorado</strong> facility by up to 80,000 square feet to enhance its A&D Application Center of Excellence, supporting process qualification, validation, and production-scale manufacturing. The site is also pursuing certification under the America Makes JAQS-SQ framework in collaboration with the National Institute for Aviation Research, enabling qualified additive production for defense components.</p><p>The company is separately progressing a multi-phase, <strong>$18.5 million</strong> U.S. Air Force-sponsored program to develop next-generation laser powder-bed fusion technology for large-format, high-efficiency metal parts, on track through 2027. That builds on an earlier $7.65 million Air Force contract for a Large-Format Metal 3D Printer Advanced Technology Demonstrator focused on high-temperature structures for high-speed flight.</p><p>"We are prioritizing A&D applications where additive manufacturing delivers maximum mission impact, from shipbuilding and advanced defense systems to aviation and space," said Dr. Mike Shepard, vice president of 3D Systems' aerospace & defense business. Other current work includes a NASA-backed collaboration with Penn State and Arizona State University developing titanium and nickel-titanium thermal management systems for spacecraft.</p>`,
-    source: "3D Printing Industry",
-    url: "https://3dprintingindustry.com/news/aerospace-defense-set-to-become-3d-systems-fastest-growing-industrial-business-247905/",
-    img: "https://3dprintingindustry.com/wp-content/uploads/2026/01/1763630405356.jpeg"
-  },
-  {
-    title: "Rolls-Royce Opens UK MoD-Backed Additive Manufacturing Cell in Bristol",
-    sector: "Aerospace",
-    summary: "Rolls-Royce has inaugurated a UK Ministry of Defence-funded metal 3D printing cell in Bristol to produce components for next-generation combat aircraft engines under the Global Combat Air Programme.",
-    fullContent: `<p><strong>Rolls-Royce</strong> has opened a purpose-built Additive Manufacturing Development Cell at its Defence Assembly and Operations facility in Bristol, UK, inaugurated by Luke Pollard MP, Minister for Defence Readiness and Industry. Backed by <strong>UK Ministry of Defence</strong> funding, the cell uses metal powder bed fusion technology to produce critical components for next-generation military aircraft engines.</p><p>The facility occupies a custom-built <strong>350 square meter</strong> space where humidity, temperature, and air pressure are tightly regulated to ensure consistent output quality. Inside, metal super-alloy powders are fused layer by layer with lasers, building components that would be difficult or impossible to produce through conventional machining.</p><p>The performance case rests on three gains: parts come out lighter than traditionally manufactured equivalents, improving fuel efficiency and power output; lead times shrink because the process skips many conventional fabrication steps; and because material is deposited only where needed, both raw material consumption and waste drop. "This new facility in Bristol is a clear sign of UK industry investing in the skills and technology we need to stay ahead," said Pollard.</p><p>The cell's output feeds directly into the <strong>Global Combat Air Programme (GCAP)</strong>, the multinational next-generation fighter initiative in which the UK is a core partner, as well as future combat propulsion work across Rolls-Royce. "Programmes like FCAS and GCAP will be fundamental to the UK's future aerospace sector and capabilities like additive manufacturing will be crucial to enabling innovation at pace," said Andy Higginson, Senior Vice President of Manufacturing, Assembly and Test at Rolls-Royce.</p><p>The opening reflects a broader UK push to embed additive manufacturing into defense production: a Defence Innovation Unit-commissioned report found that 3D printing 15% of the defense inventory could save <strong>£110 million</strong> over 15 years, with annual net benefits potentially reaching £35.5 million thereafter, part of a "factory to foxhole" strategy spanning frontline spare parts to submarine construction.</p>`,
-    source: "3D Printing Industry",
-    url: "https://3dprintingindustry.com/news/rolls-royce-inaugurates-mod-backed-additive-manufacturing-development-cell-251197/",
-    img: "https://3dprintingindustry.com/wp-content/uploads/2026/05/additive-manufacturing-development-cell-opens-in-bristol-image-2.jpg"
+    summary: "The University of Oklahoma and Oak Ridge National Laboratory have secured $8.8 million to develop a standardized qualification framework for 3D printed and repaired parts on legacy US Air Force aircraft.",
+    fullContent: `<p>The <strong>University of Oklahoma</strong> and <strong>Oak Ridge National Laboratory</strong>, working with the Air Force Sustainment Center, Air Force Research Laboratory, and the Oklahoma City Air Logistics Complex, are launching Phase II of a research program aimed at standardizing how the US military qualifies additively manufactured parts for legacy aircraft. OU has been awarded <strong>$8.8 million</strong> for the initiative.</p><p>The project targets a structural problem in military aviation: aircraft that stay in service for up to sixty years require replacement parts that are increasingly hard to source through original supply chains. Rather than testing materials, geometry, and machines separately for every part, as current certification practice requires, the team is developing a data-driven system that digitally tracks the entire manufacturing process, letting parts be produced on different machines and platforms while still meeting military safety requirements.</p><p>"Phase One focused on replacement components using additive manufacturing, especially laser powder bed fusion," said <strong>Zahed Siddique</strong>, associate dean of research in OU's Gallogly College of Engineering. "In Phase 2, we will be looking at the repair of components in addition to the manufacturing of new components and looking at quality assurance using AI and in situ monitoring."</p><p>The work builds on OU's Sooner Advanced Manufacturing Laboratory, established in partnership with ORNL in 2025, and leverages ORNL's Peregrine software for in-situ print monitoring. "Sustainment is extremely important to the readiness of our U.S. Air Force and broader Department of War," said <strong>Moe Khaleel</strong>, associate laboratory director for National Security Sciences at ORNL. "We are proud to partner with the University of Oklahoma and the Air Force to democratize national laboratory capabilities... which can accelerate manufacturing innovation and ultimately build defect-free parts that are born ready to fly."</p><p><strong>Mark Benedict</strong>, senior scientist for convergent manufacturing at the Air Force Research Laboratory, called standardized AM qualification "a pervasive issue in the aerospace industry," noting the OU-ORNL partnership is directly accelerating adoption for the Air Force's sustainment enterprise through 2028.</p>`,
+    source: "OU News",
+    url: "https://www.ou.edu/news/articles/2026/march/ou-ornl-advance-qualification-of-additive-manufacturing-for-air-force-aircraft",
+    img: "https://www.ou.edu/content/dam/news/images/articles/2026/march/SAML.jpg"
   },
   // DEFENCE
   {
-    title: "Simulating the Seas to Make Additive Manufacturing Fleet-Ready",
+    title: "Stratasys Joins Pentagon's JAMA IV Pilot Parts Program",
     sector: "Defence",
-    summary: "Johns Hopkins APL and GKN Aerospace are developing a system that simulates shipboard motion for metal 3D printing at sea, advancing the Navy's ability to produce critical parts on demand aboard vessels.",
-    fullContent: `<p><strong>Johns Hopkins Applied Physics Laboratory (APL)</strong> and <strong>GKN Aerospace</strong> are partnering to develop a system that simulates shipboard motion for metal 3D printing at sea, advancing the U.S. Navy's ability to produce critical parts on demand in dynamic maritime environments. The effort builds on APL's earlier success demonstrating 3D printing aboard the USS Bataan.</p><p>Metal additive manufacturing systems are typically designed and calibrated for stable, land-based factory floors. The rolling, pitching motion of a ship at sea introduces vibration and positional variance that can compromise print quality and machine reliability, a barrier that has limited how much production the Navy can push aboard active vessels rather than shore-based depots.</p><p>The new motion-simulation platform is designed to let engineers characterize how wave-induced ship motion affects metal AM processes before deploying systems to the fleet, effectively derisking the qualification of onboard manufacturing systems. That builds toward the Navy's broader goal of resilient, on-demand logistics: reducing dependence on resupply runs by enabling ships to fabricate mission-essential components while underway.</p><p>The collaboration is funded through the <strong>Naval Sea Systems Command's Technology Office (NAVSEA 05T)</strong> and reflects a wider push across the defense industrial base to move metal 3D printing out of the lab and onto operational platforms supporting the Navy's Marine Industrial Base.</p><p>If successful, the platform would let the Navy qualify onboard AM systems with far more confidence, extending a capability currently proven in isolated demonstrations into standard equipment across deployed surface ships, cutting the turnaround time for replacing failed components at sea from weeks of resupply logistics to hours of onboard printing.</p>`,
-    source: "Johns Hopkins APL",
-    url: "https://www.jhuapl.edu/news/news-releases/260304-3d-printing-at-sea-motion-simulation",
-    img: "https://www.jhuapl.edu/sites/default/files/2026-02/20260302-APL-GKN-Motion-Simulation-Platform.jpg"
+    summary: "Stratasys has been selected for the Pentagon's Joint Additive Manufacturing Acceptability program, deepening its role supplying qualified 3D printed parts to the US Air Force and Navy as defense AM budgets surge 83%.",
+    fullContent: `<p><strong>Stratasys</strong> has been selected to participate in the <strong>Joint Additive Manufacturing Acceptability (JAMA) IV Pilot Parts Program</strong>, a US Department of Defense initiative aimed at accelerating the qualification and deployment of 3D printed components across military platforms at scale. The company's parts-on-demand division, Stratasys Direct, will lead the work.</p><p>"Unlike aspirational additive manufacturing initiatives in defense, Stratasys Direct, the contract manufacturing division of Stratasys, delivers qualified production-scale parts to defense organizations for operational use across active platforms," the company said in a release announcing the selection. Stratasys already supplies the US Air Force and Naval Air Systems Command (NAVAIR), and its systems produce microvanes for the C-17 transport aircraft that have helped reduce drag and save an estimated <strong>$14 million</strong> annually in fuel costs.</p><p>The announcement comes as US defense spending on additive manufacturing accelerates sharply: budget allocations for 3D printing technologies are projected to reach <strong>$3.3 billion</strong> in fiscal year 2026, an 83% increase over the previous year, as the Pentagon seeks to strengthen supply chain resilience, modernize aging fleets, and reduce maintenance bottlenecks.</p><p>"In 2025, Stratasys saw double-digit annual revenue growth from aerospace and defense, demonstrating that additive manufacturing is becoming a key capability for defense sustainment and supply chain resilience," said <strong>Foster Ferguson</strong>, Vice President of Stratasys' Industrial Business Unit. "Stratasys Direct already ships over 100,000 parts annually to the defense industry, and programs like JAMA will accelerate qualification of parts so organizations can deploy them faster across operational platforms."</p><p>Stratasys Direct operates three manufacturing facilities in North America, working under AS9100 and ISO 9001 quality systems while supporting ITAR and CMMC compliance requirements essential for defense and aerospace customers.</p>`,
+    source: "The Jerusalem Post",
+    url: "https://www.jpost.com/defense-and-tech/article-891750",
+    img: "https://images.jpost.com/image/upload/f_auto,fl_lossy/q_auto/c_fill,g_faces:center,h_720,w_1280/714440"
   },
   {
-    title: "U.S. War Department's FY2026 Budget Allocates $3.3B to Additive Manufacturing",
+    title: "Army's 25th Infantry Division 3D Prints a Lethal FPV Drone",
     sector: "Defence",
-    summary: "The U.S. Department of War's FY2026 budget request allocates $3.3 billion to additive manufacturing projects, an 83% increase from FY2025, backing both new product development and sustainment of legacy platforms.",
-    fullContent: `<p>The <strong>U.S. Department of War's</strong> $1 trillion Fiscal Year 2026 budget request allocates <strong>$3.3 billion</strong> to projects involving additive manufacturing, an <strong>83% increase</strong> from the $1.8 billion approved for FY2025. The funding is aimed at two overlapping priorities: developing new AM-enabled products and sustaining legacy vehicles and equipment that are increasingly difficult to support through conventional supply chains.</p><p>The scale of the increase reflects how central 3D printing has become to military logistics and readiness planning. Legacy aircraft, ships, and ground vehicles often rely on components no longer produced by their original manufacturers; additive manufacturing offers a way to reproduce or redesign those parts on demand rather than maintaining costly long-term inventories or re-establishing obsolete supply chains.</p><p>Real-world payoffs are already visible across the services. The Navy has used 3D printing to replace failed components at sea within hours, restoring mission capability without returning to port. The Air Force and Marine Corps brought a grounded F-15 Eagle back into operation months ahead of schedule by printing and installing a replacement cockpit cooling duct.</p><p>The Army, meanwhile, is testing portable 3D-printing labs in Hawaii that let soldiers design, print, and assemble first-person-view drones on site within hours, addressing the unique logistics challenges posed by the vast distances of the Pacific theater. These programs collectively illustrate the shift from AM as a research curiosity to a standard tool for both sustainment and rapid new capability development.</p><p>Agencies including the Defense Advanced Research Projects Agency, Defense Logistics Agency, and America Makes are all named in the budget's supporting materials as recipients of expanded funding, alongside continued collaboration with the UK Ministry of Defence on shared additive manufacturing standards and qualification frameworks.</p>`,
-    source: "3D Printing Industry",
-    url: "https://3dprintingindustry.com/news/analysis-of-u-s-military-budget-shows-increased-commitment-to-additive-manufacturing-241651/",
-    img: null
-  },
-  {
-    title: "Additive Manufacturing Moves Military Drone Operations to the Tactical Edge",
-    sector: "Defence",
-    summary: "Portable 3D printing labs are letting soldiers and Marines design, produce, and repair FPV drones directly in the field, compressing procurement timelines from months to hours at forward operating locations.",
-    fullContent: `<p>Additive manufacturing is reshaping how the U.S. military builds and sustains its growing fleet of small drones, pushing production capability out of centralized depots and directly onto the battlefield. Rather than waiting weeks or months for replacement parts or new airframes to move through traditional procurement and shipping channels, units are now printing components, and in some cases entire drone hulls, at forward operating locations.</p><p>The shift is driven by the increasing tempo and attrition rate of small uncrewed aerial systems in modern conflict, where FPV (first-person-view) drones are frequently lost or damaged and need rapid replacement to maintain operational tempo. Portable 3D printing labs, some housed in shipping-container-sized mobile units, allow soldiers to iterate designs, print replacement airframes, and assemble complete systems within hours rather than the weeks typical of conventional defense procurement.</p><p>This tactical-edge manufacturing model mirrors broader trends already validated elsewhere in the military: the Army's testing of portable 3D-printing labs in Hawaii, the Navy's onboard printing of replacement parts at sea, and the Air Force and Marine Corps' use of AM to return a grounded F-15 to service months ahead of schedule. Together, they point toward a military logistics model built around distributed, on-demand digital manufacturing rather than centralized stockpiles.</p><p>Cost and speed are the central drivers. Conventionally sourced drone components can carry long lead times and per-unit costs that scale poorly against battlefield attrition rates, while 3D printed equivalents can be produced for a fraction of the cost using widely available desktop and industrial printers, with design files that can be updated and redistributed digitally within hours of identifying a needed change.</p><p>As adoption expands, the Defense Department is working to standardize qualification frameworks so that field-printed components meet the same reliability bar as conventionally manufactured parts, a balancing act between the speed advantages of decentralized production and the safety requirements of mission-critical hardware operating in contested environments.</p>`,
-    source: "Automation Alley",
-    url: "https://automationalley.com/2026/02/18/manufacturing-at-the-tactical-edge-the-future-of-military-drone-operations/",
+    summary: "Hawaii's 25th Infantry Division has fabricated an in-house 3D printed FPV drone with an EOD-developed detonation system, marking a first publicly disclosed case of a US military unit printing a lethal drone entirely on site.",
+    fullContent: `<p>The US Army's <strong>25th Infantry Division</strong>, based at Schofield Barracks, Hawaii, has 3D printed a first-person-view (FPV) drone with lethal capabilities entirely in-house, according to comments from division commander <strong>Capt. David Velasquez</strong> at the AFCEA TechNet Indo-Pacific 2025 conference. It is understood to be the first time the US military has publicly disclosed producing a weaponized 3D printed drone using organic unit capability.</p><p>"Our Lightning Labs team has fabricated a drone that we're calling the Capstone drone, and in partnership with the EOD [explosive ordnance disposal] team, they've developed a detonation system for that drone so that we can go ahead and put lethal effects on target," Velasquez said. "[It's] completely built in house here in the 25th ID... They can put lethal effects on target right now."</p><p>The disclosure follows recent public comments from Army Materiel Command's acting commander, Lt. Gen. Christopher Mohan, and Secretary of the Army Dan Driscoll, both emphasizing the branch's urgent push to expand additive manufacturing for maintenance, repair, and organic drone production. The 25th ID's work was framed specifically around the logistics of the Indo-Pacific theater, where <strong>Gen. Ronald Clark</strong>, commanding general of Army Pacific, noted the region's "vast and diverse terrain" creates supply challenges that additive manufacturing is uniquely positioned to solve.</p><p>The unit's capability has already influenced other programs: the Oregon Army National Guard cited the 25th ID's work as inspiration for a new drone training curriculum aimed at cutting the cost of small drones. Separately, a Developmental Command Exportable Lab operated by the 25th ID enabled deployment of more than 100 FPV drones during a recent Joint Pacific Multinational Readiness Center rotation in the Philippines.</p><p>The disclosure is likely to sharpen Department of War attention on cybersecurity standards for battlefield 3D printing capability, as the technology moves from repair parts and training aids toward directly lethal applications produced at the tactical edge.</p>`,
+    source: "3DPrint.com",
+    url: "https://3dprint.com/321825/u-s-army-drone-printing-hits-next-phase-25th-infantry-divisions-lethal-fpv-system/",
     img: null
   },
   // AUTOMOTIVE
   {
-    title: "Stratasys Broadens AM Portfolio With New Materials and Software at RAPID + TCT 2026",
+    title: "Nikon SLM Solutions and Bosch 3D Print a Complete V8 Engine Block in One Piece",
     sector: "Automotive",
-    summary: "Stratasys unveiled new FDM, PolyJet, and SLA materials plus a warping-correction software feature at RAPID + TCT 2026, targeting automotive brackets, tooling, and other production applications.",
-    fullContent: `<p>At <strong>RAPID + TCT 2026</strong>, 3D printer OEM <strong>Stratasys</strong> showcased a series of new materials and software capabilities aimed at widening the scope of its additive manufacturing solutions across automotive, aerospace, and industrial customers. "These innovations are designed to solve real challenges manufacturers face when adopting or scaling additive manufacturing," said Rich Garrity, Chief Business Unit Officer, Stratasys.</p><p>On the FDM side, ULTEM 1010 is now available as a filament option for the F3300 printer, prized for aerospace-grade thermal resilience and low thermal expansion, particularly suited to composite tooling where dimensional accuracy under stress matters. Two new Origin-compatible photopolymer resins round out the industrial lineup: P3 Deflect 110, engineered for end-use parts facing heat and mechanical stress such as <strong>automotive brackets, jigs, and structural components</strong>, and Loctite 3D IND3785 Low Migration resin for regulated food and pharmaceutical production.</p><p>New PolyJet materials, ToughONE White and ToughONE Black, bring enhanced durability for functional prototypes subjected to repeated mechanical stress. On the software side, GrabCAD Print Pro now includes Measurement-Based Warped Adaptive Modeling (WAM), which automatically corrects warping based on measured dimension data, improving first-attempt accuracy for tight-tolerance parts like electrical connectors and precision jigs on the Origin P3 platform.</p><p>The wave of launches reflects where the AM market stands heading into 2026: according to the 3D Printing Industry Executive Survey, <strong>70.3%</strong> of AM executives now expect favorable business conditions this year, up sharply from 51.2% who felt that way about 2025. But executives consistently cite customer education as the dominant barrier, with many organizations still designing for AM using assumptions borrowed from injection molding or CNC machining.</p><p>Competitors are responding in parallel: Formlabs launched its Tough Resin Family alongside PreForm software workflow updates, and UnionTech debuted its MUEES430 PRO batch-production system at the same event, underscoring that the industry's remaining adoption barriers are increasingly operational rather than technical.</p>`,
-    source: "3D Printing Industry",
-    url: "https://3dprintingindustry.com/news/stratasys-broadens-its-additive-manufacturing-portfolio-with-new-materials-and-software-250639/",
-    img: "https://3dprintingindustry.com/wp-content/uploads/2026/04/STRP054_Software-Accuracy-Center-MWAM.png"
+    summary: "Bosch and Nikon SLM Solutions have printed a complete aluminum V8 engine block as a single part with no casting or tooling, signaling that metal AM is approaching automotive production volumes and complexity.",
+    fullContent: `<p><strong>Nikon SLM Solutions</strong> and <strong>Bosch Industry Consulting</strong> have produced a complete V8 engine block as a single 3D printed part, using the NXG XII 600 laser powder bed fusion system at the Bosch Additive Solution Center in Nuremberg, Germany. The block was printed in AlSi10Mg aluminum with no casting and no tooling required.</p><p>Conventional cylinder block production requires tooling that can take weeks or months to develop before a single production part is made, and every design change forces a tooling modification that adds time and cost. Producing the block directly from a digital file bypassed those constraints entirely, opening up geometries, including integrated cooling channels and topology-optimized structures, that casting cannot reliably achieve.</p><p>Weight reduction is among the most immediate payoffs: by placing material only where structural analysis shows it is needed, the printed block comes out lighter than its cast equivalent without sacrificing performance, a gain that translates directly into competitive advantage in motorsport and high-performance automotive applications.</p><p>The project also underscores where automotive AM adoption needs to take root next. An estimated 60 to 80 percent of components in a finished vehicle are made not by the OEM but by tier 1 and tier 2 suppliers, and Bosch is among the largest tier 1 suppliers in the world. The collaboration paired Bosch's manufacturing expertise with Nikon SLM Solutions' process parameters, materials qualification, software, and application engineering, a different proposition than simply selling a printer.</p><p>The V8 block is not entering production, but it demonstrates a combination of geometric complexity, performance requirements, and production volume that would not have been considered realistic for metal AM just a few years ago, with the technology, partnerships, and production systems increasingly already in place to make it viable.</p>`,
+    source: "3DPrinting.com",
+    url: "https://3dprinting.com/news/nikon-slm-solutions-and-bosch-3d-print-complete-v8-engine-block-as-a-single-piece/",
+    img: "https://3dprinting.com/wp-content/uploads/9830909-3.jpg"
   },
   {
-    title: "3D Prod and Sculpteo Merge to Scale Industrial AM in France",
+    title: "BMW Group Scales Up 3D Printing With Recycled Powder and Filament",
     sector: "Automotive",
-    summary: "French additive manufacturing providers 3D Prod and Sculpteo have merged, combining 78 industrial 3D printers and over 7,000 corporate clients to build a European industrial 3D printing leader.",
-    fullContent: `<p><strong>3D Prod</strong>, backed by injection moulding firm Platex, has acquired <strong>Sculpteo</strong> from BASF New Business GmbH, which had held the company since its 2019 purchase. The combined entity aims to establish itself as a reference point for industrial 3D printing across Europe, guiding manufacturers, including automotive suppliers, from initial prototypes through to large-scale series production.</p><p>Together, the two companies bring 100 staff, over <strong>7,000 corporate clients</strong> across 61 countries, and two French production sites, in Vosges and Villejuif. On the production side, the unified group will operate 78 industrial 3D printers and work with 75 technical materials, manufacturing more than <strong>1.25 million parts per year</strong>, with a shared fleet of 18 HP Multi Jet Fusion systems understood to rank among the largest in the world.</p><p>"With this merger, we are giving ourselves the means to support the expansion of this sector by offering a complete range of services, from prototypes to large-scale production, to support French, European, and American manufacturers at every stage of their development," said Quentin Kiener, President of 3D Prod. The two entities currently generate a combined <strong>€17 million</strong> in annual revenue, with a target of €20 million by 2027.</p><p>"Combining the offerings of both companies will give customers access to a broader portfolio of materials and services, delivering an even more comprehensive industrial 3D printing solution," said Alexandre d'Orsetti, CEO of Sculpteo. Automotive manufacturers are a core target segment for the combined business, relying on additive manufacturing for assembly aids, end-of-arm tooling, and low-volume service parts that support flexible, localized production.</p><p>The deal follows a broader consolidation pattern across AM services, echoing Protolabs' acquisition of 3D Hubs and ADDMAN's acquisition of Forecast 3D, as service bureaus scale up to meet growing demand for production-grade 3D printing beyond prototyping.</p>`,
-    source: "3D Printing Industry",
-    url: "https://3dprintingindustry.com/news/3d-prod-and-sculpteo-merge-to-scale-am-in-france-251695/",
-    img: "https://3dprintingindustry.com/wp-content/uploads/2026/05/1778148198701.jpeg"
+    summary: "BMW is rolling out a closed-loop recycling process that turns waste 3D printing powder and used parts into new filament and granulate, now expanding from its Munich campus to new plants including Debrecen, Hungary.",
+    fullContent: `<p><strong>BMW Group</strong> is using polymer filament and granulate reprocessed from waste 3D printing powder and used parts to manufacture new additively manufactured components, converting a byproduct that was previously discarded into new production feedstock. Up to <strong>12 tonnes</strong> of waste powder can be recycled each year into filament and granulate for reuse at BMW plants and the company's Additive Manufacturing Campus.</p><p>The recycling loop traces back to BMW's 2018 "bottleUP" project, which began sourcing 3D printing material from recycled PET bottles. Within a year, BMW moved to pilot use of recycled filament, and by 2021 the company had successfully printed its first holders and auxiliary production devices using its own recycled material. Recycled granulate now supports Fused Granulate Fabrication for larger tools, while recycled filament serves Fused Filament Fabrication for smaller devices.</p><p>"I've been involved with this project from the very beginning and I'm thrilled to see how far we've come... It's incredibly exciting to continuously develop and test new processes. The use of waste powder and discarded 3D printing components is a key element of a functional and efficient circular economy," said <strong>Paul Victor Osswald</strong>, Project Manager for Predevelopment Non-Metals at BMW.</p><p>Every BMW Group plant is now equipped with an additive manufacturing system, together producing several hundred thousand components a year, from ergonomic and occupational safety solutions to scratch protection, fitting aids, gauges, templates, and tool organization. Concrete applications include customized support pedestals for applying decor to motorcycle trim panels at BMW's Motorrad plant in Berlin, and fitting aids at Plant Dingolfing that prevent screws from being lost during vehicle assembly.</p><p>BMW is now exporting the recycling process beyond its Oberschleißheim Additive Manufacturing Campus to other production sites, testing and optimizing printers and print parameters at each new location. The next facility to receive the capability is under construction at <strong>Plant Debrecen, Hungary</strong>, which will support production of BMW's upcoming Neue Klasse platform.</p>`,
+    source: "TCT Magazine",
+    url: "https://www.tctmagazine.com/bmw-group-3d-printing-components-material-recycled-waste-used-parts/",
+    img: "https://www.tctmagazine.com/downloads/22226/download/P90610935_highRes_3d-print-bmw-group-a.jpg?cb=7020b580a67d4d1e2a1d0d94eaab498f"
   },
   {
-    title: "3D Printing Shifts From Prototyping to Strategic Production in 2026",
+    title: "3D Systems Launches High-Throughput SLA 825 Dual and AddiTrak Software",
     sector: "Automotive",
-    summary: "Automotive manufacturers are increasingly treating additive manufacturing as a viable production method rather than a prototyping step, as the global 3D printing market heads toward a doubling within five years.",
-    fullContent: `<p>Additive manufacturing is completing a long-anticipated shift within the automotive sector: from a tool used almost exclusively for early-stage prototyping to a method increasingly trusted for actual production. Automakers and their suppliers now rely on 3D printing for assembly aids, end-of-arm tooling, jigs and fixtures, and low-volume service parts that support flexible, responsive manufacturing lines.</p><p>The global 3D printing market was valued at approximately <strong>$24 billion in 2025</strong> and is expected to double within five years, according to industry trend reporting, a trajectory that reflects growing confidence among manufacturers that AM-produced parts can meet the durability and repeatability standards required for real production environments rather than just design validation.</p><p>Sentiment data backs up the shift: the 3D Printing Industry Executive Survey found <strong>70.3%</strong> of AM executives expect favorable or very favorable business conditions in 2026, up sharply from 51.2% who felt that way about 2025, with the share describing conditions as "very favorable" more than doubling year over year.</p><p>For automotive specifically, the appeal lies in the ability to iterate tooling designs quickly without the capital cost and lead time of traditional hard tooling, while also supporting low-volume specialty and service parts that would be uneconomical to produce through injection molding or stamping. As more brands move core manufacturing-support functions onto 3D printers, the technology is increasingly embedded into standard production workflows rather than treated as a specialized, occasional tool.</p><p>Executives caution, however, that customer education remains the dominant barrier to further scaling: many manufacturing teams still approach part design with assumptions carried over from injection molding or CNC machining, leaving much of AM's potential value, such as part consolidation, geometric freedom, and lead-time reduction, still underexploited across the broader automotive supply base.</p>`,
-    source: "Design News",
-    url: "https://www.designnews.com/3d-printing/additive-manufacturing-shifts-from-prototyping-to-strategic-production-in-2026",
+    summary: "3D Systems unveiled a dual-laser production SLA printer and a new fleet-monitoring software platform at RAPID + TCT 2026, targeting higher-volume automotive, aerospace and healthcare additive manufacturing.",
+    fullContent: `<p><strong>3D Systems</strong> announced new hardware, software, and applications at RAPID + TCT 2026 aimed at scaling additive manufacturing into production environments that demand high throughput, reliability, repeatability, and process control. The centerpiece is the <strong>SLA 825 Dual</strong>, a next-generation dual-laser production system now available worldwide, delivering over 20% larger build volumes and up to 30% faster print speeds than competitive systems.</p><p>Alongside the hardware, 3D Systems introduced <strong>AddiTrak</strong>, an integrated software platform providing secure, on-premises, real-time fleet monitoring, process control, data collection, and customizable analytics, intended to give manufacturers the visibility needed to run additive processes as dependable production lines rather than isolated prototyping cells.</p><p>The company positioned the launch around accelerating adoption in markets requiring high-volume, precision production, specifically citing aerospace and defense, automotive, healthcare, and industrial customers as the primary beneficiaries of the combined hardware-software package. For automotive users, the throughput gains are aimed squarely at tooling, jigs, fixtures, and low-volume production parts where cycle time has historically limited AM's competitiveness against machining or molding.</p><p>The announcements were made at RAPID + TCT 2026, where competitors including Stratasys, Formlabs, and UnionTech also unveiled new materials, resins, and batch-production systems, underscoring an industry-wide shift toward closing the remaining operational gaps, rather than technical ones, that have kept additive manufacturing from displacing more conventional production processes.</p>`,
+    source: "3D Systems",
+    url: "https://www.3dsystems.com/press-releases/3d-systems-accelerates-production-scale-additive-manufacturing",
     img: null
   },
   // ENERGY
   {
-    title: "Aramco's $30B U.S. Partnerships Open a Structural Door for AM in Oil & Gas",
+    title: "Baker Hughes Deepens 3D Printing Bets With Saudi Dussur and Aramco",
     sector: "Energy",
-    summary: "Saudi Aramco's $30 billion-plus U.S. partnership framework, spanning LNG investment, procurement, and advanced materials, creates a structural opening for additive manufacturing across oil and gas supply chains.",
-    fullContent: `<p><strong>Saudi Aramco</strong> has announced 17 Memoranda of Understanding and commercial agreements with U.S.-based firms, representing a potential combined value exceeding <strong>US$30 billion</strong>. The agreements span liquefied natural gas investments, procurement of industrial equipment and services, advanced materials manufacturing, and financial partnerships, spanning firms including SLB, Baker Hughes, Halliburton, McDermott International, KBR, Worley, Fluor, Flowserve, NOV, and NESR.</p><p>The advanced materials component centers on an expanded memorandum with Syensqo, a global advanced materials company spun out of Solvay, focused on high-performance polymers and composites used across aerospace, energy, and industrial applications, materials engineered for extreme temperatures and corrosive environments common in oil and gas infrastructure.</p><p>Individually, procurement agreements and materials localization deals do not mandate additive manufacturing adoption. Collectively, though, they create favorable conditions: oil and gas operations routinely contend with extended lead times for replacement parts, component obsolescence, and high logistics costs across geographically dispersed assets, exactly the constraints AM is designed to address by decoupling production from centralized factories.</p><p>Shell has already demonstrated the payoff at scale, reporting that the printing, heat-treatment, and testing of a 3D-printed impeller was completed within <strong>40 days</strong>, roughly 85% faster than conventional manufacturing. Aramco's framework enables a similar workflow at industrial scale: engineering expertise from U.S. service firms paired with in-country additive manufacturing facilities in Saudi Arabia, reducing lead times, import complexity, and exposure to global supply disruptions.</p><p>Constraints remain real: materials certification for pressure-containing components is rigorous, large-format parts present technical hurdles, and OEM acceptance requires standardized qualification pathways. But with capital, long-term supplier relationships, and explicit interest in advanced materials now aligned, market analysts say the conditions for AM's transition from pilot programs to sustained operational deployment in oil and gas have rarely been stronger.</p>`,
+    summary: "Oilfield services giant Baker Hughes is expanding additive manufacturing across its global supply chain through a Saudi joint venture with Dussur and a research partnership with Aramco on advanced materials.",
+    fullContent: `<p><strong>Baker Hughes</strong>, one of the world's largest oilfield services companies, is deepening its integration of additive manufacturing across its global supply chain to streamline processes, reduce inventory carrying costs, and cut delivery times as part of a broader operational efficiency and energy-transition strategy.</p><p>The company has formed a joint venture with <strong>Saudi Industrial Investments (Dussur)</strong> to establish a Center for Innovation and Additive Manufacturing in Saudi Arabia. The facility focuses on on-demand printing and application engineering serving energy, defense, and healthcare markets, aiming to localize advanced manufacturing capability in the region while supporting supply chain security and regional job creation.</p><p>Separately, Baker Hughes partnered with software firm <strong>Oqton</strong> to build an industrial-scale additive manufacturing software suite, combining Baker Hughes' operational knowledge with Oqton's Manufacturing OS platform to support design, production, and quality control across energy, aerospace, and healthcare applications with an integrated digital workflow.</p><p>Baker Hughes is also collaborating with <strong>Saudi Aramco</strong> on research into advanced additive manufacturing and materials science, exploring new manufacturing technologies to support operational efficiency and sustainability goals shared by both companies as they push AM further into core oilfield equipment production.</p><p>The moves reflect a broader pattern across the energy sector, where operators increasingly treat additive manufacturing not as an experimental technology but as a standard tool for managing legacy component obsolescence, reducing physical inventory, and localizing production closer to remote or geographically dispersed operating sites.</p>`,
     source: "Fabbaloo",
-    url: "https://www.fabbaloo.com/news/3d-printing-enters-the-oil-gas-era-aramcos-us30-billion-u-s-partnerships-and-the-additive-manufacturing-opportunity",
-    img: "https://www.fabbaloo.com/wp-content/uploads/2025/12/Aramco-1.jpg"
+    url: "https://www.fabbaloo.com/news/baker-hughes-bets-big-on-3d-printing-for-an-efficient-sustainable-future",
+    img: "https://www.fabbaloo.com/wp-content/uploads/2024/10/BKR-1.jpg"
   },
   {
-    title: "Metal 3D Printing Advances Across Upstream Drilling, Completion and Artificial Lift",
+    title: "EOS Case Study Cuts Valve Spare-Part Lead Time From 52 Weeks to One",
     sector: "Energy",
-    summary: "Oil and gas operators are expanding metal additive manufacturing across drilling, well completion, and artificial lift equipment, citing shorter lead times and reduced downtime risk in remote operations.",
-    fullContent: `<p>The upstream oil and gas sector, long a laggard in additive manufacturing adoption compared to automotive and aerospace, is now expected to be one of the fastest-growing markets for metal 3D printing, driven by cost-savings opportunities tied to supply chain optimization and downtime risk reduction. Major operators including Shell, Baker Hughes, and GE are investing in the technology to design, produce, and validate components across their operations.</p><p>Drilling applications benefit from highly optimized flow profiles that minimize erosion on bottom hole assembly components, printed in high-grade steels like 17-4PH or superalloys such as Inconel 718 that withstand extreme downhole conditions. Use cases include drill bits with optimized nozzle designs and cooling channels, and optimized fluid profiles for downhole modulator and turbine components used in measurement-while-drilling and rotary steerable systems.</p><p>In well completion, additive manufacturing's ability to produce complex, customized parts in small batches at lower unit cost is proving valuable for sand control components, screens, and intake valves designed around unique reservoir conditions, along with liner hanger and packer system components that would otherwise require complex machining.</p><p>Artificial lift equipment, required on an estimated <strong>96% of oil wells</strong> to maximize production output, is another target: 3D printed electrical submersible pump impellers and diffusers made from erosion-resistant materials can be produced with significantly shorter lead times than traditional manufacturing, a critical advantage given that a single day of unplanned downtime can cost hundreds of thousands of dollars in a capital-intensive industry.</p><p>Because oil and gas operations are frequently located far from centralized suppliers, metal 3D printing also reduces the geographical footprint of manufacturing, letting parts be printed close to the production site rather than shipped from distant facilities, a shift toward decentralized, simplified supply chains that also supports faster production of discontinued legacy parts through scan-to-print workflows.</p>`,
-    source: "The Steel Printers",
-    url: "https://www.thesteelprinters.com/news/how-additive-manufacturing-is-revolutionising-the-upstream-oil-and-gas-sector",
-    img: "https://20348224.fs1.hubspotusercontent-na1.net/hubfs/20348224/AdobeStock_358298613-min-1.jpeg"
-  },
-  {
-    title: "DNV Study Finds 3D Printed Parts Could Cut Offshore and Maritime Supply Chain Risk",
-    sector: "Energy",
-    summary: "Classification society DNV finds that 3D printed spare parts could reduce logistics dependency and downtime for offshore oil, gas and maritime assets, building on Shell's public use of the technology for spares and tooling.",
-    fullContent: `<p>Classification society <strong>DNV</strong> has evaluated the potential for 3D printed spare parts to benefit offshore and maritime oil and gas supply chains, finding that additive manufacturing can reduce logistics dependency and improve responsiveness to maintenance needs for assets operating far from centralized manufacturing hubs. The findings add independent, third-party weight to a case long made by AM vendors and oil majors alike.</p><p>Offshore and maritime energy infrastructure, including LNG terminals, floating production facilities, and vessels, present environments where additive manufacturing's value proposition is strongest: these assets operate continuously in harsh conditions and rely on specialized components that can be difficult to source quickly through conventional supply channels stretched across multiple continents.</p><p><strong>Shell</strong> has publicly highlighted its own use of 3D printing for spare parts, tooling, and low-volume specialized components, part of a broader industry pattern of moving AM applications from non-critical items into more demanding operational roles as materials, qualification frameworks, and printer capabilities mature.</p><p>The digital supply chain model at the center of DNV's analysis replaces physical inventories with digital design files that can be transferred securely and manufactured on demand, wherever and whenever a part is needed, reducing the carrying costs and lead-time risk associated with maintaining large stockpiles of legacy or specialized components for remote assets.</p><p>Despite the promise, DNV's assessment echoes industry-wide caution: materials certification and qualification requirements remain rigorous for safety-critical, pressure-containing components, and broader adoption depends on standardized qualification pathways that give operators, insurers, and regulators confidence in the long-term reliability of additively manufactured parts operating in demanding offshore environments.</p>`,
-    source: "DNV",
-    url: "https://www.dnv.com/energy/services/laboratories-test-facilities/article/3D-printed-parts-could-benefit-oil-gas-offshore-and-maritime-supply-chains/",
+    summary: "A global valve services provider working with EOS's Additive Minds consultancy slashed lead time for a critical metal component from a year to a week using polymer laser powder bed fusion, while cutting weight 15% and total cost 30%.",
+    fullContent: `<p>A case study from <strong>EOS</strong> illustrates a new, more agile paradigm for spare parts in the oil and gas industry, after a global provider of valve services worked with EOS's <strong>Additive Minds</strong> consultancy to apply polymer laser powder bed fusion (LPBF) to critical valve components, replacing a slow, brittle traditional supply chain with an on-demand digital workflow.</p><p>The results were dramatic: lead time for the original metal component fell from <strong>52 weeks to just one week</strong>, alongside a <strong>15% reduction in part weight</strong> and a <strong>total cost of ownership reduction of at least 30%</strong>, according to the case study figures. The approach combined reverse engineering tools and digital twin models to reproduce missing or hard-to-source parts on demand.</p><p>The technique directly addresses one of the oil and gas industry's most persistent operational risks: components that are no longer supported by their original manufacturers, or that sit at the end of long, complex global supply chains prone to disruption. By minimizing system downtime and reducing dependence on maintaining large physical inventories of legacy parts, digital, on-demand manufacturing lets operators respond to failures in days rather than months.</p><p>EOS and the valve provider see the case study as a template for a broader digital spare-parts program across the company's operations, aiming to eliminate the need for extensive physical inventories entirely in favor of qualified digital part files that can be printed close to the point of need whenever a component fails or becomes obsolete.</p>`,
+    source: "VoxelMatters",
+    url: "https://www.voxelmatters.com/eos-3d-printing-new-paradigm-spare-parts-oil-gas/",
     img: null
   },
   // MOTORSPORT
   {
-    title: "2026 F1 Technical Regulations Open the Door to Titanium and Aluminum Suspension Uprights",
+    title: "Mercedes and Red Bull's 3D Printed Pistons Exploit a Compression Loophole",
     sector: "Motorsport",
-    summary: "The newly released 2026 Formula 1 Technical Regulations permit additive manufacturing of suspension uprights in titanium or aluminum alloys, formalizing where and how teams can use 3D printed components on the car.",
-    fullContent: `<p>The newly released <strong>2026 Formula 1 Technical Regulations</strong> introduce significant updates governing additive manufacturing, establishing the materials, components, and specific areas where 3D printing can be applied on the car, balancing safety and performance with continued innovation. Chief among the changes: suspension uprights may now be additively manufactured using titanium or aluminum alloys, letting teams optimize the design and performance of parts crucial to vehicle handling and stability.</p><p>The regulations also set new material requirements for additively manufactured components: the finished mass of a 3D printed part must be at least <strong>60% of the mass of the printed component</strong>, excluding support structures, a rule aimed at preventing teams from gaming lattice or hollow designs purely to shed weight beyond what the regulations intend. Separately, the use of additive manufacturing materials containing beryllium is prohibited due to health and safety concerns.</p><p>The suspension-upright provision follows years of incremental regulatory openings for 3D printing in F1, reflecting the sport's growing comfort with additively manufactured metal components in genuinely safety-critical, load-bearing applications rather than confining the technology to non-structural bodywork, brackets, and wind-tunnel test parts.</p><p>Teams are moving quickly to take advantage: Mercedes and Red Bull are reportedly using 3D printing to create engine pistons with complex internal structures unachievable through traditional forging, allowing engineers to control material density and internal architecture throughout each part, while sustainability requirements introduced alongside the 2026 rules have pushed teams like McLaren toward AM using recycled filament materials.</p><p>The changes underscore how central additive manufacturing has become to Formula 1 engineering under the sport's new technical era, with the FIA's rule-writing increasingly focused on where AM's design freedom should be bounded rather than whether it should be permitted at all.</p>`,
-    source: "VoxelMatters",
-    url: "https://www.voxelmatters.com/exploring-additive-manufacturing-in-the-2026-formula-1-technical-regulations/",
-    img: null
+    summary: "Mercedes and Red Bull have reportedly engineered 3D printed F1 pistons with internal structures that maximize thermal expansion, letting engines exceed the new 16:1 compression ratio cap once at operating temperature.",
+    fullContent: `<p>For the 2026 Formula 1 season, <strong>Mercedes</strong> and <strong>Red Bull</strong> appear to have found a way around the sport's new compression ratio cap, which drops the maximum allowable ratio from last year's 18:1 to 16:1. The FIA measures the static geometric compression ratio at ambient temperature, using an engine's maximum and minimum cylinder volumes, but at high temperature and rpm, pistons expand and rods stretch, subtly altering the effective compression ratio during a race.</p><p>F1 pistons, made of steel alloy, have shifted in recent years from subtractive manufacturing, forging from a steel billet, to additive manufacturing using high-powered, precise lasers. That shift lets engineers incorporate complex internal structures within a solid metal part and vary material density throughout, control that Mercedes and Red Bull engineers have reportedly used to design piston architectures that channel combustion heat toward specific points, causing the piston to expand more than a conventionally manufactured equivalent.</p><p>If the approach works as intended, the two teams could start the season with a meaningful power advantage over rivals, in a sport where championships are frequently decided by fractions of a second. Rival teams Ferrari, Audi, and Honda have written a joint letter to the FIA seeking clarification on how compression ratio should be measured, and requesting a method that accounts for operating-temperature expansion, though with the season starting March 8 a rule change before then appears unlikely.</p><p>The episode is a familiar pattern in F1 engineering: exploiting the grey area between the letter and the spirit of the regulations for competitive advantage, following in the footsteps of Benetton's 1994 traction control, Brawn's 2009 double diffuser, Red Bull's 2010 flexible wings, and Mercedes' dual-axis steering. What is new is that additive manufacturing, rather than conventional machining, is now precise and repeatable enough to be the tool teams reach for to engineer that advantage into the smallest, most safety-critical parts of the engine.</p>`,
+    source: "Autoblog",
+    url: "https://www.autoblog.com/news/how-3d-printed-pistons-let-f1-engines-bend-the-rules-on-compression",
+    img: "https://www.autoblog.com/.image/NzowMDAwMDAwMDAxMDUxNjMz/mercedes-f1-engine.jpeg?profile=share16-9"
   },
   {
-    title: "Cadillac F1 Team Deploys Seven 3D Systems SLA Machines to Make Its 2026 Debut",
+    title: "McLaren's W1 Supercar Runs a 3D Printed Titanium Suspension by Divergent",
     sector: "Motorsport",
-    summary: "The new Cadillac Formula 1 Team used seven 3D Systems SLA 3D printers to accelerate wind tunnel testing and production parts on a compressed timeline ahead of its 2026 season debut.",
-    fullContent: `<p>The newest entrant to the FIA Formula 1 World Championship, <strong>Cadillac Formula 1 Team</strong>, deployed seven <strong>3D Systems</strong> SLA 3D printing systems to accelerate critical wind tunnel testing ahead of the 2026 season, as well as the development of production parts. The large-format additive manufacturing systems, integrated with 3D Systems software and Accura Xtreme White 200, Accura Xtreme Black, and Accura HPC materials, enabled rapid testing within rapidly diminishing pre-season deadlines.</p><p>3D Systems' SLA solutions are built for high-quality, production-grade manufacturing, delivering sharp part corners, fine feature detail, and smooth layer lines on angled faces. That precision proved decisive for a brand-new team working against one of motorsport's most demanding technical timelines: Formula 1 racing operates under regulatory scrutiny Racecar Engineering magazine has called "the greatest challenge a manufacturer of mechanical components may ever be confronted with."</p><p>Cadillac secured its place in the championship in time for the FORMULA 1 QATAR AIRWAYS AUSTRALIAN GRAND PRIX 2026 in March, working with 3D Systems' Application Innovation Group (AIG), a team of additive manufacturing engineers, designers, and technicians who co-develop applications directly with customers.</p><p>"3D Systems was founded on innovation, pioneering the additive manufacturing industry and we are continuing to lead it into an era of high-precision, highly repeatable production at scale," said Elvis Perez, Senior Vice President, Sales, 3D Systems. "We are pleased that our work has enabled Cadillac Formula 1 team to enter the 2026 FORMULA 1 season despite the short timelines and strict qualification conditions."</p><p>Tool-free SLA manufacturing eliminated weeks of lead time that would otherwise have been needed for machined or molded test parts, a critical factor for a team racing against the calendar just to reach the grid, and one that continues to support Cadillac's ongoing race car development through the season.</p>`,
-    source: "3D Systems",
-    url: "https://www.3dsystems.com/press-releases/new-cadillac-formula-1-team-deploys-3d-systems-sla-technology-2026-debut",
-    img: "https://www.3dsystems.com/sites/default/files/styles/thumbnail_social_media_940_x_494_/public/2026-05/cadillac-f1-thumbnail-940x494.png"
-  },
-  {
-    title: "Ford Has 3D-Printed Over 1,000 Parts for Its 2026 Red Bull F1 Return",
-    sector: "Motorsport",
-    summary: "Ford's motorsport division has 3D-printed more than 1,000 parts for its 2026 Formula 1 return with Red Bull, applying aerospace-grade CT and X-ray testing methods before parts reach the track.",
-    fullContent: `<p><strong>Ford's</strong> motorsport team has 3D-printed over <strong>1,000 parts</strong> in preparation for its 2026 Formula 1 debut with Red Bull, applying testing methods borrowed from aerospace to components including cold plates for batteries and cooling plates for other systems. "It's not things like nuts and bolts and easy stuff. These are complex metal and polymer parts that get tested to extremes so they can withstand races that average 200 miles an hour," said Christian Hertrich, chief powertrain expert at Ford Performance Motorsports.</p><p>The validation pipeline is rigorous: parts are first 3D scanned to check mechanical strength, hardness, and geometric compliance, then run through X-ray and CT scanners by Ford's Non-Destructive Evaluation (NDE) team before moving to metrology for accuracy and precision testing, and only then shipped to Red Bull's F1 operation.</p><p>Ford says the testing protocols developed across its departments for motorsport use are also finding their way into road car development. Hertrich cited a glue issue on an F-150 headlight that eluded engineers for months until the NDE team's scanners identified the root cause within a day, illustrating a two-way technology transfer between Ford's racing and consumer vehicle programs.</p><p>The scale of Ford's 3D printing effort reflects how central additive manufacturing has become to modern F1 engineering, following a lineage that includes the Bugatti titanium brake caliper and full 3D printed demonstration cars, but pushing further by placing large volumes of printed parts directly into a car racing at the sport's highest level rather than treating AM as a novelty or prototyping aid.</p><p>Whether Ford's rapidly produced parts translate into competitive results once the 2026 season gets underway remains to be seen, but the volume and rigor of the program underscore that additive manufacturing has moved well past the experimental stage for top-tier motorsport powertrain development.</p>`,
-    source: "Top Gear",
-    url: "https://www.topgear.com/car-news/formula-one/ford-3d-printing-parts-2026-red-bull-f1-car",
-    img: "https://www.topgear.com/sites/default/files/2025/01/Redbull-x-Ford-smp.jpg"
+    summary: "McLaren worked with Czinger's additive manufacturing spinoff Divergent to 3D print the W1 hypercar's front suspension in titanium, bringing an F1-style pushrod layout to a road-legal supercar.",
+    fullContent: `<p><strong>McLaren</strong> has fitted its <strong>W1</strong> supercar with a 3D printed front suspension system developed in collaboration with <strong>Divergent</strong>, the additive manufacturing spinoff of hypercar maker Czinger, bringing Formula 1-inspired engineering directly to a road-legal production model.</p><p>Divergent, which has also worked with Bugatti, Aston Martin, and Mercedes-AMG, focused on the W1's front upper wishbone, aero-form lower wishbone, and front upright components, all 3D printed in titanium to balance strength with weight optimization. The resulting layout mirrors the pushrod suspension setup with inboard dampers found on F1 cars, reducing unsprung mass and improving handling responsiveness and control.</p><p>"This cutting-edge technology has enabled us to develop more complex suspension structures in the McLaren W1, which enhance the driving experience for our customers and support McLaren's mission to continually push the boundaries of performance," said McLaren CEO <strong>Michael Leiters</strong>. The intricate geometries used in the design would be difficult or impossible to achieve using traditional casting or machining methods.</p><p>The lightweight, high-strength printed components are not simply a technical showcase: they contribute directly to the W1's speed and agility, giving drivers enhanced performance on both road and track. Divergent's titanium 3D printing process is also used in the suspension system of the Ferrari F80, reinforcing the growing footprint of additive manufacturing across the ultra-high-performance segment of the automotive industry.</p><p>The collaboration illustrates a broader shift already visible in Formula 1 itself, where 3D printed pistons, suspension uprights, and structural components are increasingly treated as safety-critical, load-bearing parts rather than confined to bodywork and wind-tunnel test pieces, with that engineering confidence now flowing directly into limited-run road cars.</p>`,
+    source: "3DPrinting.com",
+    url: "https://3dprinting.com/news/mclaren-w1-showcases-3d-printed-suspension-developed-by-divergent/",
+    img: "https://3dprinting.com/wp-content/uploads/image6-16.png"
   },
   // SEMICONDUCTOR
   {
-    title: "XTPL Sells First ODRA Advanced Packaging System to Silicon Valley Semiconductor Client",
+    title: "XTPL Posts Q1 2026 Revenue as ODRA Platform Gains Defense and Semiconductor Traction",
     sector: "Semiconductor",
-    summary: "Polish micro-printing firm XTPL has sold its first production-level ODRA system to a Silicon Valley semiconductor advanced packaging client, part of a wider push into semiconductor and defense markets.",
-    fullContent: `<p>Poland's <strong>XTPL</strong>, an OEM of additive manufacturing systems and materials used for advanced packaging in the electronics industry, has sold its first <strong>ODRA system</strong>, the production-level version of its Delta Printing System, to a client in Silicon Valley that provides advanced packaging solutions for both the technology and defense sectors. Both systems rely on XTPL's Ultra-Precise Dispensing printhead technology, capable of creating conductive structures as small as one micrometer.</p><p>"The first-ever order for the ODRA system is a breakthrough moment for XTPL. It provides market validation for our new business line and significantly strengthens our revenue potential both this year and over the horizon of our Strategy," said Filip Granek, CEO of XTPL. The order is valued at approximately <strong>USD 0.4–0.5 million</strong>, more than twice the price of XTPL's DPS technology demonstrators, with delivery scheduled for the second half of 2026.</p><p>Unlike the DPS, used primarily for R&D, the ODRA is designed for high-mix, low-volume industrial production, a profile that attracts corporate and defense-sector clients. The unnamed Silicon Valley buyer holds ITAR certification enabling collaboration with defense contractors, and is a member of an international consortium building an advanced semiconductor packaging R&D center in Silicon Valley, likely referring to the US-JOINT Consortium backed by Japanese chemicals manufacturer Resonac.</p><p>The sale follows XTPL's earlier deal placing a DPS system with Manz Asia, giving the company a foothold in Taiwan's semiconductor market, and a previous 2025 DPS sale to a different Silicon Valley client. "Our Silicon Valley client has already indicated interest in additional ODRA systems, and we are simultaneously conducting discussions with a number of potential partners across North America, Europe, and Asia," Granek added.</p><p>The advanced packaging breakthroughs driving this demand stem largely from the 3D design revolution in semiconductors over the past two decades, as chipmakers increasingly stack chips vertically rather than laying them out side by side, a shift that has made additive manufacturing an increasingly common part of the advanced packaging conversation.</p>`,
+    summary: "Polish micro-printing firm XTPL reported Q1 2026 revenue of roughly $441,000 and raised $8.3 million as its new ODRA production platform draws interest from semiconductor and defense customers in the US and China.",
+    fullContent: `<p>Polish microprinting company <strong>XTPL</strong> (WSE: XTP) reported first-quarter 2026 revenue of <strong>PLN 1.6 million</strong> (roughly $441,000), with product and service sales of PLN 1.2 million driven by deliveries of its Delta Printing System (DPS) and Ultra-Precise Dispensing (UPD) modules, plus early commercial traction for its newly launched <strong>ODRA</strong> production platform.</p><p>ODRA, designed for low-volume industrial production, secured its first order from a Silicon Valley customer working in semiconductor advanced packaging and cooperating with the defense industry, with additional orders expected as early as this year for delivery in late 2026 or 2027. XTPL's UPD modules can create conductive structures as small as one micrometer, targeting semiconductor manufacturing, advanced displays, printed electronics, and biosensors.</p><p>CEO <strong>Filip Granek</strong> said the quarter marked an important step in executing the company's 2026–2028 growth strategy, and noted XTPL is working to secure a larger second order from one of China's biggest display makers after completing the first stage of an active production-line deployment: "The UPD modules we delivered are now operating on an industrial production line, confirming the successful completion of the 'from lab to fab' pathway."</p><p>A separate UPD module was delivered to a Nasdaq-100-listed US customer in semiconductor production equipment and advanced displays as part of an ongoing technology evaluation. XTPL raised nearly <strong>PLN 30 million ($8.3 million)</strong> during the quarter through a public share offering and support from Poland's National Centre for Research and Development, ending the period with PLN 2.1 million in cash and an EBITDA loss of PLN 3.9 million.</p><p>XTPL now operates four commercial product lines: UPD industrial modules, DPS prototyping systems, High Performance Materials, and ODRA. Management sees ODRA, which sells for more than twice the price of DPS units, as the company's most important growth lever given its focus on repeat orders from defense and semiconductor manufacturing customers rather than one-off research sales.</p>`,
     source: "3DPrint.com",
-    url: "https://3dprint.com/324544/3d-printed-advanced-packaging-specialist-xtpl-sells-first-odra-system-to-silicon-valley-client/",
+    url: "https://3dprint.com/326329/3d-printing-financials-xtpl-adds-new-semiconductor-and-defense-customers-in-q1-2026/",
     img: null
   },
   {
-    title: "UT Austin's DARPA-Backed HMNL Process Aims to 3D Print Chip Packages in Days, Not Months",
+    title: "Semiconductor Additive Manufacturing Market Set to More Than Double by 2031",
     sector: "Semiconductor",
-    summary: "University of Texas at Austin engineers, backed by a $14.5M DARPA grant, have developed a holographic 3D printing method that produces complex semiconductor chip packages in a single step.",
-    fullContent: `<p>Engineers at the <strong>University of Texas at Austin</strong> are leading an academic and industry team developing a new 3D printing method for semiconductor chip packaging called <strong>Holographic Metasurface Nano-Lithography (HMNL)</strong>, aiming for faster, more efficient, and more environmentally friendly production of advanced electronics spanning smartphones, robotics, and aerospace applications.</p><p>"Our goal is to fundamentally change how electronics are packaged and manufactured," said Michael Cullinan, associate professor in the Cockrell School of Engineering's Walker Department of Mechanical Engineering, who leads the effort. "With HMNL, we can create complex, multimaterial structures in a single step, reducing production time from months to days."</p><p>The technique relies on metasurfaces, ultra-thin optical masks capable of encoding high-density information, which create holograms that simultaneously pattern a hybrid metal-and-polymer resin into intricate three-dimensional structures. The process is precise enough to achieve resolutions smaller than the width of a human hair, and by eliminating multiple production steps it also reduces material waste compared to conventional layer-by-layer electronics manufacturing.</p><p>The team, which includes researchers from the University of Utah, Applied Materials, Bright Silicon Technologies, Electroninks, Northrop Grumman, NXP Semiconductors, and Texas Microsintering, has received a <strong>$14.5 million grant</strong> from the Defense Advanced Research Projects Agency (DARPA). The group has already built four prototypes: a fan-out module for consumer electronics, advanced prototypes for high-frequency defense communications, nonplanar packages that fit unconventional spaces, and active packages combining mechanical and electrical functions such as precision beam-pointing systems.</p><p>"This isn't just about making electronics faster or cheaper; it's about unlocking new possibilities," Cullinan said, citing applications like embedding customized AI hardware configurations directly into robots or rockets. The team plans to commercialize HMNL through Texas Microsintering Inc., a startup Cullinan founded.</p>`,
-    source: "UT Austin News",
-    url: "https://news.utexas.edu/2025/12/03/3d-printed-chip-packages-could-supercharge-semiconductor-manufacturing/",
-    img: "https://news.utexas.edu/wp-content/uploads/2025/12/Silver-patterning-longhorn-Size-459.jpg-600x400-c-default.png"
-  },
-  {
-    title: "Siemens Debuts Innovator 3D IC and Calibre 3DStress for Chiplet Packaging",
-    sector: "Semiconductor",
-    summary: "Siemens introduced new design tools at DAC 2026 to detect thermal stress, warpage and electrical failure risks in advanced 3D chiplet packaging, as the semiconductor packaging market heads toward $66B by 2035.",
-    fullContent: `<p><strong>Siemens</strong> introduced <strong>Innovator 3D IC</strong> and <strong>Calibre 3DStress</strong> at the Design Automation Conference in San Francisco, tools designed to detect and mitigate risks such as thermal stress, warpage, and electrical failure that arise when multiple smaller chips, or "chiplets," are combined into a single processor package using advanced 3D packaging techniques.</p><p>The launch reflects a broader industry pivot as transistor miniaturization slows: with further gains from simple die shrinks becoming harder to achieve, manufacturers are increasingly turning to advanced packaging, assembling several chiplets within one package, as their primary lever for continued performance improvement. That shift raises new engineering challenges around managing heat and mechanical stress across densely stacked, heterogeneous chip assemblies.</p><p>Siemens is positioning its new tools as a way to simplify chiplet integration, reduce production risks, and strengthen semiconductor supply chains amid intensifying global competition in advanced packaging capability. Calibre 3DStress specifically targets the warpage and thermal stress failure modes that become more severe as designers stack more silicon into a single package footprint.</p><p>Market forecasts underscore the stakes: the global 3D semiconductor packaging market is projected to expand from approximately <strong>$17.23 billion in 2026</strong> to <strong>$66.41 billion by 2035</strong>, a compound annual growth rate of roughly 16.17%, as chipmakers across AI, mobile, and high-performance computing markets adopt 3D packaging to sustain performance gains.</p><p>The tools add to a growing ecosystem of software and additive hardware aimed at making advanced packaging more manufacturable at scale, arriving alongside continued momentum in physical 3D printing approaches to chip packaging, including university-led metasurface lithography research and specialized micro-printing systems now shipping to advanced packaging customers in Silicon Valley and Taiwan.</p>`,
-    source: "Chiplet Summit",
-    url: "https://www.chiplet-summit.com/news/siemens-pushes-3d-packaging-to-the-forefront",
-    img: null
+    summary: "The additive manufacturing in semiconductor market is projected to grow from $423 million in 2026 to $962 million by 2031, a 17.85% CAGR, led by 3D Systems, Materialise, Optomec and GE Additive.",
+    fullContent: `<p>The global market for additive manufacturing in the semiconductor industry is valued at <strong>USD 423.32 million in 2026</strong> and is projected to grow at a compound annual growth rate of <strong>17.85%</strong> to reach <strong>USD 962.19 million by 2031</strong>, according to new market sizing data. The major companies operating in the space include 3D Systems, EnvisionTEC, Materialise, Optomec, and GE Additive.</p><p>The growth case rests on additive manufacturing's ability to fabricate intricate, micron-scale components using techniques such as two-photon polymerization and projection micro stereolithography, achieving precision levels difficult to reach with conventional semiconductor fabrication processes, while offering a complementary pathway that reduces material waste and accelerates prototyping.</p><p>Adoption is also being driven by the industry's shift toward three-dimensional chip architectures. As device manufacturers increasingly stack chips vertically rather than laying them out side by side to sustain performance gains as transistor miniaturization slows, additive manufacturing is becoming a more natural fit for producing the complex, multi-material structures that advanced packaging requires.</p><p>Despite the momentum, cost remains a real barrier to broader adoption: production-class metal printers suited to semiconductor tolerances can exceed <strong>USD 500,000 per unit</strong>, and often approach USD 2 million once post-processing, inert-gas infrastructure, and metrology equipment are included, a threshold that continues to concentrate early adoption among large chipmakers, equipment suppliers, and well-funded specialty printing firms rather than the broader semiconductor supply base.</p>`,
+    source: "Mordor Intelligence",
+    url: "https://www.mordorintelligence.com/industry-reports/additive-manufacturing-in-semiconductor-industry-market",
+    img: "https://s3.mordorintelligence.com/production/additive-manufacturing-in-semiconductor-industry-market/market-snapshot.webp"
   }
 ]
 
 const ARCHIVE = [
+  {
+    date: "2026-07-07",
+    label: "7 Jul 2026",
+    items: [
+    {
+      title: "EOS Acquires Metalpine to Lock Down Titanium Powder Supply",
+      sector: "Aerospace",
+      source: "EOS GmbH",
+      url: "https://www.eos.info/press-media/press-center/press-releases/2026/eos-acquires-metalpine",
+      summary: "EOS has taken full ownership of Austrian metal powder specialist Metalpine, securing its patented titanium atomization process to meet surging aerospace and medical demand for metal 3D printing feedstock.",
+      customer: "Multiple / Industry",
+      vendor: "EOS / Metalpine",
+      location: "Krailling, Germany / Graz, Austria"
+    },
+    {
+      title: "OU and Oak Ridge Launch Phase II of Air Force AM Qualification Program",
+      sector: "Aerospace",
+      source: "OU News",
+      url: "https://www.ou.edu/news/articles/2026/march/ou-ornl-advance-qualification-of-additive-manufacturing-for-air-force-aircraft",
+      summary: "The University of Oklahoma and Oak Ridge National Laboratory have secured $8.8 million to develop a standardized qualification framework for 3D printed and repaired parts on legacy US Air Force aircraft.",
+      customer: "US Air Force Sustainment Center",
+      vendor: "University of Oklahoma / Oak Ridge National Laboratory",
+      location: "Norman, Oklahoma, USA"
+    },
+    {
+      title: "Stratasys Joins Pentagon's JAMA IV Pilot Parts Program",
+      sector: "Defence",
+      source: "The Jerusalem Post",
+      url: "https://www.jpost.com/defense-and-tech/article-891750",
+      summary: "Stratasys has been selected for the Pentagon's Joint Additive Manufacturing Acceptability program, deepening its role supplying qualified 3D printed parts to the US Air Force and Navy as defense AM budgets surge 83%.",
+      customer: "US Department of Defense (Air Force, NAVAIR)",
+      vendor: "Stratasys",
+      location: "Eden Prairie, Minnesota, USA / Rehovot, Israel"
+    },
+    {
+      title: "Army's 25th Infantry Division 3D Prints a Lethal FPV Drone",
+      sector: "Defence",
+      source: "3DPrint.com",
+      url: "https://3dprint.com/321825/u-s-army-drone-printing-hits-next-phase-25th-infantry-divisions-lethal-fpv-system/",
+      summary: "Hawaii's 25th Infantry Division has fabricated an in-house 3D printed FPV drone with an EOD-developed detonation system, marking a first publicly disclosed case of a US military unit printing a lethal drone entirely on site.",
+      customer: "US Army 25th Infantry Division",
+      vendor: "US Army Lightning Labs (in-house)",
+      location: "Schofield Barracks, Hawaii, USA"
+    },
+    {
+      title: "Nikon SLM Solutions and Bosch 3D Print a Complete V8 Engine Block in One Piece",
+      sector: "Automotive",
+      source: "3DPrinting.com",
+      url: "https://3dprinting.com/news/nikon-slm-solutions-and-bosch-3d-print-complete-v8-engine-block-as-a-single-piece/",
+      summary: "Bosch and Nikon SLM Solutions have printed a complete aluminum V8 engine block as a single part with no casting or tooling, signaling that metal AM is approaching automotive production volumes and complexity.",
+      customer: "Bosch",
+      vendor: "Nikon SLM Solutions",
+      location: "Nuremberg, Germany"
+    },
+    {
+      title: "BMW Group Scales Up 3D Printing With Recycled Powder and Filament",
+      sector: "Automotive",
+      source: "TCT Magazine",
+      url: "https://www.tctmagazine.com/bmw-group-3d-printing-components-material-recycled-waste-used-parts/",
+      summary: "BMW is rolling out a closed-loop recycling process that turns waste 3D printing powder and used parts into new filament and granulate, now expanding from its Munich campus to new plants including Debrecen, Hungary.",
+      customer: "BMW Group",
+      vendor: "BMW Group (in-house)",
+      location: "Oberschleißheim / Munich, Germany"
+    },
+    {
+      title: "3D Systems Launches High-Throughput SLA 825 Dual and AddiTrak Software",
+      sector: "Automotive",
+      source: "3D Systems",
+      url: "https://www.3dsystems.com/press-releases/3d-systems-accelerates-production-scale-additive-manufacturing",
+      summary: "3D Systems unveiled a dual-laser production SLA printer and a new fleet-monitoring software platform at RAPID + TCT 2026, targeting higher-volume automotive, aerospace and healthcare additive manufacturing.",
+      customer: "Multiple / Industry",
+      vendor: "3D Systems",
+      location: "Rock Hill, South Carolina, USA"
+    },
+    {
+      title: "Baker Hughes Deepens 3D Printing Bets With Saudi Dussur and Aramco",
+      sector: "Energy",
+      source: "Fabbaloo",
+      url: "https://www.fabbaloo.com/news/baker-hughes-bets-big-on-3d-printing-for-an-efficient-sustainable-future",
+      summary: "Oilfield services giant Baker Hughes is expanding additive manufacturing across its global supply chain through a Saudi joint venture with Dussur and a research partnership with Aramco on advanced materials.",
+      customer: "Baker Hughes / Saudi Aramco",
+      vendor: "Baker Hughes / Dussur",
+      location: "Houston, Texas, USA / Saudi Arabia"
+    },
+    {
+      title: "EOS Case Study Cuts Valve Spare-Part Lead Time From 52 Weeks to One",
+      sector: "Energy",
+      source: "VoxelMatters",
+      url: "https://www.voxelmatters.com/eos-3d-printing-new-paradigm-spare-parts-oil-gas/",
+      summary: "A global valve services provider working with EOS's Additive Minds consultancy slashed lead time for a critical metal component from a year to a week using polymer laser powder bed fusion, while cutting weight 15% and total cost 30%.",
+      customer: "Multiple / Industry (Global valve services provider)",
+      vendor: "EOS (Additive Minds)",
+      location: "Global"
+    },
+    {
+      title: "Mercedes and Red Bull's 3D Printed Pistons Exploit a Compression Loophole",
+      sector: "Motorsport",
+      source: "Autoblog",
+      url: "https://www.autoblog.com/news/how-3d-printed-pistons-let-f1-engines-bend-the-rules-on-compression",
+      summary: "Mercedes and Red Bull have reportedly engineered 3D printed F1 pistons with internal structures that maximize thermal expansion, letting engines exceed the new 16:1 compression ratio cap once at operating temperature.",
+      customer: "Mercedes-AMG Petronas F1 / Red Bull Racing",
+      vendor: "In-house (Mercedes HPP / Red Bull Powertrains)",
+      location: "Brackley, UK / Milton Keynes, UK"
+    },
+    {
+      title: "McLaren's W1 Supercar Runs a 3D Printed Titanium Suspension by Divergent",
+      sector: "Motorsport",
+      source: "3DPrinting.com",
+      url: "https://3dprinting.com/news/mclaren-w1-showcases-3d-printed-suspension-developed-by-divergent/",
+      summary: "McLaren worked with Czinger's additive manufacturing spinoff Divergent to 3D print the W1 hypercar's front suspension in titanium, bringing an F1-style pushrod layout to a road-legal supercar.",
+      customer: "McLaren Automotive",
+      vendor: "Divergent Technologies",
+      location: "Woking, UK / Torrance, California, USA"
+    },
+    {
+      title: "XTPL Posts Q1 2026 Revenue as ODRA Platform Gains Defense and Semiconductor Traction",
+      sector: "Semiconductor",
+      source: "3DPrint.com",
+      url: "https://3dprint.com/326329/3d-printing-financials-xtpl-adds-new-semiconductor-and-defense-customers-in-q1-2026/",
+      summary: "Polish micro-printing firm XTPL reported Q1 2026 revenue of roughly $441,000 and raised $8.3 million as its new ODRA production platform draws interest from semiconductor and defense customers in the US and China.",
+      customer: "Multiple (semiconductor, defense, display clients)",
+      vendor: "XTPL",
+      location: "Wrocław, Poland"
+    },
+    {
+      title: "Semiconductor Additive Manufacturing Market Set to More Than Double by 2031",
+      sector: "Semiconductor",
+      source: "Mordor Intelligence",
+      url: "https://www.mordorintelligence.com/industry-reports/additive-manufacturing-in-semiconductor-industry-market",
+      summary: "The additive manufacturing in semiconductor market is projected to grow from $423 million in 2026 to $962 million by 2031, a 17.85% CAGR, led by 3D Systems, Materialise, Optomec and GE Additive.",
+      customer: "Multiple / Industry",
+      vendor: "N/A (Market Report)",
+      location: "Global"
+    }
+    ]
+  },
   {
     date: "2026-07-06",
     label: "6 Jul 2026",
@@ -2345,9 +2498,12 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
     lv.classList.toggle('visible', tab === 'leads');
     const cv = document.getElementById('companies-view');
     cv.classList.toggle('visible', tab === 'companies');
+    const asv = document.getElementById('as9100-view');
+    asv.classList.toggle('visible', tab === 'as9100');
     if (tab === 'archive') renderArchive();
     if (tab === 'leads') renderLeads();
     if (tab === 'companies') renderAMCompanies();
+    if (tab === 'as9100') renderAS9100();
   });
 });
 
@@ -2362,6 +2518,7 @@ function renderStats() {
   const totalArch = ARCHIVE.reduce((a,e) => a + e.items.length, 0);
   document.getElementById('archive-count').textContent = totalArch;
   document.getElementById('companies-count').textContent = AM_COMPANIES.length;
+  document.getElementById('as9100-count').textContent = AS9100_ROADMAP.length;
 }
 
 // Archive render
@@ -3368,6 +3525,913 @@ Best regards,
 [Your Name]
 [Company] | [Email] | [Phone]`}
     ]
+  },
+  {
+    name:"GE Aerospace", sector:"Aerospace", hq:"Cincinnati, OH, USA",
+    articleUrl:"https://www.engineering.com/additive-aerospace-update-ge-aerospace-rocket-lab-velo3d-and-more/",
+    articleTitle:"GE Aerospace Pours $115M Into Cincinnati and Alabama Additive Capacity",
+    articleBrief:"GE Aerospace is investing $115M to expand advanced 3D metal printing capacity at its Cincinnati HQ and Auburn, Alabama jet engine parts facility — signalling continued in-house scale-up of metal AM for flight-critical components.",
+    contacts:[
+      {name:"Michael Kauffman", title:"Vice President of Supply Chain", location:"Cincinnati, OH, USA",
+       linkedin:"https://www.linkedin.com/in/michael-kauffman-4a75684a", email:null,
+       subject:"External LPBF Capacity to Support GE Aerospace's AM Scale-Up",
+       body:`Hi Michael,
+
+With GE Aerospace's $115M investment expanding metal 3D printing capacity in Cincinnati and Auburn, I imagine your team is also evaluating external qualified capacity to complement in-house builds during the ramp.
+
+We're a metal LPBF service bureau specialising in Ti64, IN718, IN625, MS1, and 316L, with integrated CNC machining and full material traceability for flight-critical components. We support surge capacity and qualification-parallel production runs for OEMs scaling internal AM programmes.
+
+If GE Aerospace is looking at supplemental LPBF partners during this expansion, I'd welcome a conversation.
+
+Best regards,
+[Name] | [Company] | [Phone]`},
+      {name:"Matthew Foister", title:"Global Supply Chain Leader", location:"Cincinnati, OH, USA",
+       linkedin:"https://www.linkedin.com/in/matthew-foister-071ba3a", email:null,
+       subject:"Qualified Metal AM Supply — GE Aerospace Global Supply Chain",
+       body:`Hi Matthew,
+
+Following GE Aerospace's $115M additive capacity expansion across Cincinnati and Auburn, I wanted to introduce our metal LPBF service bureau as a potential supply chain partner.
+
+We print Ti64, IN718, IN625, MS1, and 316L with integrated precision machining, and support aerospace OEMs needing qualified overflow capacity or second-source production during internal ramp-ups.
+
+Happy to share material certifications and qualification data if useful for your supplier evaluation process.
+
+Best regards,
+[Name] | [Company] | [Phone]`},
+      {name:"Courtney Kasselman", title:"Executive Director of Quality and Global Supply Chain", location:"Hamilton, OH, USA",
+       linkedin:"https://www.linkedin.com/in/courtney-kasselman-72635425", email:null,
+       subject:"Metal LPBF Quality & Traceability for GE Aerospace",
+       body:`Hi Courtney,
+
+Given your remit across quality and global supply chain, I wanted to flag our metal LPBF service bureau capability as GE Aerospace scales additive manufacturing capacity in Cincinnati and Auburn.
+
+We specialise in Ti64, IN718, IN625, MS1, and 316L with full material certification, in-process quality documentation, and integrated CNC finishing — built for aerospace traceability requirements from day one.
+
+If you're assessing external AM suppliers as part of this expansion, I'd welcome the chance to share our quality system documentation.
+
+Best regards,
+[Name] | [Company] | [Phone]`},
+      {name:"Connor Mclaughlin", title:"Senior Manufacturing Manager, Power Plant Engineering", location:"Florence, KY, USA",
+       linkedin:"https://www.linkedin.com/in/connor-mclaughlin-mba-5920a390", email:null,
+       subject:"LPBF Support for GE Aerospace Power Plant Engineering",
+       body:`Hi Connor,
+
+With GE Aerospace's additive capacity expansion underway, I wanted to reach out about our metal LPBF service bureau for power plant engineering applications.
+
+We produce Ti64, IN718, IN625, MS1, and 316L components with integrated machining for tight-tolerance engine parts, and can support development iterations or production overflow as your team's AM programmes scale.
+
+Would be glad to set up a capability review if there's a fit.
+
+Best regards,
+[Name] | [Company] | [Phone]`}
+    ]
+  },
+  {
+    name:"Northrop Grumman", sector:"Aerospace", hq:"Falls Church, VA, USA",
+    articleUrl:"https://3dprintingindustry.com/news/aerospace-defense-set-to-become-3d-systems-fastest-growing-industrial-business-247905/",
+    articleTitle:"AMAA 2026: Northrop Grumman's Single-Piece Printed Tanks Cut Space Programme Costs",
+    articleBrief:"Northrop Grumman's internal Additive Manufacturing Center of Excellence is consolidating multi-part space propellant tank assemblies into single printed components — reducing weld joints, weight, and programme risk.",
+    contacts:[
+      {name:"Greg Maxwell", title:"Sector Vice President of Global Supply Chain", location:"United States",
+       linkedin:"https://www.linkedin.com/in/greg-maxwell-15148b", email:null,
+       subject:"Metal AM Supply Chain Partner for Northrop Grumman",
+       body:`Hi Greg,
+
+Northrop Grumman's work consolidating multi-part space tank assemblies into single printed components is a strong signal of how central metal AM has become to your production strategy.
+
+We're a metal LPBF service bureau — Ti64, IN718, IN625, MS1, and 316L — with integrated CNC machining and full traceability, supporting defense and space primes with qualified overflow and second-source capacity.
+
+If Northrop Grumman is expanding its qualified supplier base for these programmes, I'd welcome a conversation.
+
+Best regards,
+[Name] | [Company] | [Phone]`},
+      {name:"Travis Hedges", title:"Vice President of Supply Chain", location:"United States",
+       linkedin:"https://www.linkedin.com/in/travis-hedges-79675414", email:null,
+       subject:"LPBF Metal AM Capability — Northrop Grumman Supply Chain",
+       body:`Hi Travis,
+
+With Northrop Grumman's Additive Manufacturing Center of Excellence pushing single-piece printed tank designs into space programmes, I wanted to introduce our metal LPBF service bureau.
+
+We manufacture in Ti64, IN718, IN625, MS1, and 316L with integrated precision machining, supporting aerospace and defense primes that need qualified capacity beyond internal AM lines.
+
+Happy to share our quality documentation and material certifications if there's a fit for upcoming programmes.
+
+Best regards,
+[Name] | [Company] | [Phone]`},
+      {name:"Gina Woullard", title:"Vice President of Manufacturing Operations", location:"Palmdale, CA, USA",
+       linkedin:"https://www.linkedin.com/in/gina-woullard-a183364", email:null,
+       subject:"External LPBF Capacity for Palmdale Manufacturing Operations",
+       body:`Hi Gina,
+
+Given your role overseeing manufacturing operations, I wanted to reach out about our metal LPBF service bureau as a potential partner for Palmdale's additive programmes.
+
+We print Ti64, IN718, IN625, MS1, and 316L with integrated CNC finishing and full material traceability, supporting qualification-parallel production and surge capacity for aerospace and defense manufacturers.
+
+Would welcome the opportunity to discuss how we might support your site's AM supply chain.
+
+Best regards,
+[Name] | [Company] | [Phone]`}
+    ]
+  },
+  {
+    name:"Boeing", sector:"Aerospace", hq:"Arlington, VA, USA",
+    articleUrl:"https://3dprintingindustry.com/news/aerospace-defense-set-to-become-3d-systems-fastest-growing-industrial-business-247905/",
+    articleTitle:"Metal AM Certification Push: Hybrid AM-CNC Workflows Dominate Aerospace Supply Chain",
+    articleBrief:"A NADCAP-aligned audit framework and a wave of hybrid AM-CNC qualification programmes are pushing Boeing's tier supply chain toward standardised metal AM certification pathways.",
+    contacts:[
+      {name:"David Canada", title:"Director of Strategic Sourcing and Partnerships", location:"Arlington, TX, USA",
+       linkedin:"https://www.linkedin.com/in/davidcanada", email:null,
+       subject:"Qualified Metal LPBF Partner for Boeing Strategic Sourcing",
+       body:`Hi David,
+
+As Boeing's supply chain moves toward standardised hybrid AM-CNC qualification pathways, I wanted to introduce our metal LPBF service bureau as a potential strategic sourcing partner.
+
+We manufacture in Ti64, IN718, IN625, MS1, and 316L with integrated CNC machining and full material traceability, built to support NADCAP-aligned qualification requirements for aerospace primes.
+
+If Boeing is expanding its qualified AM supplier base, I'd welcome a conversation about how we could support your sourcing strategy.
+
+Best regards,
+[Name] | [Company] | [Phone]`},
+      {name:"Lokesh Penikalapati", title:"Senior Director of IT and Data Analytics, Supply Chain", location:"Miami, FL, USA",
+       linkedin:"https://www.linkedin.com/in/lokesh-penikalapati-3072307", email:null,
+       subject:"Metal AM Supplier Data & Traceability for Boeing Supply Chain",
+       body:`Hi Lokesh,
+
+Given your focus on supply chain data and analytics, I wanted to flag our metal LPBF service bureau's digital traceability capabilities as Boeing's tier network moves toward standardised AM certification.
+
+We print Ti64, IN718, IN625, MS1, and 316L with full material lot tracking and quality documentation designed to integrate cleanly into supplier data systems.
+
+Happy to share more on our digital quality infrastructure if it's relevant to your supplier data initiatives.
+
+Best regards,
+[Name] | [Company] | [Phone]`}
+    ]
+  },
+  {
+    name:"Dawn Aerospace", sector:"Aerospace", hq:"Christchurch, New Zealand",
+    articleUrl:"https://www.3dnatives.com/en/",
+    articleTitle:"Dawn Aerospace Raises $25 Million to Scale 3D-Printed Reusable Spaceplane Programme",
+    articleBrief:"Dawn Aerospace's Series funding will scale production of its Mk-II Aurora reusable spaceplane, which relies heavily on AM-partnered propulsion and structural components across its NZ, Netherlands, and US engineering teams.",
+    contacts:[
+      {name:"Stefan Powell", title:"Chief Executive Officer & Chief Technology Officer", location:"Christchurch, New Zealand",
+       linkedin:"https://www.linkedin.com/in/spowell111", email:null,
+       subject:"Metal & Polymer AM Partner for Dawn Aerospace's Aurora Programme",
+       body:`Hi Stefan,
+
+Congratulations on the $25M raise to scale the Aurora spaceplane programme. As production ramps, I wanted to introduce our AM service bureau as a potential partner for propulsion and structural components.
+
+We manufacture in Ti64, IN718, IN625, and high-performance polymers with integrated precision machining, supporting new space companies that need qualified capacity without the capital cost of in-house metal AM.
+
+Would welcome a conversation on how we might support Aurora's scale-up.
+
+Best regards,
+[Name] | [Company] | [Phone]`},
+      {name:"Jason Hochstein", title:"Senior Certification Engineer", location:"United States",
+       linkedin:"https://www.linkedin.com/in/jasonhochstein", email:null,
+       subject:"AM Component Certification Support for Dawn Aerospace",
+       body:`Hi Jason,
+
+With Dawn Aerospace scaling its Aurora spaceplane programme, I wanted to reach out regarding our metal LPBF service bureau's certification and traceability capabilities.
+
+We produce Ti64, IN718, and IN625 components with full material documentation designed to support aerospace certification workflows, and would be glad to share our quality data as your team evaluates AM suppliers.
+
+Best regards,
+[Name] | [Company] | [Phone]`},
+      {name:"Burak Cakir", title:"Director of Business Development", location:"Netherlands",
+       linkedin:"https://www.linkedin.com/in/burak-cakir", email:null,
+       subject:"AM Manufacturing Partnership — Dawn Aerospace Business Development",
+       body:`Hi Burak,
+
+Following Dawn Aerospace's $25M raise to scale the Aurora reusable spaceplane, I wanted to introduce our metal and polymer AM service bureau as a potential manufacturing partner.
+
+We support new space companies with Ti64, IN718, IN625, and high-performance polymer components, integrated CNC finishing, and full traceability — flexible capacity as programmes scale from prototype to production.
+
+Open to a call if useful as you evaluate supply partners.
+
+Best regards,
+[Name] | [Company] | [Phone]`}
+    ]
+  },
+  {
+    name:"Astrobotic Technology", sector:"Aerospace", hq:"Pittsburgh, PA, USA",
+    articleUrl:"https://3dprintingindustry.com/news/astrobotic-uses-patented-metal-3d-printing-technology-to-break-rotating-detonation-engine-records-251176/",
+    articleTitle:"Astrobotic Breaks Rotating Detonation Engine Records with 3D Printing",
+    articleBrief:"Astrobotic used patented metal 3D printing technology to complete a record-setting hot-fire test of its Chakram rotating detonation rocket engine — underscoring metal AM's role in next-gen propulsion development.",
+    contacts:[
+      {name:"John Thornton", title:"Chief Executive Officer", location:"Pittsburgh, PA, USA",
+       linkedin:"https://www.linkedin.com/in/john-thornton-astro", email:null,
+       subject:"Metal AM Partner Following Astrobotic's Chakram RDRE Milestone",
+       body:`Hi John,
+
+Congratulations on the record-setting Chakram rotating detonation engine test — a great showcase of what metal AM can unlock for propulsion development.
+
+We're a metal LPBF service bureau specialising in Ti64, IN718, IN625, and copper alloys with integrated CNC machining, supporting space companies that need qualified overflow capacity as propulsion programmes scale toward flight hardware.
+
+Happy to discuss how we could support Astrobotic's next development phase.
+
+Best regards,
+[Name] | [Company] | [Phone]`},
+      {name:"Lindsay Kovach", title:"Director of Supply Chain", location:"United States",
+       linkedin:"https://www.linkedin.com/in/lindsay-mansberry-kovach-mba-pmp-9a5a263", email:null,
+       subject:"Qualified Metal AM Supply — Astrobotic Supply Chain",
+       body:`Hi Lindsay,
+
+Following Astrobotic's record-setting Chakram rotating detonation engine test, I wanted to introduce our metal LPBF service bureau as a potential supply chain partner for propulsion hardware.
+
+We print Ti64, IN718, IN625, and copper alloys with integrated precision machining and full material traceability, and support space companies scaling from prototype engines to flight production.
+
+Would welcome a conversation about your supplier qualification process.
+
+Best regards,
+[Name] | [Company] | [Phone]`},
+      {name:"Chris Cloutier", title:"Chief Engineer", location:"Pittsburgh, PA, USA",
+       linkedin:"https://www.linkedin.com/in/chris-cloutier-950aab8", email:null,
+       subject:"Metal AM Engineering Support for Astrobotic Propulsion",
+       body:`Hi Chris,
+
+The Chakram rotating detonation engine's record hot-fire test is a strong proof point for metal AM in propulsion hardware — congratulations on the milestone.
+
+We're a metal LPBF service bureau printing Ti64, IN718, IN625, and copper alloys with integrated machining, and regularly support propulsion engineering teams through design-for-AM iteration and qualification builds.
+
+Happy to set up a technical discussion if useful for upcoming engine development.
+
+Best regards,
+[Name] | [Company] | [Phone]`}
+    ]
+  },
+  {
+    name:"BMW Group", sector:"Automotive", hq:"Munich, Germany",
+    articleUrl:"https://3dprintingindustry.com/news/",
+    articleTitle:"BMW Confirms 3D-Printed Components Now in Series Production",
+    articleBrief:"BMW Group has confirmed that 3D-printed polymer and metal components are now running in series production across BMW, Mini, and Rolls-Royce vehicle lines — moving AM decisively from prototyping into standard manufacturing.",
+    contacts:[
+      {name:"Sebastian Mackensen", title:"President & CEO, Head of Region Americas", location:"United States",
+       linkedin:"https://www.linkedin.com/in/sebastian-mackensen-222616209", email:null,
+       subject:"AM Production Partner Following BMW's Series Production Milestone",
+       body:`Hi Sebastian,
+
+BMW Group's confirmation that 3D-printed components are now running in series production is a significant milestone for the industry — congratulations to the team.
+
+We're an AM service bureau supporting automotive manufacturers with metal and polymer production parts, tooling, and jigs, with capacity to scale alongside BMW's growing Americas production footprint.
+
+Would welcome the chance to discuss how we might support regional AM supply needs.
+
+Best regards,
+[Name] | [Company] | [Phone]`},
+      {name:"Greg Marler", title:"Director of IT, Americas Plants", location:"South Carolina, USA",
+       linkedin:"https://www.linkedin.com/in/greg-marler-84002a1a0", email:null,
+       subject:"AM Supply Support for BMW's Americas Manufacturing Plants",
+       body:`Hi Greg,
+
+With BMW's 3D-printed components now confirmed in series production, I wanted to flag our AM service bureau's capability to support the Americas plant network with production parts and tooling.
+
+We manufacture in metal and engineering-grade polymers with integrated finishing, supporting automotive plants that need flexible, qualified AM capacity alongside in-house production lines.
+
+Happy to connect if there's a fit for Spartanburg or other Americas facilities.
+
+Best regards,
+[Name] | [Company] | [Phone]`},
+      {name:"Jack Meyer", title:"Project Manager", location:"Saddle Brook, NJ, USA",
+       linkedin:"https://www.linkedin.com/in/jack-meyer-b81583b", email:null,
+       subject:"AM Tooling & Production Parts Support for BMW Group",
+       body:`Hi Jack,
+
+Following BMW Group's confirmation that 3D-printed parts are now in series production, I wanted to introduce our AM service bureau for tooling, jigs, and production part support.
+
+We work in both metal and engineering polymers with integrated finishing, and support automotive project teams scaling AM from pilot to series volume.
+
+Open to a quick call if useful for any upcoming projects.
+
+Best regards,
+[Name] | [Company] | [Phone]`}
+    ]
+  },
+  {
+    name:"Audi", sector:"Automotive", hq:"Ingolstadt, Germany",
+    articleUrl:"https://3dprintingindustry.com/news/",
+    articleTitle:"Audi's Metal 3D Printing Center Applies DfAM Across 50 VW Group Brands",
+    articleBrief:"Audi's in-house metal 3D printing center is now applying design-for-additive-manufacturing (DfAM) principles across components shared throughout the 50+ brands of the Volkswagen Group.",
+    contacts:[
+      {name:"Kevin Horner", title:"Director of Planning and Supply Chain", location:"Leesburg, VA, USA",
+       linkedin:"https://www.linkedin.com/in/kevin-horner-20116bb", email:null,
+       subject:"Metal AM Supply Partner for Audi / VW Group Planning",
+       body:`Hi Kevin,
+
+With Audi's metal 3D printing center applying DfAM principles across the VW Group's 50+ brands, I wanted to introduce our metal AM service bureau as a potential supply partner for overflow and second-source production.
+
+We print in Ti64, aluminum, and tooling steels with integrated CNC finishing, supporting automotive planning teams that need qualified capacity as DfAM parts scale across brand platforms.
+
+Would welcome a conversation about your supply chain evaluation process.
+
+Best regards,
+[Name] | [Company] | [Phone]`},
+      {name:"Thiemo Rusch", title:"Senior Vice President of Sales and Operations", location:"Herndon, VA, USA",
+       linkedin:"https://www.linkedin.com/in/thiemorusch", email:null,
+       subject:"AM Production Capacity for Audi Group Operations",
+       body:`Hi Thiemo,
+
+Audi's push to apply DfAM across the VW Group's brand portfolio is a strong signal of how central metal AM has become to your operations strategy.
+
+We're a metal AM service bureau offering production parts, tooling, and jigs with integrated finishing, and support automotive operations teams scaling additive programmes from pilot to series volume.
+
+Happy to discuss how we could support Audi's operations across North America.
+
+Best regards,
+[Name] | [Company] | [Phone]`},
+      {name:"Brian Stockton", title:"Senior Director of Technical Services and Training", location:"Auburn Hills, MI, USA",
+       linkedin:"https://www.linkedin.com/in/brian-stockton-90801a6", email:null,
+       subject:"AM Technical Partnership — Audi Auburn Hills",
+       body:`Hi Brian,
+
+Given Audi's metal 3D printing center is now applying DfAM across VW Group brands, I wanted to reach out regarding our AM service bureau's technical capabilities from our perspective supporting Auburn Hills-area manufacturers.
+
+We produce metal and polymer components with integrated finishing and full material documentation, and regularly support technical teams through design-for-AM consultation and qualification builds.
+
+Would welcome a technical discussion if there's a fit.
+
+Best regards,
+[Name] | [Company] | [Phone]`}
+    ]
+  },
+  {
+    name:"Tesla", sector:"Automotive", hq:"Austin, TX, USA",
+    articleUrl:"https://3dprintingindustry.com/news/",
+    articleTitle:"Formlabs Launches Fuse X1 Large-Format SLS at $84,999 — Tesla Among Early Adopters",
+    articleBrief:"Formlabs' new Fuse X1 large-format SLS platform, priced 50% below comparable industrial systems, is targeting automotive manufacturers like Tesla for jigs, fixtures, and low-volume production parts.",
+    contacts:[
+      {name:"Lucie Nguyen", title:"Director of Software Engineering Product Management, Supply Chain & ML", location:"Austin, TX, USA",
+       linkedin:"https://www.linkedin.com/in/keiira", email:null,
+       subject:"AM Production Support for Tesla Supply Chain",
+       body:`Hi Lucie,
+
+With large-format SLS platforms like Formlabs' Fuse X1 gaining traction among automotive manufacturers for jigs and production parts, I wanted to introduce our AM service bureau as a complementary supply partner.
+
+We produce polymer and metal components — tooling, fixtures, brackets, and cooling plates — with integrated finishing, supporting manufacturers scaling AM from pilot cells into recurring production supply.
+
+Happy to discuss where external capacity might fit alongside Tesla's in-house AM programmes.
+
+Best regards,
+[Name] | [Company] | [Phone]`},
+      {name:"Peter Ehlers", title:"Director of Engineering and Operations", location:"United States",
+       linkedin:"https://www.linkedin.com/in/peter-ehlers", email:null,
+       subject:"Metal & Polymer AM Capacity for Tesla Engineering & Operations",
+       body:`Hi Peter,
+
+As large-format SLS and metal AM platforms scale across automotive manufacturing, I wanted to flag our AM service bureau's capability for production tooling, fixtures, and low-volume metal parts.
+
+We work in engineering polymers and metals (Ti64, aluminum, tooling steels) with integrated finishing, offering flexible qualified capacity that scales with production ramp needs.
+
+Open to a conversation if there's a fit for upcoming engineering programmes.
+
+Best regards,
+[Name] | [Company] | [Phone]`},
+      {name:"Amir Berahmand", title:"Head of Engineering and Design", location:"Austin, TX, USA",
+       linkedin:"https://www.linkedin.com/in/amir-berahmand-p-e-7b561652", email:null,
+       subject:"AM Design & Production Partnership — Tesla Engineering",
+       body:`Hi Amir,
+
+Given the growing adoption of large-format AM platforms across automotive production, I wanted to introduce our service bureau's design-for-AM and production capabilities.
+
+We manufacture in polymers and metals with integrated CNC finishing, supporting engineering teams through design iteration, tooling production, and qualified low-volume manufacturing.
+
+Would welcome a technical conversation if useful for your team's roadmap.
+
+Best regards,
+[Name] | [Company] | [Phone]`}
+    ]
+  },
+  {
+    name:"Daimler Truck", sector:"Automotive", hq:"Portland, OR, USA",
+    articleUrl:"https://3dprintingindustry.com/news/",
+    articleTitle:"Daimler Truck Launches Decentralised AM Spare Parts Programme",
+    articleBrief:"Daimler Truck has launched a decentralised additive manufacturing programme for spare parts, using distributed 3D printing to cut lead times and inventory costs across its North American service network.",
+    contacts:[
+      {name:"Darren Trtek", title:"Director of North America Supplier Management", location:"Portland, OR, USA",
+       linkedin:"https://www.linkedin.com/in/darren-trtek-87a11241", email:null,
+       subject:"Qualified AM Supplier for Daimler Truck's Decentralised Spare Parts Programme",
+       body:`Hi Darren,
+
+Daimler Truck's decentralised AM spare parts programme is a compelling model for cutting lead times — I wanted to introduce our metal and polymer AM service bureau as a potential qualified supplier.
+
+We manufacture production and spare parts in engineering polymers, aluminum, and tooling steels with integrated finishing, supporting distributed manufacturing programmes that need reliable, qualified regional capacity.
+
+Would welcome a conversation about joining your NA supplier network for this programme.
+
+Best regards,
+[Name] | [Company] | [Phone]`},
+      {name:"Melanie Holling", title:"Director of Manufacturing Engineering", location:"Detroit, MI, USA",
+       linkedin:"https://www.linkedin.com/in/melanie-holling-a66b89178", email:null,
+       subject:"AM Manufacturing Engineering Partnership — Daimler Truck",
+       body:`Hi Melanie,
+
+With Daimler Truck's decentralised AM spare parts programme underway, I wanted to reach out regarding our manufacturing engineering support for additive parts qualification.
+
+We produce components in engineering polymers and metals with integrated CNC finishing, and support manufacturing engineering teams through design-for-AM consultation and qualification builds for spare and service parts.
+
+Happy to set up a technical discussion if there's a fit.
+
+Best regards,
+[Name] | [Company] | [Phone]`},
+      {name:"Kalvin Bowery", title:"Procurement Project and Program Manager", location:"Detroit, MI, USA",
+       linkedin:"https://www.linkedin.com/in/kalvin-bowery-58292941", email:null,
+       subject:"AM Spare Parts Supply — Daimler Truck Procurement",
+       body:`Hi Kalvin,
+
+Following the launch of Daimler Truck's decentralised AM spare parts programme, I wanted to introduce our AM service bureau as a potential procurement partner for distributed production.
+
+We manufacture spare and service parts in engineering polymers and metals with full traceability, built to integrate into decentralised, on-demand supply models.
+
+Would welcome the opportunity to discuss supplier onboarding for this programme.
+
+Best regards,
+[Name] | [Company] | [Phone]`}
+    ]
+  },
+  {
+    name:"Ferrari", sector:"Automotive", hq:"Maranello, Italy",
+    articleUrl:"https://3dprintingindustry.com/news/",
+    articleTitle:"Ferrari, Lamborghini, Aston Martin, McLaren and Bugatti Push Metal AM Into Series Hypercar Production",
+    articleBrief:"Five leading hypercar manufacturers — Ferrari, Lamborghini, Aston Martin, McLaren, and Bugatti — are jointly pushing metal additive manufacturing from prototyping into structural and series production components.",
+    contacts:[
+      {name:"Davide Abate", title:"Chief Industrial Officer", location:"Maranello, Italy",
+       linkedin:"https://www.linkedin.com/in/davide-abate-95777624", email:null,
+       subject:"Metal AM Partnership — Ferrari Industrial Operations",
+       body:`Hi Davide,
+
+With Ferrari among the hypercar manufacturers pushing metal AM into structural and series production, I wanted to introduce our metal LPBF service bureau as a potential industrial partner.
+
+We manufacture in Ti64, aluminum, and tooling steels with integrated CNC finishing and full material traceability, supporting hypercar and motorsport-adjacent manufacturers scaling AM from prototype to series components.
+
+Would welcome a conversation about how we might support Ferrari's industrial operations.
+
+Best regards,
+[Name] | [Company] | [Phone]`},
+      {name:"Franco Pinna", title:"Head of Innovation and Advanced Technologies", location:"Maranello, Italy",
+       linkedin:"https://www.linkedin.com/in/franco-pinna-39427019", email:null,
+       subject:"Advanced Metal AM Capability for Ferrari Innovation",
+       body:`Hi Franco,
+
+Given Ferrari's push into series production metal AM alongside other leading hypercar manufacturers, I wanted to flag our metal LPBF service bureau's advanced materials and process capability.
+
+We work in Ti64, aluminum, and tooling steels with integrated finishing, and regularly partner with innovation teams on design-for-AM development ahead of series qualification.
+
+Happy to arrange a technical discussion if useful for upcoming programmes.
+
+Best regards,
+[Name] | [Company] | [Phone]`}
+    ]
+  },
+  {
+    name:"Lamborghini", sector:"Automotive", hq:"Sant'Agata Bolognese, Italy",
+    articleUrl:"https://3dprintingindustry.com/news/",
+    articleTitle:"Ferrari, Lamborghini, Aston Martin, McLaren and Bugatti Push Metal AM Into Series Hypercar Production",
+    articleBrief:"Lamborghini joins four other leading hypercar manufacturers in scaling metal additive manufacturing from prototyping into structural and series production components.",
+    contacts:[
+      {name:"Silvano Michieli", title:"Chief Procurement Officer, Board Member", location:"Italy",
+       linkedin:"https://www.linkedin.com/in/silvano-michieli-8623674", email:null,
+       subject:"Metal AM Supply Partnership — Lamborghini Procurement",
+       body:`Hi Silvano,
+
+With Lamborghini among the hypercar makers scaling metal AM into series production, I wanted to introduce our metal LPBF service bureau as a potential qualified supplier.
+
+We manufacture in Ti64, aluminum, and tooling steels with integrated CNC finishing and full material traceability, supporting low-volume, high-performance automotive production runs.
+
+Would welcome the opportunity to discuss supplier qualification for upcoming programmes.
+
+Best regards,
+[Name] | [Company] | [Phone]`},
+      {name:"Ranieri Niccoli", title:"Industrial Director", location:"Bologna, Italy",
+       linkedin:"https://www.linkedin.com/in/ranieri-niccoli-0a919a5", email:null,
+       subject:"Metal AM Industrial Partnership — Lamborghini",
+       body:`Hi Ranieri,
+
+Given Lamborghini's push into series-production metal AM components, I wanted to flag our metal LPBF service bureau's industrial-scale capability.
+
+We produce Ti64, aluminum, and tooling steel components with integrated finishing, supporting hypercar manufacturers moving parts from prototype validation into qualified series production.
+
+Happy to share our capability overview if there's a fit for your production planning.
+
+Best regards,
+[Name] | [Company] | [Phone]`}
+    ]
+  },
+  {
+    name:"Aston Martin", sector:"Automotive", hq:"Gaydon, UK",
+    articleUrl:"https://3dprintingindustry.com/news/",
+    articleTitle:"Ferrari, Lamborghini, Aston Martin, McLaren and Bugatti Push Metal AM Into Series Hypercar Production",
+    articleBrief:"Aston Martin joins peer hypercar manufacturers in scaling metal additive manufacturing from prototyping into structural and series production components.",
+    contacts:[
+      {name:"Martin Corner", title:"Executive Director of Supply Chain Management", location:"United Kingdom",
+       linkedin:"https://www.linkedin.com/in/martin-corner-a4224125", email:null,
+       subject:"Metal AM Supply Chain Partnership — Aston Martin",
+       body:`Hi Martin,
+
+With Aston Martin among the hypercar manufacturers scaling metal AM into series production, I wanted to introduce our metal LPBF service bureau as a potential supply chain partner.
+
+We manufacture in Ti64, aluminum, and tooling steels with integrated CNC finishing and full material traceability, built for low-volume, high-performance automotive production.
+
+Would welcome a conversation about your supplier qualification process for AM components.
+
+Best regards,
+[Name] | [Company] | [Phone]`},
+      {name:"Arron Pearson", title:"Head of IT Operations", location:"Northampton, UK",
+       linkedin:"https://www.linkedin.com/in/arronpearson", email:null,
+       subject:"AM Supplier Systems Integration — Aston Martin Operations",
+       body:`Hi Arron,
+
+As Aston Martin scales metal AM into series production alongside other hypercar manufacturers, I wanted to flag our service bureau's digital traceability and quality documentation capability.
+
+We produce metal components with full material lot tracking designed to integrate cleanly into supplier management systems, supporting automotive operations teams managing qualified AM supply chains.
+
+Happy to share more if useful for your supplier systems planning.
+
+Best regards,
+[Name] | [Company] | [Phone]`}
+    ]
+  },
+  {
+    name:"Bugatti", sector:"Automotive", hq:"Molsheim, France",
+    articleUrl:"https://3dprintingindustry.com/news/",
+    articleTitle:"Ferrari, Lamborghini, Aston Martin, McLaren and Bugatti Push Metal AM Into Series Hypercar Production",
+    articleBrief:"Bugatti — known for titanium 3D-printed brake calipers — is among the hypercar manufacturers scaling metal additive manufacturing from prototyping into structural and series production components.",
+    contacts:[
+      {name:"Philippe Ramet", title:"Head of Manufacturing Operations", location:"Strasbourg, France",
+       linkedin:"https://www.linkedin.com/in/philippe-ramet-5b195bb6", email:null,
+       subject:"Metal AM Manufacturing Partnership — Bugatti Operations",
+       body:`Hi Philippe,
+
+Bugatti's history with titanium AM brake calipers makes you a natural fit as the hypercar segment pushes metal AM further into series production — I wanted to introduce our metal LPBF service bureau.
+
+We manufacture in Ti64, aluminum, and tooling steels with integrated CNC finishing and full material traceability, supporting low-volume, high-performance manufacturing operations.
+
+Would welcome a conversation about how we might support Bugatti's manufacturing operations.
+
+Best regards,
+[Name] | [Company] | [Phone]`},
+      {name:"Frederic Daul", title:"Director of Operations", location:"United States",
+       linkedin:"https://www.linkedin.com/in/frederic-daul-b3599192", email:null,
+       subject:"AM Operations Support — Bugatti North America",
+       body:`Hi Frederic,
+
+With Bugatti among the hypercar makers scaling metal AM into series production, I wanted to reach out regarding our metal LPBF service bureau's capability to support North American operations.
+
+We produce Ti64, aluminum, and tooling steel components with integrated finishing, and support automotive operations teams needing qualified regional AM capacity.
+
+Happy to connect if there's a fit for your North America operations.
+
+Best regards,
+[Name] | [Company] | [Phone]`},
+      {name:"Philippe Grand", title:"Director of Quality", location:"France",
+       linkedin:"https://www.linkedin.com/in/philippe-grand-b0a1261a6", email:null,
+       subject:"AM Quality & Traceability — Bugatti",
+       body:`Hi Philippe,
+
+Given Bugatti's track record with titanium AM components, I wanted to introduce our metal LPBF service bureau's quality and traceability capabilities as the hypercar segment scales AM further into series production.
+
+We manufacture in Ti64, aluminum, and tooling steels with full material certification and in-process quality documentation, built for demanding low-volume automotive production.
+
+Happy to share our quality system documentation if useful for supplier evaluation.
+
+Best regards,
+[Name] | [Company] | [Phone]`}
+    ]
+  },
+  {
+    name:"Angstrom Group", sector:"Automotive", hq:"New York, NY, USA",
+    articleUrl:"https://3dprintingindustry.com/news/",
+    articleTitle:"Tier 1 Auto Supplier Angstrom Group Acquires 3D Printed Tooling Specialist Mantle",
+    articleBrief:"Angstrom Group, a Tier 1 automotive and industrial supplier, has acquired 3D-printed tooling specialist Mantle to bring metal AM tooling capability in-house.",
+    contacts:[
+      {name:"Deb Bandyopadhyay", title:"Vice President & Chief Marketing Officer", location:"New York, NY, USA",
+       linkedin:"https://www.linkedin.com/in/debadipb", email:null,
+       subject:"AM Manufacturing Partnership Following Angstrom's Mantle Acquisition",
+       body:`Hi Deb,
+
+Following Angstrom Group's acquisition of 3D-printed tooling specialist Mantle, I wanted to introduce our metal and polymer AM service bureau as a potential complementary manufacturing partner.
+
+We produce tooling, jigs, and production parts in engineering polymers and metals with integrated finishing, supporting Tier 1 suppliers that need flexible overflow capacity alongside newly acquired in-house AM capability.
+
+Would welcome a conversation about where external capacity might fit as this integration progresses.
+
+Best regards,
+[Name] | [Company] | [Phone]`}
+    ]
+  },
+  {
+    name:"ExxonMobil", sector:"Energy", hq:"Spring, TX, USA",
+    articleUrl:"https://3dprint.com/",
+    articleTitle:"ExxonMobil Cuts Part Costs 42% and Lead Times 90% with Meltio",
+    articleBrief:"ExxonMobil has deployed Meltio's wire-laser metal 3D printing technology to produce spare parts on demand, cutting part costs 42% and lead times 90% compared to conventional sourcing.",
+    contacts:[
+      {name:"Michael Mustian", title:"President of Supply Chain", location:"United States",
+       linkedin:"https://www.linkedin.com/in/michael-mustian-6217831a8", email:null,
+       subject:"Scaling On-Demand Metal AM Spare Parts at ExxonMobil",
+       body:`Hi Michael,
+
+ExxonMobil's results with wire-laser metal AM for spare parts — 42% lower part costs, 90% shorter lead times — are a strong proof point for scaling digital inventory programmes further.
+
+We're a metal AM service bureau supporting oil & gas operators with on-demand spare parts production in corrosion- and erosion-resistant alloys, with full material traceability for critical components.
+
+Would welcome a conversation about extending this model across additional facilities or part families.
+
+Best regards,
+[Name] | [Company] | [Phone]`},
+      {name:"Caiguo Gong", title:"Director of Innovation", location:"United States",
+       linkedin:"https://www.linkedin.com/in/caiguo-gong-b68849304", email:null,
+       subject:"Metal AM Innovation Partnership — ExxonMobil",
+       body:`Hi Caiguo,
+
+Given ExxonMobil's success cutting part costs 42% and lead times 90% with wire-laser metal AM, I wanted to introduce our metal AM service bureau as a potential innovation partner for further digital spare parts initiatives.
+
+We manufacture in erosion- and corrosion-resistant alloys with integrated finishing and full traceability, tailored to upstream and downstream oil & gas component requirements.
+
+Happy to discuss where additional AM applications might create value for your team.
+
+Best regards,
+[Name] | [Company] | [Phone]`}
+    ]
+  },
+  {
+    name:"NX Atomics", sector:"Energy", hq:"Vancouver, BC, Canada",
+    articleUrl:"https://3dprintingindustry.com/news/",
+    articleTitle:"Sciaky Returns to Nuclear With NX Atomics Small Modular Reactor Programme",
+    articleBrief:"Wire-arc metal AM specialist Sciaky is supplying large-format 3D-printed components for NX Atomics' small modular reactor (SMR) programme, marking a renewed push of metal AM into nuclear infrastructure.",
+    contacts:[
+      {name:"Ahmed Hussein", title:"Chief Science Officer", location:"Vancouver, BC, Canada",
+       linkedin:"https://www.linkedin.com/in/ahmed-hussein-73a8975", email:null,
+       subject:"Metal AM Partner for NX Atomics' SMR Programme",
+       body:`Hi Ahmed,
+
+With Sciaky's wire-arc AM technology now supporting NX Atomics' small modular reactor programme, I wanted to introduce our metal AM service bureau as an additional qualified capacity option.
+
+We manufacture large-format metal components in nuclear-grade alloys with integrated CNC finishing and full material traceability, supporting SMR developers through prototype and pre-qualification stages.
+
+Would welcome a conversation about your component qualification roadmap.
+
+Best regards,
+[Name] | [Company] | [Phone]`},
+      {name:"Alex Voss", title:"Chief Financial Officer", location:"Columbus, OH, USA",
+       linkedin:"https://www.linkedin.com/in/alex-voss", email:null,
+       subject:"AM Manufacturing Partnership — NX Atomics SMR Supply Chain",
+       body:`Hi Alex,
+
+Following the news of Sciaky's involvement in NX Atomics' SMR programme, I wanted to flag our metal AM service bureau as a potential cost-efficient supply option for reactor component development.
+
+We produce large-format metal components in nuclear-grade alloys with full traceability, offering flexible capacity as your programme moves from design through qualification.
+
+Happy to share pricing and capability details if useful for your supply chain planning.
+
+Best regards,
+[Name] | [Company] | [Phone]`},
+      {name:"John Warden", title:"Chief Executive Officer", location:"London, UK",
+       linkedin:"https://www.linkedin.com/in/john-warden", email:null,
+       subject:"Metal AM Supply Partnership — NX Atomics",
+       body:`Hi John,
+
+Congratulations on progressing the SMR programme with Sciaky's wire-arc metal AM technology. I wanted to introduce our metal AM service bureau as a potential additional supplier as the programme scales toward qualification.
+
+We manufacture large-format components in nuclear-grade alloys with integrated finishing and full material traceability, supporting SMR developers from prototype through pre-production.
+
+Would welcome a conversation about how we might support NX Atomics going forward.
+
+Best regards,
+[Name] | [Company] | [Phone]`}
+    ]
+  },
+  {
+    name:"Orano", sector:"Energy", hq:"Charlotte, NC, USA",
+    articleUrl:"https://3dprintingindustry.com/news/",
+    articleTitle:"Orano & UNC Charlotte Validate 3D Printed Impact Limiters for Nuclear Fuel Transport",
+    articleBrief:"Orano and UNC Charlotte have validated 3D-printed impact limiters for nuclear fuel transport casks — a step toward qualifying additive manufacturing for safety-critical nuclear logistics hardware.",
+    contacts:[
+      {name:"Brad Beard", title:"Chief Operations Officer", location:"United States",
+       linkedin:"https://www.linkedin.com/in/brad-beard-5a189b32", email:null,
+       subject:"Metal AM Supply Partner Following Orano's Impact Limiter Validation",
+       body:`Hi Brad,
+
+Orano's work with UNC Charlotte validating 3D-printed impact limiters for nuclear fuel transport is a strong step toward qualifying AM for safety-critical nuclear hardware.
+
+We're a metal AM service bureau with experience in nuclear-grade alloys and rigorous material traceability, supporting operators moving components from validation studies into qualified production.
+
+Would welcome a conversation about how we might support this qualification pathway.
+
+Best regards,
+[Name] | [Company] | [Phone]`},
+      {name:"Alexandre Richard", title:"Director of Supply Chain", location:"United States",
+       linkedin:"https://www.linkedin.com/in/alexandre-richard-bb9b87115", email:null,
+       subject:"Qualified Metal AM Supply — Orano Nuclear Fuel Logistics",
+       body:`Hi Alexandre,
+
+Following Orano's validation of 3D-printed impact limiters with UNC Charlotte, I wanted to introduce our metal AM service bureau as a potential qualified supplier for nuclear logistics hardware.
+
+We manufacture in nuclear-grade alloys with full material traceability and in-process quality documentation, supporting operators through the qualification process for safety-critical components.
+
+Happy to share our quality system data if useful for supplier evaluation.
+
+Best regards,
+[Name] | [Company] | [Phone]`},
+      {name:"Prakash Narayanan", title:"Chief Technical Officer", location:"Columbia, MD, USA",
+       linkedin:"https://www.linkedin.com/in/prakash-narayanan-a6751a45", email:null,
+       subject:"Metal AM Technical Partnership — Orano",
+       body:`Hi Prakash,
+
+Given Orano's validation work on 3D-printed impact limiters, I wanted to reach out regarding our metal AM service bureau's technical capability in nuclear-grade materials.
+
+We manufacture in nuclear-grade alloys with full traceability and support technical teams through design-for-AM iteration ahead of formal qualification.
+
+Would welcome a technical discussion if there's a fit for upcoming validation work.
+
+Best regards,
+[Name] | [Company] | [Phone]`}
+    ]
+  },
+  {
+    name:"GE Vernova", sector:"Energy", hq:"Atlanta, GA, USA",
+    articleUrl:"https://www.energy.gov/eere/articles/fit-3-d-print-sky-high-wind-towers-additive-manufacturing",
+    articleTitle:"GE Renewable Energy 3D Prints Wind Tower Bases to Cut Transport Costs",
+    articleBrief:"GE Renewable Energy (now GE Vernova) is 3D printing concrete wind turbine tower bases on site, enabling taller towers that capture more wind while avoiding the cost and logistics of transporting oversized components.",
+    contacts:[
+      {name:"Augusto Faustino", title:"Project Director", location:"Atlanta, GA, USA",
+       linkedin:"https://www.linkedin.com/in/augusto-faustino-653553", email:null,
+       subject:"AM Partnership Following GE Vernova's 3D Printed Wind Tower Work",
+       body:`Hi Augusto,
+
+GE Vernova's work 3D printing wind turbine tower bases on site is a great example of AM solving real logistics constraints in renewable energy — I wanted to introduce our AM service bureau as a potential partner for related component work.
+
+We manufacture metal and composite components for energy infrastructure with integrated finishing and full material traceability, supporting project teams scaling site-based or distributed manufacturing approaches.
+
+Would welcome a conversation about where else AM might support your project pipeline.
+
+Best regards,
+[Name] | [Company] | [Phone]`},
+      {name:"Gabriel Alvarado", title:"Senior Manager of Operational Excellence, Global Logistics", location:"Seattle, WA, USA",
+       linkedin:"https://www.linkedin.com/in/gabriel-alvarado-6b054538", email:null,
+       subject:"AM for Logistics Cost Reduction — GE Vernova",
+       body:`Hi Gabriel,
+
+Given your focus on operational excellence and logistics, GE Vernova's 3D-printed wind tower base programme is a compelling proof point for AM's ability to cut transport costs on oversized components.
+
+We're an AM service bureau producing metal and composite parts for energy infrastructure, and can support additional component or spare parts programmes aimed at reducing logistics overhead.
+
+Happy to discuss where this model might extend further within your operations.
+
+Best regards,
+[Name] | [Company] | [Phone]`},
+      {name:"David Hardy", title:"Global Chief Commercial Officer", location:"Boston, MA, USA",
+       linkedin:"https://www.linkedin.com/in/david-hardy-04b2a02", email:null,
+       subject:"AM Manufacturing Partnership — GE Vernova Commercial",
+       body:`Hi David,
+
+GE Vernova's on-site 3D printing of wind tower bases is a strong signal of AM's growing commercial relevance in renewable energy infrastructure.
+
+We're an AM service bureau supporting energy manufacturers with metal and composite components, integrated finishing, and full traceability — happy to explore where additional AM-enabled products might support your commercial roadmap.
+
+Would welcome a conversation at your convenience.
+
+Best regards,
+[Name] | [Company] | [Phone]`}
+    ]
+  },
+  {
+    name:"Equinor", sector:"Energy", hq:"Stamford, CT, USA",
+    articleUrl:"https://3dprintingindustry.com/news/",
+    articleTitle:"Additive Manufacturing in Energy Moves Beyond Pilots",
+    articleBrief:"Equinor, Siemens Energy, and DNV describe how additive manufacturing is moving from isolated proof-of-concept parts toward standardized, certified production pathways across upstream, midstream, and offshore wind operations.",
+    contacts:[
+      {name:"Molly Morris", title:"President", location:"Stamford, CT, USA",
+       linkedin:"https://www.linkedin.com/in/molly-morris-64595a1", email:null,
+       subject:"Metal AM Partner for Equinor's Certified Production Pathways",
+       body:`Hi Molly,
+
+Equinor's work moving AM from proof-of-concept toward standardized, certified production pathways caught my attention — I wanted to introduce our metal AM service bureau as a potential qualified supplier.
+
+We manufacture offshore-grade components with full material traceability and quality documentation, supporting operators through certification and into recurring production supply.
+
+Would welcome a conversation about where AM might extend further across your operations.
+
+Best regards,
+[Name] | [Company] | [Phone]`},
+      {name:"Teddy Muhlfelder", title:"Vice President of Power Asset Development, President of Empire Wind", location:"United States",
+       linkedin:"https://www.linkedin.com/in/teddy-muhlfelder-1275b86", email:null,
+       subject:"AM for Offshore Wind Component Supply — Equinor",
+       body:`Hi Teddy,
+
+Given Equinor's push to standardize certified AM production pathways, I wanted to flag our metal AM service bureau's offshore-grade component capability as potentially relevant to Empire Wind and other power asset programmes.
+
+We manufacture in corrosion-resistant alloys with full traceability, supporting offshore energy assets that need qualified, on-demand spare and structural parts.
+
+Happy to discuss how this could support your asset development pipeline.
+
+Best regards,
+[Name] | [Company] | [Phone]`},
+      {name:"Arturo Tsouroukdissian", title:"Deputy Project Director", location:"United States",
+       linkedin:"https://www.linkedin.com/in/arturo-rodriguez-tsouroukdissian-437247b", email:null,
+       subject:"Qualified AM Supply Partner — Equinor Project Delivery",
+       body:`Hi Arturo,
+
+Following Equinor's work standardizing certified AM production pathways across offshore operations, I wanted to introduce our metal AM service bureau as a potential project supplier.
+
+We manufacture offshore-grade components with full material traceability and quality documentation, built to integrate into certified supply pathways for energy infrastructure projects.
+
+Would welcome a conversation about your project's component requirements.
+
+Best regards,
+[Name] | [Company] | [Phone]`}
+    ]
+  },
+  {
+    name:"Siemens Energy", sector:"Energy", hq:"Orlando, FL, USA",
+    articleUrl:"https://3dprintingindustry.com/news/",
+    articleTitle:"Additive Manufacturing in Energy Moves Beyond Pilots",
+    articleBrief:"Siemens Energy, alongside Equinor and DNV, is moving additive manufacturing from isolated proof-of-concept parts toward standardized, certified production pathways across power generation and energy infrastructure.",
+    contacts:[
+      {name:"Brian Maragno", title:"Vice President of Large Generator Product Line, Siemens Energy Charlotte Hub", location:"Charlotte, NC, USA",
+       linkedin:"https://www.linkedin.com/in/brian-maragno-ab738153", email:null,
+       subject:"Metal AM Partner for Siemens Energy's Charlotte Hub",
+       body:`Hi Brian,
+
+Siemens Energy's work standardizing certified AM production pathways is a strong signal for the power generation sector — I wanted to introduce our metal AM service bureau as a potential qualified supplier for the Charlotte Hub's generator product line.
+
+We manufacture turbine-grade metal components with full material traceability and quality documentation, supporting power OEMs through certification and into recurring production.
+
+Would welcome a conversation about your supplier qualification roadmap.
+
+Best regards,
+[Name] | [Company] | [Phone]`},
+      {name:"Martin Tartibi", title:"Vice President of Strategy and Business Development", location:"Winter Springs, FL, USA",
+       linkedin:"https://www.linkedin.com/in/martin-tartibi-84a91b9", email:null,
+       subject:"AM Strategy Partnership — Siemens Energy",
+       body:`Hi Martin,
+
+Given Siemens Energy's push to standardize certified AM production pathways across power generation, I wanted to flag our metal AM service bureau as a potential strategic manufacturing partner.
+
+We produce turbine-grade components with full traceability, and would welcome a conversation about where AM-enabled supply could support your strategy and business development priorities.
+
+Happy to set up a call at your convenience.
+
+Best regards,
+[Name] | [Company] | [Phone]`},
+      {name:"Mayuresh Joshi", title:"Senior Director of Strategy, Market and Business Development", location:"Orlando, FL, USA",
+       linkedin:"https://www.linkedin.com/in/mayuresh-joshi-8487593", email:null,
+       subject:"Qualified Metal AM Supply — Siemens Energy Market Strategy",
+       body:`Hi Mayuresh,
+
+Following Siemens Energy's work standardizing certified AM production pathways, I wanted to introduce our metal AM service bureau as a potential qualified supplier for power generation components.
+
+We manufacture turbine-grade metal parts with full material traceability and quality documentation, positioned to support certification-driven procurement across your product lines.
+
+Would welcome a conversation about how we might fit into your supply strategy.
+
+Best regards,
+[Name] | [Company] | [Phone]`}
+    ]
+  },
+  {
+    name:"Chip Ganassi Racing", sector:"Motorsport", hq:"Indianapolis, IN, USA",
+    articleUrl:"https://www.tctmagazine.com/chip-ganassi-racing-adopts-roboze-super-polymer-3d-printing/",
+    articleTitle:"Roboze Named Official High Performance Polymer Partner for Chip Ganassi Racing",
+    articleBrief:"Roboze has been named Chip Ganassi Racing's official high-performance polymer partner, bringing beltless 3D printing technology to the team's Indianapolis race shop for NTT INDYCAR SERIES entries.",
+    contacts:[
+      {name:"Christopher Simmons", title:"Director of Performance", location:"Carmel, IN, USA",
+       linkedin:"https://www.linkedin.com/in/christopher-simmons-b4b83a6", email:null,
+       subject:"Metal AM Complement to Chip Ganassi Racing's Roboze Partnership",
+       body:`Hi Christopher,
+
+Congratulations on the new Roboze polymer partnership — a strong move for CGR's in-house AM capability. I wanted to introduce our metal LPBF service bureau as a complementary resource for metal components polymer printing can't cover.
+
+We manufacture in Ti64, aluminum, and tooling steels with integrated CNC finishing, supporting race teams that need qualified metal AM parts alongside in-house polymer production.
+
+Would welcome a conversation about where metal AM might fit into CGR's development pipeline.
+
+Best regards,
+[Name] | [Company] | [Phone]`},
+      {name:"John Olguin", title:"Executive Vice President of Business Operations", location:"Charlotte, NC, USA",
+       linkedin:"https://www.linkedin.com/in/john-olguin-04357b3", email:null,
+       subject:"AM Manufacturing Partnership — Chip Ganassi Racing Operations",
+       body:`Hi John,
+
+Following Chip Ganassi Racing's new partnership with Roboze for high-performance polymer printing, I wanted to introduce our metal LPBF service bureau as a complementary manufacturing partner.
+
+We produce metal components in Ti64, aluminum, and tooling steels with integrated finishing, supporting race teams' rapid iteration and qualified low-volume production needs.
+
+Happy to connect if there's a fit alongside your growing in-house AM capability.
+
+Best regards,
+[Name] | [Company] | [Phone]`},
+      {name:"Cody Muir", title:"Director of Information Technology", location:"Indianapolis, IN, USA",
+       linkedin:"https://www.linkedin.com/in/codymuir", email:null,
+       subject:"AM Production Data Integration — Chip Ganassi Racing",
+       body:`Hi Cody,
+
+With Chip Ganassi Racing's new Roboze polymer partnership expanding in-house AM capability, I wanted to flag our metal AM service bureau's digital workflow integration for parts tracking and iteration.
+
+We manufacture metal components with full material traceability designed to integrate cleanly into team production and data systems, supporting race shops running mixed polymer/metal AM workflows.
+
+Would welcome a conversation if useful for your team's systems planning.
+
+Best regards,
+[Name] | [Company] | [Phone]`}
+    ]
   }
 ];
 
@@ -3635,10 +4699,292 @@ function renderLeadsCount() {
   document.getElementById('leads-count').textContent = total;
 }
 
+const AS9100_SUMMARY = {
+  totalDuration: "~9–11 months from kickoff to Stage 2 certification decision",
+  totalCost: "$20,000 – $50,000 all-in for first-time certification",
+  ongoingCost: "~$3,000 – $10,000 / year thereafter for annual surveillance audits, plus a Stage-2-sized recertification audit every 3rd year",
+  disclaimer: "Rough planning estimates based on industry-reported ranges for small first-time AS9100 applicants — not vendor quotes. Actual costs depend on the registrar and consultant chosen and the final certification scope."
+};
+
+const AS9100_ROADMAP = [
+  {
+    phase: "Phase 1", title: "Leadership Commitment & Project Kickoff",
+    duration: "Weeks 1–2", cost: "$0 – $2,000 (mostly internal time)",
+    summary: "Get formal executive sponsorship, define what's actually in scope for certification, and put one named owner in charge before any documentation work starts.",
+    groups: [
+      { dept: "All Departments", items: [
+        "Appoint an AS9100 Management Representative / Quality Director to own the project end-to-end",
+        "Define certification scope precisely — Newmarket facility, metal LPBF production of tool steel components, in-house heat treat, and inspection — and document any exclusions",
+        "Secure leadership sign-off on budget, timeline, and who gets pulled off other duties to support this",
+        "Communicate the initiative to all staff; frame AS9100 as daily operating discipline, not a paperwork exercise for the audit",
+        "Identify an experienced AS9100 consultant or auditor-trainer to support the gap analysis — strongly recommended for a first-time aerospace certification"
+      ]}
+    ]
+  },
+  {
+    phase: "Phase 2", title: "Gap Analysis — ISO 9001:2015 vs AS9100D",
+    duration: "Weeks 1–4 (runs parallel to kickoff)", cost: "$3,000 – $6,000 (consultant-led gap audit)",
+    summary: "Map every existing ISO 9001:2015 procedure against the full AS9100D clause set to find exactly what's missing before committing to a timeline.",
+    groups: [
+      { dept: "All Departments", items: [
+        "Run a clause-by-clause gap audit against AS9100D Rev D — it layers roughly 30 aerospace-specific requirements on top of the existing ISO 9001:2015 backbone",
+        "Identify the aerospace-specific additions not yet covered: risk management (5.1.2/6.1), configuration management (8.1.2), product safety (8.1.3), counterfeit parts prevention (8.1.4), human factors (7.1.2)",
+        "Score every gap by effort — documentation-only vs. process change vs. capital/equipment — and build a prioritized remediation backlog"
+      ]},
+      { dept: "Metal LPBF / Print Department", focus: true, items: [
+        "Assess current LPBF process-control maturity against AS9100 8.5.1 special-process requirements — this will be the single largest gap area found",
+        "Review current build traceability and powder-lot documentation for AS9102 (First Article Inspection) and AS9103 (Key Characteristics) readiness"
+      ]},
+      { dept: "Heat Treat & Thermal Simulation", items: [
+        "Confirm existing furnace controls, pyrometry calibration, and simulation records as a baseline — expect a lighter gap list than LPBF since these are more mature conventional processes"
+      ]}
+    ]
+  },
+  {
+    phase: "Phase 3", title: "Project Planning, Team & Registrar Selection",
+    duration: "Weeks 3–6 (overlapping)", cost: "$15,000 – $30,000 (3-year registrar contract, quoted now / paid across phases)",
+    summary: "Turn the gap list into an owned project plan and lock in an accredited registrar early — audit slots book out months in advance.",
+    groups: [
+      { dept: "All Departments", items: [
+        "Build a detailed project plan from the Phase 2 backlog with a named owner and due date on every item",
+        "Assign a cross-functional AS9100 team: Quality, LPBF Production/Engineering, Heat Treat, Purchasing, and a management reviewer",
+        "Shortlist ANAB- or IAQG-recognized accredited registrars with experience auditing metal AM or small aerospace machine shops",
+        "Request quotes from 2–3 registrars covering Stage 1 + Stage 2 + the 3-year surveillance cycle",
+        "Confirm OASIS (Online Aerospace Supplier Information System) registration requirements with the chosen registrar",
+        "Set a target Stage 1 audit date — typically 6–9 months out from kickoff"
+      ]}
+    ]
+  },
+  {
+    phase: "Phase 4", title: "QMS Documentation Build-Out",
+    duration: "Months 2–4", cost: "$5,000 – $15,000 (consultant/writer support, templates, software)",
+    summary: "The biggest single lift in the whole roadmap. Metal LPBF gets by far the most detail here because it's Exco's core special process — heat treat, thermal sim, and quality get lighter, right-sized updates.",
+    groups: [
+      { dept: "QMS-Wide (All Departments)", items: [
+        "Update the Quality Manual and Quality Policy to reference AS9100D and the aerospace scope",
+        "Build a Risk Management procedure — an FMEA-style risk register covering products, processes, and projects (5.1.2, 6.1)",
+        "Build a Configuration Management procedure for part/process revision and engineering change control (8.1.2)",
+        "Build a Control of Work Transfer procedure in case work ever moves between sites or to subcontractors (8.1.3)",
+        "Build a Counterfeit Parts Prevention procedure — verified mill/atomizer sources, incoming material testing (8.1.4)",
+        "Build or expand a FOD (Foreign Object Debris) Prevention Program — especially important in a powder-handling environment",
+        "Update Purchasing/Supplier Control: approved supplier list, powder supplier qualification and requalification, flow-down of aerospace requirements to sub-tier suppliers (8.4)",
+        "Build a Human Factors procedure covering operator fatigue, training, and error-proofing for machine operators and inspectors",
+        "Strengthen Nonconformance & Corrective Action procedures to AS9100 rigor — formal root-cause method (5-Why/fishbone) plus effectiveness verification (8.7, 10.2)",
+        "Update the Internal Audit procedure/schedule to cover every AS9100 clause and every department at least once a year"
+      ]},
+      { dept: "Metal LPBF / Print Department — Primary Focus", focus: true, items: [
+        "Formally designate LPBF as a special process per tool-steel part family/material, citing AS9100 8.5.1",
+        "Lock down process parameter sets per part/material — laser power, scan speed, hatch spacing, layer thickness, chamber O2 level, platform preheat — with formal change control and re-validation before any parameter change",
+        "Establish a machine qualification & periodic requalification schedule for all four EOS M400-4 systems: laser power calibration, build-plate flatness/levelness checks, gas-flow/O2 sensor verification, OEM PM schedule",
+        "Implement powder-lot traceability: incoming powder certs (chemistry, PSD, flowability, moisture), virgin/reused blend-ratio tracking, powder aging/reuse limits, sieving records",
+        "Build full build-to-part traceability: link every serial/part number to machine ID, build job, operator, powder lot(s), and parameter set used",
+        "Stand up a First Article Inspection (FAI) program per AS9102 for the first article of every new part number/process combination, with re-FAI triggered by any process, design, or location change",
+        "Identify Key Characteristics per AS9103 — critical-to-function dimensions on printed tool-steel inserts — with SPC sampling plans",
+        "Formalize an operator qualification/certification program for LPBF machine operators, including periodic re-certification",
+        "Define environmental controls for the print room and powder-handling area: inert gas monitoring, humidity control, contamination and FOD control specific to metal powders",
+        "Establish in-process monitoring records (melt-pool/optical monitoring data, if the EOS systems support it) as objective evidence of process stability",
+        "Link post-process steps — stress relief, support removal, machining, heat treat, finishing — into a single router/traveler per part for continuous, unbroken records",
+        "Define an NDT/inspection plan for internal defects (CT scanning or equivalent) tied to part criticality",
+        "Build an FMEA-style risk assessment template specifically for new part introduction on the LPBF line"
+      ]},
+      { dept: "Heat Treat (in-house furnace)", items: [
+        "Document furnace qualification and a temperature-uniformity survey per AMS2750 pyrometry practice, plus a calibration schedule",
+        "Tighten per-batch/load process record-keeping, linked into the part traceability chain above",
+        "Flag as a candidate for future NADCAP Heat Treating accreditation — see follow-on consideration below"
+      ]},
+      { dept: "Thermal Simulation / CAE", items: [
+        "Document the simulation software validation/verification approach and how results feed into build parameter selection and distortion compensation",
+        "Define record retention for simulation reports tied to specific part numbers and builds"
+      ]},
+      { dept: "Quality / Inspection", items: [
+        "Confirm CMM and other measurement equipment calibration meets the AS9100 7.1.5 traceability-to-national-standards requirement",
+        "Update inspection/test record formats to capture every AS9100-required data field"
+      ]}
+    ]
+  },
+  {
+    phase: "Phase 5", title: "Training & Competency Rollout",
+    duration: "Months 3–5 (overlaps documentation)", cost: "$5,000 – $25,000 (scales with headcount)",
+    summary: "Documentation only matters if people actually work the new way — this phase builds the record trail that proves it.",
+    groups: [
+      { dept: "All Departments", items: [
+        "Deliver AS9100D awareness training to all employees",
+        "Deliver role-specific training: internal auditors, LPBF machine operators, quality inspectors, purchasing/supplier-control owners",
+        "Document all training records and competency evidence per clause 7.2 — registrars will sample these directly"
+      ]}
+    ]
+  },
+  {
+    phase: "Phase 6", title: "Live Implementation / Objective Evidence Period",
+    duration: "Months 4–7", cost: "Primarily internal labor (~200–400 staff-hours across the shop)",
+    summary: "Run the new QMS on real production jobs long enough to generate a genuine track record — registrars want to see the system actually working, not just written down.",
+    groups: [
+      { dept: "All Departments", items: [
+        "Run real production jobs through the new procedures and generate the full record set: LPBF traceability packets, FAIs, training records, supplier qualification files",
+        "Complete at least 2–3 full months of \"live\" operating history with objective evidence before scheduling Stage 2 — longer is better and reduces audit risk",
+        "Track open items weekly in the AS9100 team meeting so nothing drifts before the internal audit"
+      ]}
+    ]
+  },
+  {
+    phase: "Phase 7", title: "Internal Audit Program & Management Review",
+    duration: "Months 6–7", cost: "$0 – $2,000 (if external internal-audit support is hired)",
+    summary: "Close the loop internally before an outside auditor ever sees the system.",
+    groups: [
+      { dept: "All Departments", items: [
+        "Complete one full internal audit cycle covering every clause and every department, including LPBF special-process controls",
+        "Hold a formal Management Review meeting with the full AS9100-required agenda (clause 9.3): audit results, customer feedback, process performance, risk register status, resource needs",
+        "Close out every internal finding — with root cause and verified corrective action — before Stage 1"
+      ]}
+    ]
+  },
+  {
+    phase: "Phase 8", title: "Stage 1 Audit — Documentation & Readiness Review",
+    duration: "Month 7–8", cost: "$3,000 – $6,000 + travel (registrar fee)",
+    summary: "The registrar checks that the QMS is documented and ready for a full audit — typically 1–2 days on-site or remote.",
+    groups: [
+      { dept: "All Departments", items: [
+        "Registrar reviews Quality Manual, procedures, and readiness evidence against AS9100D",
+        "Expect minor findings — this is normal for a first-time audit",
+        "Receive the Stage 1 report and finalize the Stage 2 audit date"
+      ]}
+    ]
+  },
+  {
+    phase: "Phase 9", title: "Stage 1 Corrective Actions",
+    duration: "Month 8 (2–4 weeks)", cost: "Internal labor",
+    summary: "Close every Stage 1 finding cleanly — this is the last checkpoint before the audit that actually grants certification.",
+    groups: [
+      { dept: "All Departments", items: [
+        "Root-cause every Stage 1 finding and implement corrective action with objective evidence",
+        "Submit the corrective action package to the registrar for review and acceptance"
+      ]}
+    ]
+  },
+  {
+    phase: "Phase 10", title: "Stage 2 Audit — Certification Audit",
+    duration: "Month 8–9", cost: "$4,000 – $8,000 + travel (registrar fee)",
+    summary: "The full on-site audit. Expect the LPBF special process to draw the most auditor attention and the most audit days, since it's the highest-risk process in scope.",
+    groups: [
+      { dept: "All Departments", items: [
+        "Full on-site audit of implementation across every clause and department",
+        "Auditors pull real job traceability packets and interview staff on the floor — this is where the Phase 4 documentation depth pays off directly",
+        "Aerospace scope typically adds audit days versus a plain ISO 9001 audit, driven mostly by special-process sampling on the LPBF line"
+      ]}
+    ]
+  },
+  {
+    phase: "Phase 11", title: "Certification Decision, OASIS Listing & Issuance",
+    duration: "Month 9–10", cost: "Included in registrar fee",
+    summary: "The formal finish line for initial certification.",
+    groups: [
+      { dept: "All Departments", items: [
+        "Registrar's certification decision panel reviews the audit results independently of the audit team",
+        "Upon approval, the certificate is issued and Exco Additive is listed on OASIS",
+        "Announce certification to customers and primes; update marketing materials, sales collateral, and RFQ response templates"
+      ]}
+    ]
+  },
+  {
+    phase: "Phase 12", title: "Surveillance Audits & 3-Year Recertification Cycle",
+    duration: "Ongoing — annual surveillance in Years 1 & 2, full recertification in Year 3", cost: "$3,000 – $10,000 / year + travel; recertification audit roughly Stage-2-sized",
+    summary: "Certification isn't a one-time event — it has to be actively maintained or it can be suspended or withdrawn.",
+    groups: [
+      { dept: "All Departments", items: [
+        "Maintain the internal audit and management review cadence every year, not just before audits",
+        "Monitor LPBF process data trends (parameter drift, FAI results, NCR trends) as ongoing objective evidence",
+        "Keep training and competency records current as staff join, leave, or change roles",
+        "Close corrective actions promptly — a pattern of late closures is a common driver of surveillance findings"
+      ]}
+    ]
+  }
+];
+
+const AS9100_NADCAP = {
+  title: "Follow-on Consideration: NADCAP Special Process Accreditation",
+  body: "AS9100 certifies the quality management system as a whole. It does not automatically satisfy every aerospace prime's requirement for accreditation of specific “special processes.” For Exco Additive, two processes are worth flagging now so they don't come as a surprise later.",
+  items: [
+    { name: "Heat Treating — NADCAP AC7102", note: "Because Exco operates an in-house heat-treat furnace on printed tool-steel parts, primes supplying flight-critical or fracture-critical components may specifically require NADCAP heat-treat accreditation in addition to — not instead of — AS9100 certification." },
+    { name: "Nondestructive Testing (NDT) — NADCAP AC7114", note: "If in-house or contracted CT/X-ray inspection is used to detect internal defects on flight-critical parts, NDT may also need its own NADCAP accreditation depending on the specific customer/program requirement." }
+  ],
+  recommendation: "Treat NADCAP as a separate, later project rather than folding it into this roadmap — it has its own PRI audit criteria, its own auditor pool, and its own timeline (commonly 9–18 months per process). Confirm with target aerospace customers whether NADCAP will actually be required for their specific contracts before committing budget, since not every prime or program mandates it."
+};
+
+function renderAS9100() {
+  const sum = AS9100_SUMMARY;
+  document.getElementById('as-summary').innerHTML =
+    '<div class="as-summary-item"><div class="as-summary-label">Estimated Timeline</div><div class="as-summary-value">' + sum.totalDuration + '</div></div>' +
+    '<div class="as-summary-item"><div class="as-summary-label">Estimated Cost — First Certification</div><div class="as-summary-value">' + sum.totalCost + '</div></div>' +
+    '<div class="as-summary-item"><div class="as-summary-label">Ongoing Maintenance Cost</div><div class="as-summary-value">' + sum.ongoingCost + '</div></div>' +
+    '<div class="as-summary-disclaimer">' + sum.disclaimer + '</div>';
+
+  document.getElementById('as-nav').innerHTML = AS9100_ROADMAP.map(function(p, idx) {
+    return '<button class="as-nav-pill" onclick="jumpToAS(' + idx + ')">' + p.phase + '</button>';
+  }).join('');
+
+  document.getElementById('as-list').innerHTML = AS9100_ROADMAP.map(function(p, idx) {
+    const totalItems = p.groups.reduce(function(a, g) { return a + g.items.length; }, 0);
+    const groupsHtml = p.groups.map(function(g) {
+      const itemsHtml = g.items.map(function(it) { return '<div class="as-todo">' + it + '</div>'; }).join('');
+      return '<div class="as-group' + (g.focus ? ' focus' : '') + '"><div class="as-group-dept">' + g.dept + '</div>' + itemsHtml + '</div>';
+    }).join('');
+    return '<div class="as-card">' +
+      '<div class="as-header" onclick="toggleAS(' + idx + ')">' +
+        '<div class="as-color-bar"></div>' +
+        '<div class="as-info">' +
+          '<div class="as-top">' +
+            '<span class="as-phase-badge">' + p.phase + '</span>' +
+            '<span class="as-title">' + p.title + '</span>' +
+          '</div>' +
+          '<div class="as-meta-row">' +
+            '<span class="as-meta-badge"><b>Duration:</b>&nbsp;' + p.duration + '</span>' +
+            '<span class="as-meta-badge"><b>Cost:</b>&nbsp;' + p.cost + '</span>' +
+          '</div>' +
+          '<div class="as-summary-text">' + p.summary + '</div>' +
+        '</div>' +
+        '<div class="as-right">' +
+          '<span class="as-count">' + totalItems + ' to-dos</span>' +
+          '<span class="as-chevron" id="as-chev-' + idx + '">▼</span>' +
+        '</div>' +
+      '</div>' +
+      '<div class="as-body" id="as-panel-' + idx + '">' + groupsHtml + '</div>' +
+    '</div>';
+  }).join('');
+
+  const n = AS9100_NADCAP;
+  const nadcapItems = n.items.map(function(it) {
+    return '<div class="as-nadcap-item"><b>' + it.name + '</b><div>' + it.note + '</div></div>';
+  }).join('');
+  document.getElementById('as-nadcap-body').innerHTML =
+    '<p>' + n.body + '</p>' + nadcapItems + '<div class="as-nadcap-rec">' + n.recommendation + '</div>';
+}
+
+function toggleAS(idx) {
+  const panel = document.getElementById('as-panel-' + idx);
+  const chev = document.getElementById('as-chev-' + idx);
+  const isOpen = panel.classList.contains('open');
+  panel.classList.toggle('open', !isOpen);
+  chev.classList.toggle('open', !isOpen);
+}
+
+function jumpToAS(idx) {
+  const panel = document.getElementById('as-panel-' + idx);
+  if (!panel.classList.contains('open')) toggleAS(idx);
+  panel.closest('.as-card').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function toggleNadcap() {
+  const body = document.getElementById('as-nadcap-body');
+  const chev = document.getElementById('as-nadcap-chev');
+  const isOpen = body.classList.contains('open');
+  body.classList.toggle('open', !isOpen);
+  chev.classList.toggle('open', !isOpen);
+}
+
 renderCards('all');
 renderStats();
 renderLeadsCount();
 renderLeads();
 </script>
 </body>
-</html>
+</html><!-- redeploy trigger 2026-07-07T01:19:12Z -->
