@@ -209,6 +209,28 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Inter',sans-serif;
 .dot-nc{background:rgba(255,255,255,.25)}
 .dot-ct{background:#eab308}
 .dot-rp{background:#22c55e}
+.dot-ni{background:#ef4444}
+.status-ni{background:rgba(239,68,68,.1);border-color:rgba(239,68,68,.28);color:#fca5a5}
+.lead-score{display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:22px;padding:0 7px;border-radius:7px;font-size:11.5px;font-weight:800;cursor:default;flex-shrink:0}
+.lead-score-hi{background:rgba(34,197,94,.15);color:#86efac;border:1px solid rgba(34,197,94,.3)}
+.lead-score-mid{background:rgba(234,179,8,.13);color:#fde047;border:1px solid rgba(234,179,8,.28)}
+.lead-score-lo{background:rgba(255,255,255,.05);color:rgba(255,255,255,.4);border:1px solid rgba(255,255,255,.1)}
+.lead-score-override{outline:1.5px dashed rgba(165,180,252,.6);outline-offset:1.5px}
+.lead-score-edit{background:transparent;border:none;color:rgba(255,255,255,.25);cursor:pointer;font-size:11px;padding:2px 4px;flex-shrink:0}
+.lead-score-edit:hover{color:rgba(255,255,255,.6)}
+.lead-notes-btn{display:inline-flex;align-items:center;gap:4px;padding:5px 9px;border-radius:7px;font-size:11px;font-weight:600;color:rgba(255,255,255,.4);background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);cursor:pointer;white-space:nowrap;transition:all .12s}
+.lead-notes-btn:hover{color:rgba(255,255,255,.7);background:rgba(255,255,255,.06)}
+.lead-notes-btn.has-notes{color:#a5b4fc;border-color:rgba(99,102,241,.3);background:rgba(99,102,241,.08)}
+.lead-notes-box{display:none;margin:8px 16px 12px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:9px;padding:10px 12px}
+.lead-notes-box.open{display:block}
+.lead-notes-box textarea{width:100%;min-height:56px;background:rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.1);border-radius:7px;color:#e8e8f0;font-size:12.5px;font-family:inherit;padding:8px 10px;resize:vertical;outline:none}
+.lead-notes-box textarea:focus{border-color:rgba(99,102,241,.5)}
+.lead-notes-save{margin-top:6px;font-size:10.5px;color:rgba(255,255,255,.25)}
+.crm-sync-btn{display:inline-flex;align-items:center;gap:5px;padding:6px 11px;border-radius:8px;font-size:11px;font-weight:600;color:rgba(255,255,255,.4);background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);cursor:pointer;white-space:nowrap}
+.crm-sync-btn.synced{color:#86efac;border-color:rgba(34,197,94,.28);background:rgba(34,197,94,.08)}
+.crm-sync-btn.error{color:#fca5a5;border-color:rgba(239,68,68,.28);background:rgba(239,68,68,.08)}
+.lead-sort-btn{display:inline-flex;align-items:center;gap:4px;padding:6px 11px;border-radius:8px;font-size:11px;font-weight:600;color:rgba(255,255,255,.4);background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);cursor:pointer;white-space:nowrap}
+.lead-sort-btn.active{color:#a5b4fc;border-color:rgba(99,102,241,.35);background:rgba(99,102,241,.1)}
 .lead-email-overlay{position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);display:flex;align-items:flex-end;opacity:0;pointer-events:none;transition:opacity .25s}
 .lead-email-overlay.open{opacity:1;pointer-events:all}
 .lead-email-sheet{background:#13131f;border:1px solid rgba(255,255,255,.09);border-radius:24px 24px 0 0;width:100%;max-height:92vh;overflow-y:auto;transform:translateY(50px);transition:transform .3s cubic-bezier(.32,1.1,.7,1)}
@@ -453,6 +475,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Inter',sans-serif;
       <button class="lead-btn" data-lsector="Motorsport">Motorsport</button>
       <button class="lead-btn" data-lsector="Aerospace">Aerospace</button>
     </div>
+    <button class="lead-sort-btn" id="leads-sort-score-btn" onclick="toggleLeadSort('am')">&#8645; Sort by score</button>
+    <button class="crm-sync-btn" id="crm-sync-btn-am" onclick="crmPromptPassphrase()">&#128274; Local only</button>
     <span class="leads-meta" id="leads-meta"></span>
   </div>
   <div id="leads-list"></div>
@@ -588,6 +612,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Inter',sans-serif;
 <div class="leads-wrap" id="nu-leads-view">
   <div class="leads-toolbar">
     <input class="leads-search" id="nu-leads-search" type="text" placeholder="Search company, name, title&#8230;">
+    <button class="lead-sort-btn" id="nu-leads-sort-score-btn" onclick="toggleLeadSort('nuclear')">&#8645; Sort by score</button>
+    <button class="crm-sync-btn" id="crm-sync-btn-nu" onclick="crmPromptPassphrase()">&#128274; Local only</button>
     <span class="leads-meta" id="nu-leads-meta"></span>
   </div>
   <div style="font-size:11.5px;color:rgba(255,255,255,.35);margin-bottom:14px;line-height:1.6">Leads are sourced from public web search and press bylines, not a verified contact database &mdash; titles and links can be out of date. Treat as a starting point, not a call list. Ariba Discovery and OCNI postings require manual login and aren&#39;t covered here.</div>
@@ -5541,36 +5567,206 @@ const COMPANIES = [
 ];
 
 let activeLeadSector = 'all';
-const STATUS_LABELS = {not_contacted:'Not Contacted', contacted:'Contacted', replied:'Replied'};
-const STATUS_CLASSES = {not_contacted:'status-btn status-nc', contacted:'status-btn status-ct', replied:'status-btn status-rp'};
-const STATUS_DOTS = {not_contacted:'status-dot dot-nc', contacted:'status-dot dot-ct', replied:'status-dot dot-rp'};
+const STATUS_LABELS = {not_contacted:'Not Contacted', contacted:'Contacted', replied:'Replied', not_interested:'Not Interested'};
+const STATUS_CLASSES = {not_contacted:'status-btn status-nc', contacted:'status-btn status-ct', replied:'status-btn status-rp', not_interested:'status-btn status-ni'};
+const STATUS_DOTS = {not_contacted:'status-dot dot-nc', contacted:'status-dot dot-ct', replied:'status-dot dot-rp', not_interested:'status-dot dot-ni'};
+const STATUS_CYCLE = ['not_contacted','contacted','replied','not_interested'];
 
-function getStatus(coName, contName) {
-  try {
-    const stored = JSON.parse(localStorage.getItem('am_lead_status') || '{}');
-    return stored[coName + '::' + contName] || 'not_contacted';
-  } catch(e) { return 'not_contacted'; }
+// ===== CRM shared-state module =====
+// Set CRM_BACKEND_URL to your deployed Google Apps Script Web App URL to enable
+// cross-device shared sync. Leave blank to run in localStorage-only (per-browser) mode.
+const CRM_BACKEND_URL = '';
+const CRM_PASSPHRASE_KEY = 'exco_crm_passphrase';
+let CRM_STATE = {};
+let CRM_BACKEND_STATUS = 'offline';
+
+function crmKey(section, coName, contName) { return section + '::' + coName + '::' + contName; }
+function crmDefaultRecord() { return { status: 'not_contacted', notes: '', scoreOverride: null, updatedAt: null }; }
+
+function crmLoadLocal() {
+  try { return JSON.parse(localStorage.getItem('exco_crm_state') || '{}'); } catch(e) { return {}; }
+}
+function crmSaveLocal() {
+  try { localStorage.setItem('exco_crm_state', JSON.stringify(CRM_STATE)); } catch(e) {}
+}
+function crmGet(section, coName, contName) {
+  const k = crmKey(section, coName, contName);
+  return CRM_STATE[k] || crmDefaultRecord();
+}
+function crmSet(section, coName, contName, patch) {
+  const k = crmKey(section, coName, contName);
+  const cur = CRM_STATE[k] || crmDefaultRecord();
+  const next = Object.assign({}, cur, patch, { updatedAt: new Date().toISOString() });
+  CRM_STATE[k] = next;
+  crmSaveLocal();
+  crmSyncRemote(section, coName, contName, next);
+  return next;
+}
+function crmPromptPassphrase() {
+  if (!CRM_BACKEND_URL) { alert('Shared sync isn\'t connected yet. Ask Owen to finish the Google Sheets setup.'); return; }
+  const existing = localStorage.getItem(CRM_PASSPHRASE_KEY) || '';
+  const next = prompt('Enter the shared sync passphrase:', existing);
+  if (next === null) return;
+  localStorage.setItem(CRM_PASSPHRASE_KEY, next.trim());
+  crmLoadRemote();
+}
+function crmUpdateSyncBadges() {
+  ['crm-sync-btn-am', 'crm-sync-btn-nu'].forEach(function(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.className = 'crm-sync-btn' + (CRM_BACKEND_STATUS === 'synced' ? ' synced' : CRM_BACKEND_STATUS === 'error' ? ' error' : '');
+    el.textContent = !CRM_BACKEND_URL ? '\u{1F512} Local only' : CRM_BACKEND_STATUS === 'synced' ? '\u{1F513} Synced' : CRM_BACKEND_STATUS === 'error' ? '\u26A0 Sync error' : '\u{1F512} Not synced';
+  });
+}
+function crmSyncRemote(section, coName, contName, record) {
+  if (!CRM_BACKEND_URL) return;
+  const passphrase = localStorage.getItem(CRM_PASSPHRASE_KEY) || '';
+  fetch(CRM_BACKEND_URL, {
+    method: 'POST',
+    headers: {'Content-Type':'text/plain;charset=utf-8'},
+    body: JSON.stringify({ action: 'set', passphrase: passphrase, key: crmKey(section, coName, contName), section: section, company: coName, contact: contName, record: record })
+  }).then(function(r) { return r.json(); }).then(function(res) {
+    CRM_BACKEND_STATUS = res && res.ok ? 'synced' : 'error';
+    crmUpdateSyncBadges();
+  }).catch(function() { CRM_BACKEND_STATUS = 'error'; crmUpdateSyncBadges(); });
+}
+function crmLoadRemote() {
+  CRM_STATE = crmLoadLocal();
+  if (!CRM_BACKEND_URL) { CRM_BACKEND_STATUS = 'offline'; crmUpdateSyncBadges(); renderLeads(); renderNuLeads(); return; }
+  const passphrase = localStorage.getItem(CRM_PASSPHRASE_KEY) || '';
+  fetch(CRM_BACKEND_URL + '?action=getAll&passphrase=' + encodeURIComponent(passphrase))
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      CRM_STATE = Object.assign({}, CRM_STATE, (data && data.state) || {});
+      CRM_BACKEND_STATUS = 'synced';
+      crmSaveLocal();
+      crmUpdateSyncBadges();
+      renderLeads();
+      renderNuLeads();
+    })
+    .catch(function() {
+      CRM_BACKEND_STATUS = 'error';
+      crmUpdateSyncBadges();
+      renderLeads();
+      renderNuLeads();
+    });
 }
 
-function setStatus(coName, contName, status) {
-  try {
-    const stored = JSON.parse(localStorage.getItem('am_lead_status') || '{}');
-    stored[coName + '::' + contName] = status;
-    localStorage.setItem('am_lead_status', JSON.stringify(stored));
-  } catch(e) {}
+// ===== Lead scoring (0-100, five equal-weight factors) =====
+const ROLE_FIT_RULES = [
+  { re: /procure|purchas|sourcing|supply chain|buyer|vendor management|commercial lead/i, score: 20 },
+  { re: /manufacturing engineer|operations|manufacturing program|quality/i, score: 18 },
+  { re: /chief technical|chief engineer|technical director|engineering director|vp.*engineering/i, score: 14 },
+  { re: /chief executive|president|chief operating|\bceo\b|\bcoo\b|\bcfo\b/i, score: 12 },
+];
+function roleFitScore(title) {
+  if (!title) return 8;
+  for (let i = 0; i < ROLE_FIT_RULES.length; i++) { if (ROLE_FIT_RULES[i].re.test(title)) return ROLE_FIT_RULES[i].score; }
+  return 8;
+}
+function reachabilityScore(c) {
+  const hasEmail = !!c.email;
+  const hasDirectLinkedIn = !!c.linkedin && c.linkedin.indexOf('/search/results/') === -1;
+  const hasPhone = !!c.phone;
+  if (hasEmail && hasPhone) return 20;
+  if (hasEmail) return 16;
+  if (hasDirectLinkedIn) return 10;
+  if (c.linkedin) return 4;
+  return 0;
+}
+const PROGRAM_FIT_TABLE = {
+  'Utility / Owner': 20, 'Research / Federal Site Owner': 18, 'Prime Contractor / Reactor Vendor': 18,
+  'Reactor Vendor / OEM': 16, 'Reactor Vendor / Component Supplier': 16, 'Nuclear Fabrication': 16,
+  'Aerospace': 18, 'Defence': 18, 'Energy': 18, 'Motorsport': 14, 'Automotive': 14, 'Semiconductor': 16
+};
+function programFitScore(categoryOrSector) {
+  return PROGRAM_FIT_TABLE.hasOwnProperty(categoryOrSector) ? PROGRAM_FIT_TABLE[categoryOrSector] : 12;
+}
+function triggerFreshnessScore(co) {
+  return (co.triggerTier || 'fresh') === 'fresh' ? 20 : 10;
+}
+const ENGAGEMENT_SCORE_MAP = { not_contacted: 10, contacted: 14, replied: 20, not_interested: 0 };
+function engagementScore(status) {
+  return ENGAGEMENT_SCORE_MAP.hasOwnProperty(status) ? ENGAGEMENT_SCORE_MAP[status] : 10;
+}
+function computeLeadScore(section, co, c, categoryField) {
+  const crm = crmGet(section, co.name, c.name);
+  if (crm.scoreOverride !== null && crm.scoreOverride !== undefined && crm.scoreOverride !== '') {
+    return { total: Math.max(0, Math.min(100, Math.round(crm.scoreOverride))), overridden: true };
+  }
+  const trigger = triggerFreshnessScore(co);
+  const role = roleFitScore(c.title);
+  const reach = reachabilityScore(c);
+  const program = programFitScore(co[categoryField]);
+  const engagement = engagementScore(crm.status);
+  return { total: trigger + role + reach + program + engagement, overridden: false };
+}
+function leadScoreClass(total) {
+  if (total >= 75) return 'lead-score-hi';
+  if (total >= 50) return 'lead-score-mid';
+  return 'lead-score-lo';
+}
+function leadScoreBadgeHtml(section, co, c, categoryField) {
+  const s = computeLeadScore(section, co, c, categoryField);
+  const cls = leadScoreClass(s.total) + (s.overridden ? ' lead-score-override' : '');
+  const title = s.overridden ? 'Manually set score' : 'Auto-computed score';
+  return '<span class="lead-score ' + cls + '" title="' + title + '">' + s.total + '</span>' +
+    '<button class="lead-score-edit" title="Override score" onclick="event.stopPropagation();crmOverrideScore(\'' + section + '\',\'' + co.name.replace(/'/g,"\\'") + '\',\'' + c.name.replace(/'/g,"\\'") + '\')">\u270E</button>';
+}
+function crmOverrideScore(section, coName, contName) {
+  const cur = crmGet(section, coName, contName);
+  const input = prompt('Set a manual score (0-100) for ' + contName + '. Leave blank to clear override and use the auto-computed score.', cur.scoreOverride != null ? String(cur.scoreOverride) : '');
+  if (input === null) return;
+  const trimmed = input.trim();
+  if (trimmed === '') { crmSet(section, coName, contName, { scoreOverride: null }); }
+  else {
+    const n = Math.max(0, Math.min(100, Math.round(Number(trimmed))));
+    if (isNaN(n)) { alert('Enter a number between 0 and 100.'); return; }
+    crmSet(section, coName, contName, { scoreOverride: n });
+  }
+  if (section === 'am') renderLeads(); else renderNuLeads();
+}
+function crmToggleNotes(btnId, boxId) {
+  const box = document.getElementById(boxId);
+  if (box) box.classList.toggle('open');
+}
+function crmSaveNotes(section, coName, contName, value, btnId) {
+  crmSet(section, coName, contName, { notes: value });
+  const btn = document.getElementById(btnId);
+  if (btn) btn.classList.toggle('has-notes', !!value.trim());
+}
+let activeLeadSort = 'default';
+let activeNuLeadSort = 'default';
+function toggleLeadSort(section) {
+  if (section === 'am') { activeLeadSort = activeLeadSort === 'score' ? 'default' : 'score'; renderLeads(); }
+  else { activeNuLeadSort = activeNuLeadSort === 'score' ? 'default' : 'score'; renderNuLeads(); }
+  const btn = document.getElementById(section === 'am' ? 'leads-sort-score-btn' : 'nu-leads-sort-score-btn');
+  if (btn) btn.classList.toggle('active', (section === 'am' ? activeLeadSort : activeNuLeadSort) === 'score');
 }
 
+function getStatus(coName, contName) { return crmGet('am', coName, contName).status; }
+function setStatus(coName, contName, status) { crmSet('am', coName, contName, { status: status }); }
+
+function refreshLeadScoreBadge(section, coIdx, contIdx) {
+  const co = section === 'am' ? COMPANIES[coIdx] : NU_COMPANIES[coIdx];
+  const c = co.contacts[contIdx];
+  const field = section === 'am' ? 'sector' : 'category';
+  const el = document.getElementById((section === 'am' ? 'score-' : 'nscore-') + coIdx + '-' + contIdx);
+  if (el) el.innerHTML = leadScoreBadgeHtml(section, co, c, field);
+}
 function cycleStatus(coIdx, contIdx) {
   const co = COMPANIES[coIdx];
   const c = co.contacts[contIdx];
   const cur = getStatus(co.name, c.name);
-  const next = cur === 'not_contacted' ? 'contacted' : cur === 'contacted' ? 'replied' : 'not_contacted';
+  const idx = STATUS_CYCLE.indexOf(cur);
+  const next = STATUS_CYCLE[(idx + 1) % STATUS_CYCLE.length];
   setStatus(co.name, c.name, next);
   const btn = document.getElementById('sbtn-' + coIdx + '-' + contIdx);
   if (btn) {
     btn.className = STATUS_CLASSES[next];
     btn.innerHTML = '<span class="' + STATUS_DOTS[next] + '"></span>' + STATUS_LABELS[next];
   }
+  refreshLeadScoreBadge('am', coIdx, contIdx);
 }
 
 function toggleCompany(coIdx) {
@@ -5587,22 +5783,40 @@ function renderLeads() {
   const liSvg = '<svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>';
 
   let totalContacts = 0;
-  const cards = COMPANIES.map((co, coIdx) => {
+  let coOrder = COMPANIES.map((co, i) => i);
+  if (activeLeadSort === 'score') {
+    coOrder.sort((ai, bi) => {
+      const ca = COMPANIES[ai], cb = COMPANIES[bi];
+      const maxA = Math.max.apply(null, ca.contacts.map(c => computeLeadScore('am', ca, c, 'sector').total).concat([0]));
+      const maxB = Math.max.apply(null, cb.contacts.map(c => computeLeadScore('am', cb, c, 'sector').total).concat([0]));
+      return maxB - maxA;
+    });
+  }
+  const cards = coOrder.map((coIdx) => {
+    const co = COMPANIES[coIdx];
     if (sector !== 'all' && co.sector !== sector) return '';
-    const contacts = co.contacts.filter(c => {
+    let contacts = co.contacts.filter(c => {
       if (!search) return true;
       return (co.name + c.name + c.title + c.location).toLowerCase().includes(search);
     });
     if (!contacts.length) return '';
+    if (activeLeadSort === 'score') {
+      contacts = contacts.slice().sort((a, b) => computeLeadScore('am', co, b, 'sector').total - computeLeadScore('am', co, a, 'sector').total);
+    }
     totalContacts += contacts.length;
     const color = SECTOR_COLORS[co.sector] || '#999';
 
     const contactRows = contacts.map((c, ci) => {
       const realCi = co.contacts.indexOf(c);
       const st = getStatus(co.name, c.name);
+      const crmRec = crmGet('am', co.name, c.name);
+      const notesBtnId = 'notesbtn-' + coIdx + '-' + realCi;
+      const notesBoxId = 'notesbox-' + coIdx + '-' + realCi;
+      const safeCo = co.name.replace(/'/g, "\\'");
+      const safeC = c.name.replace(/'/g, "\\'");
       return '<div class="contact-row">' +
         '<div class="contact-details">' +
-          '<div class="contact-name">' + c.name + '</div>' +
+          '<div class="contact-name"><span id="score-' + coIdx + '-' + realCi + '">' + leadScoreBadgeHtml('am', co, c, 'sector') + '</span> ' + c.name + '</div>' +
           '<div class="contact-title">' + c.title + '</div>' +
           '<div class="contact-loc">&#128205; ' + c.location + '</div>' +
         '</div>' +
@@ -5612,9 +5826,11 @@ function renderLeads() {
           '<button id="sbtn-' + coIdx + '-' + realCi + '" class="' + STATUS_CLASSES[st] + '" onclick="cycleStatus(' + coIdx + ',' + realCi + ')">' +
             '<span class="' + STATUS_DOTS[st] + '"></span>' + STATUS_LABELS[st] +
           '</button>' +
+          '<button id="' + notesBtnId + '" class="lead-notes-btn' + (crmRec.notes && crmRec.notes.trim() ? ' has-notes' : '') + '" onclick="event.stopPropagation();crmToggleNotes(\'' + notesBtnId + '\',\'' + notesBoxId + '\')">&#128221; Notes</button>' +
           '<button class="c-draft-btn" onclick="openLeadEmail(' + coIdx + ',' + realCi + ')">&#10003; Draft Email</button>' +
         '</div>' +
-      '</div>';
+      '</div>' +
+      '<div class="lead-notes-box" id="' + notesBoxId + '"><textarea placeholder="Call notes, follow-up reminders, context..." onblur="crmSaveNotes(\'am\',\'' + safeCo + '\',\'' + safeC + '\',this.value,\'' + notesBtnId + '\')">' + (crmRec.notes || '') + '</textarea><div class="lead-notes-save">Saves automatically when you click away</div></div>';
     }).join('');
 
     return '<div class="co-card">' +
@@ -6089,7 +6305,6 @@ function toggleNadcap() {
 renderCards('all');
 renderStats();
 renderLeadsCount();
-renderLeads();
 
 // ===== NUCLEAR SECTION =====
 const NU_ITEMS = [
@@ -6947,19 +7162,17 @@ document.querySelectorAll('[data-nuatype]').forEach(function(btn) {
   });
 });
 
-function getNuStatus(coName, contName) {
-  try { const s = JSON.parse(localStorage.getItem('nuclear_lead_status') || '{}'); return s[coName+'::'+contName] || 'not_contacted'; } catch(e) { return 'not_contacted'; }
-}
-function setNuStatus(coName, contName, status) {
-  try { const s = JSON.parse(localStorage.getItem('nuclear_lead_status') || '{}'); s[coName+'::'+contName] = status; localStorage.setItem('nuclear_lead_status', JSON.stringify(s)); } catch(e) {}
-}
+function getNuStatus(coName, contName) { return crmGet('nuclear', coName, contName).status; }
+function setNuStatus(coName, contName, status) { crmSet('nuclear', coName, contName, { status: status }); }
 function cycleNuStatus(coIdx, contIdx) {
   const co = NU_COMPANIES[coIdx]; const c = co.contacts[contIdx];
   const cur = getNuStatus(co.name, c.name);
-  const next = cur === 'not_contacted' ? 'contacted' : cur === 'contacted' ? 'replied' : 'not_contacted';
+  const idx = STATUS_CYCLE.indexOf(cur);
+  const next = STATUS_CYCLE[(idx + 1) % STATUS_CYCLE.length];
   setNuStatus(co.name, c.name, next);
   const btn = document.getElementById('nsbtn-' + coIdx + '-' + contIdx);
   if (btn) { btn.className = STATUS_CLASSES[next]; btn.innerHTML = '<span class="' + STATUS_DOTS[next] + '"></span>' + STATUS_LABELS[next]; }
+  refreshLeadScoreBadge('nuclear', coIdx, contIdx);
 }
 function toggleNuCompany(coIdx) {
   const panel = document.getElementById('nco-panel-' + coIdx);
@@ -6973,31 +7186,52 @@ function renderNuLeads() {
   const search = (document.getElementById('nu-leads-search').value || '').toLowerCase();
   const liSvg = '<svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>';
   let totalContacts = 0;
-  const cards = NU_COMPANIES.map(function(co, coIdx) {
-    const contacts = co.contacts.filter(function(c) {
+  let nuCoOrder = NU_COMPANIES.map(function(co, i) { return i; });
+  if (activeNuLeadSort === 'score') {
+    nuCoOrder.sort(function(ai, bi) {
+      const ca = NU_COMPANIES[ai], cb = NU_COMPANIES[bi];
+      const maxA = Math.max.apply(null, ca.contacts.map(function(c) { return computeLeadScore('nuclear', ca, c, 'category').total; }).concat([0]));
+      const maxB = Math.max.apply(null, cb.contacts.map(function(c) { return computeLeadScore('nuclear', cb, c, 'category').total; }).concat([0]));
+      return maxB - maxA;
+    });
+  }
+  const cards = nuCoOrder.map(function(coIdx) {
+    const co = NU_COMPANIES[coIdx];
+    let contacts = co.contacts.filter(function(c) {
       if (!search) return true;
       return (co.name + c.name + c.title + c.location).toLowerCase().includes(search);
     });
     if (!contacts.length) return '';
+    if (activeNuLeadSort === 'score') {
+      contacts = contacts.slice().sort(function(a, b) { return computeLeadScore('nuclear', co, b, 'category').total - computeLeadScore('nuclear', co, a, 'category').total; });
+    }
     totalContacts += contacts.length;
     const color = '#06b6d4';
     const contactRows = contacts.map(function(c) {
       const realCi = co.contacts.indexOf(c);
       const st = getNuStatus(co.name, c.name);
+      const crmRec = crmGet('nuclear', co.name, c.name);
+      const notesBtnId = 'nnotesbtn-' + coIdx + '-' + realCi;
+      const notesBoxId = 'nnotesbox-' + coIdx + '-' + realCi;
+      const safeCo = co.name.replace(/'/g, "\\'");
+      const safeC = c.name.replace(/'/g, "\\'");
       return '<div class="contact-row">' +
         '<div class="contact-details">' +
-          '<div class="contact-name">' + c.name + '</div>' +
+          '<div class="contact-name"><span id="nscore-' + coIdx + '-' + realCi + '">' + leadScoreBadgeHtml('nuclear', co, c, 'category') + '</span> ' + c.name + '</div>' +
           '<div class="contact-title">' + c.title + '</div>' +
           '<div class="contact-loc">\u{1F4CD} ' + c.location + '</div>' +
         '</div>' +
         '<div class="contact-actions">' +
           '<a class="c-li-btn" href="' + c.linkedin + '" target="_blank" rel="noopener">' + liSvg + ' Search LinkedIn</a>' +
+          (c.email ? '<span style="font-size:11px;font-family:monospace;color:rgba(255,255,255,.4)">' + c.email + '</span>' : '') +
           '<button id="nsbtn-' + coIdx + '-' + realCi + '" class="' + STATUS_CLASSES[st] + '" onclick="cycleNuStatus(' + coIdx + ',' + realCi + ')">' +
             '<span class="' + STATUS_DOTS[st] + '"></span>' + STATUS_LABELS[st] +
           '</button>' +
+          '<button id="' + notesBtnId + '" class="lead-notes-btn' + (crmRec.notes && crmRec.notes.trim() ? ' has-notes' : '') + '" onclick="event.stopPropagation();crmToggleNotes(\'' + notesBtnId + '\',\'' + notesBoxId + '\')">\u{1F4DD} Notes</button>' +
           '<button class="c-draft-btn" onclick="openNuLeadEmail(' + coIdx + ',' + realCi + ')">\u2713 Draft Email</button>' +
         '</div>' +
-      '</div>';
+      '</div>' +
+      '<div class="lead-notes-box" id="' + notesBoxId + '"><textarea placeholder="Call notes, follow-up reminders, context..." onblur="crmSaveNotes(\'nuclear\',\'' + safeCo + '\',\'' + safeC + '\',this.value,\'' + notesBtnId + '\')">' + (crmRec.notes || '') + '</textarea><div class="lead-notes-save">Saves automatically when you click away</div></div>';
     }).join('');
     return '<div class="co-card">' +
       '<div class="co-header" onclick="toggleNuCompany(' + coIdx + ')">' +
@@ -7110,7 +7344,7 @@ window.addEventListener('resize', function() {
 
 renderNuCards('all');
 renderNuStats();
-renderNuLeads();
+crmLoadRemote();
 </script>
 </body>
 </html><!-- redeploy trigger 2026-07-07T01:19:12Z -->
